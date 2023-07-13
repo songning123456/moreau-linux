@@ -1,0 +1,1432 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>24.软件包管理yum · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="25.shell多分支if和for循环.html" />
+    
+    
+    <link rel="prev" href="23.软件包管理rpm.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Linux宝典
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01.linux基本操作使用.html">
+            
+                <a href="01.linux基本操作使用.html">
+            
+                    
+                    01.linux基本操作使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="02.linux获取命令使用帮助.html">
+            
+                <a href="02.linux获取命令使用帮助.html">
+            
+                    
+                    02.linux获取命令使用帮助
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="03.linux常用基础命令.html">
+            
+                <a href="03.linux常用基础命令.html">
+            
+                    
+                    03.linux常用基础命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04.根文件系统.html">
+            
+                <a href="04.根文件系统.html">
+            
+                    
+                    04.根文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05.Linux系统上的文件类型和历史命令.html">
+            
+                <a href="05.Linux系统上的文件类型和历史命令.html">
+            
+                    
+                    05.Linux系统上的文件类型和历史命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="06.目录文本查看命令.html">
+            
+                <a href="06.目录文本查看命令.html">
+            
+                    
+                    06.目录文本查看命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="07.文件管理命令.html">
+            
+                <a href="07.文件管理命令.html">
+            
+                    
+                    07.文件管理命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="08.glob通配及IO重定向.html">
+            
+                <a href="08.glob通配及IO重定向.html">
+            
+                    
+                    08.glob通配及IO重定向
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="09.用户和组管理概念.html">
+            
+                <a href="09.用户和组管理概念.html">
+            
+                    
+                    09.用户和组管理概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="10.用户和组管理命令.html">
+            
+                <a href="10.用户和组管理命令.html">
+            
+                    
+                    10.用户和组管理命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="11.用户权限管理.html">
+            
+                <a href="11.用户权限管理.html">
+            
+                    
+                    11.用户权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="12.shell变量,算数和逻辑运算及配置文件.html">
+            
+                <a href="12.shell变量,算数和逻辑运算及配置文件.html">
+            
+                    
+                    12.shell变量,算数和逻辑运算及配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="13.grep和基本正则表达式.html">
+            
+                <a href="13.grep和基本正则表达式.html">
+            
+                    
+                    13.grep和基本正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="14.vim编辑器.html">
+            
+                <a href="14.vim编辑器.html">
+            
+                    
+                    14.vim编辑器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="15.文件查找find和特殊权限及facl.html">
+            
+                <a href="15.文件查找find和特殊权限及facl.html">
+            
+                    
+                    15.文件查找find和特殊权限及facl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="16.磁盘及文件系统管理.html">
+            
+                <a href="16.磁盘及文件系统管理.html">
+            
+                    
+                    16.磁盘及文件系统管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="17.shell条件测试,逻辑判断,参数传递.html">
+            
+                <a href="17.shell条件测试,逻辑判断,参数传递.html">
+            
+                    
+                    17.shell条件测试,逻辑判断,参数传递
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="18.RAID技术.html">
+            
+                <a href="18.RAID技术.html">
+            
+                    
+                    18.RAID技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="19.LVM2.html">
+            
+                <a href="19.LVM2.html">
+            
+                    
+                    19.LVM2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="20.btrfs文件系统.html">
+            
+                <a href="20.btrfs文件系统.html">
+            
+                    
+                    20.btrfs文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="21.压缩工具.html">
+            
+                <a href="21.压缩工具.html">
+            
+                    
+                    21.压缩工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="22.Liunx任务计划crontab.html">
+            
+                <a href="22.Liunx任务计划crontab.html">
+            
+                    
+                    22.Liunx任务计划crontab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="23.软件包管理rpm.html">
+            
+                <a href="23.软件包管理rpm.html">
+            
+                    
+                    23.软件包管理rpm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.25" data-path="24.软件包管理yum.html">
+            
+                <a href="24.软件包管理yum.html">
+            
+                    
+                    24.软件包管理yum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="25.shell多分支if和for循环.html">
+            
+                <a href="25.shell多分支if和for循环.html">
+            
+                    
+                    25.shell多分支if和for循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="26.文本处理神器sed.html">
+            
+                <a href="26.文本处理神器sed.html">
+            
+                    
+                    26.文本处理神器sed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="27.计算机网络基础.html">
+            
+                <a href="27.计算机网络基础.html">
+            
+                    
+                    27.计算机网络基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="28.Linux网络属性配置.html">
+            
+                <a href="28.Linux网络属性配置.html">
+            
+                    
+                    28.Linux网络属性配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="29.Linux进程及作业管理.html">
+            
+                <a href="29.Linux进程及作业管理.html">
+            
+                    
+                    29.Linux进程及作业管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="30.Linux进程及作业管理二.html">
+            
+                <a href="30.Linux进程及作业管理二.html">
+            
+                    
+                    30.Linux进程及作业管理二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.32" data-path="31.网络客户端工具和while、untill循环.html">
+            
+                <a href="31.网络客户端工具和while、untill循环.html">
+            
+                    
+                    31.网络客户端工具和while、untill循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33" data-path="32.CentOS系统启动流程.html">
+            
+                <a href="32.CentOS系统启动流程.html">
+            
+                    
+                    32.CentOS系统启动流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.34" data-path="33.grub系统配置与使用.html">
+            
+                <a href="33.grub系统配置与使用.html">
+            
+                    
+                    33.grub系统配置与使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.35" data-path="34.Linux内核功能及模块应用.html">
+            
+                <a href="34.Linux内核功能及模块应用.html">
+            
+                    
+                    34.Linux内核功能及模块应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.36" data-path="35.Linux内核模块功能定制.html">
+            
+                <a href="35.Linux内核模块功能定制.html">
+            
+                    
+                    35.Linux内核模块功能定制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.37" data-path="36.Linux自动化安装anaconda配置定制.html">
+            
+                <a href="36.Linux自动化安装anaconda配置定制.html">
+            
+                    
+                    36.Linux自动化安装anaconda配置定制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.38" data-path="37.Linux系统自动化安装无人值守环境配置部署.html">
+            
+                <a href="37.Linux系统自动化安装无人值守环境配置部署.html">
+            
+                    
+                    37.Linux系统自动化安装无人值守环境配置部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.39" data-path="38.函数编程和case语句.html">
+            
+                <a href="38.函数编程和case语句.html">
+            
+                    
+                    38.函数编程和case语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.40" data-path="39.systemd及systemctl实战.html">
+            
+                <a href="39.systemd及systemctl实战.html">
+            
+                    
+                    39.systemd及systemctl实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.41" data-path="40.SELinux简介.html">
+            
+                <a href="40.SELinux简介.html">
+            
+                    
+                    40.SELinux简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.42" data-path="41.shell数组和字符串处理工具.html">
+            
+                <a href="41.shell数组和字符串处理工具.html">
+            
+                    
+                    41.shell数组和字符串处理工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.43" data-path="42.shell信号捕捉实战.html">
+            
+                <a href="42.shell信号捕捉实战.html">
+            
+                    
+                    42.shell信号捕捉实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.44" data-path="43.awk使用与实践.html">
+            
+                <a href="43.awk使用与实践.html">
+            
+                    
+                    43.awk使用与实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.45" data-path="44.通信加密和解密、公钥、私钥、CA.html">
+            
+                <a href="44.通信加密和解密、公钥、私钥、CA.html">
+            
+                    
+                    44.通信加密和解密、公钥、私钥、CA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.46" data-path="45.OpenSSL.html">
+            
+                <a href="45.OpenSSL.html">
+            
+                    
+                    45.OpenSSL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.47" data-path="46.DNS.html">
+            
+                <a href="46.DNS.html">
+            
+                    
+                    46.DNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.48" data-path="47.DNS and Bind.html">
+            
+                <a href="47.DNS and Bind.html">
+            
+                    
+                    47.DNS and Bind
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.49" data-path="48.http协议及Web服务.html">
+            
+                <a href="48.http协议及Web服务.html">
+            
+                    
+                    48.http协议及Web服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.50" data-path="49.Apache.html">
+            
+                <a href="49.Apache.html">
+            
+                    
+                    49.Apache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.51" data-path="50.LAMP.html">
+            
+                <a href="50.LAMP.html">
+            
+                    
+                    50.LAMP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.52" data-path="51.MariaDB.html">
+            
+                <a href="51.MariaDB.html">
+            
+                    
+                    51.MariaDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.53" data-path="52.php-fpm基础应用与实战.html">
+            
+                <a href="52.php-fpm基础应用与实战.html">
+            
+                    
+                    52.php-fpm基础应用与实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.54" data-path="53.文件共享服务、ftp、vsftp.html">
+            
+                <a href="53.文件共享服务、ftp、vsftp.html">
+            
+                    
+                    53.文件共享服务、ftp、vsftp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.55" data-path="54.nfs服务配置应用与实战.html">
+            
+                <a href="54.nfs服务配置应用与实战.html">
+            
+                    
+                    54.nfs服务配置应用与实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.56" data-path="55.samba服务基础应用.html">
+            
+                <a href="55.samba服务基础应用.html">
+            
+                    
+                    55.samba服务基础应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.57" data-path="56.iptables.html">
+            
+                <a href="56.iptables.html">
+            
+                    
+                    56.iptables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.58" data-path="57.iptables网络防火墙.html">
+            
+                <a href="57.iptables网络防火墙.html">
+            
+                    
+                    57.iptables网络防火墙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.59" data-path="58.iptables_nat路由.html">
+            
+                <a href="58.iptables_nat路由.html">
+            
+                    
+                    58.iptables_nat路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.60" data-path="59.Linux时间服务-chrony.html">
+            
+                <a href="59.Linux时间服务-chrony.html">
+            
+                    
+                    59.Linux时间服务-chrony
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.61" data-path="GitLab安装_CentOS7.html">
+            
+                <a href="GitLab安装_CentOS7.html">
+            
+                    
+                    GitLab安装_CentOS7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.62" data-path="JDK安装.html">
+            
+                <a href="JDK安装.html">
+            
+                    
+                    JDK安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.63" data-path="Linux中kill -2和kill -9的区别.html">
+            
+                <a href="Linux中kill -2和kill -9的区别.html">
+            
+                    
+                    Linux中kill -2和kill -9的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.64" data-path="linux中修改环境变量及生效方法.html">
+            
+                <a href="linux中修改环境变量及生效方法.html">
+            
+                    
+                    linux中修改环境变量及生效方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.65" data-path="Linux查看设置系统时区.html">
+            
+                <a href="Linux查看设置系统时区.html">
+            
+                    
+                    Linux查看设置系统时区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.66" data-path="rc.local脚本开机自启动.html">
+            
+                <a href="rc.local脚本开机自启动.html">
+            
+                    
+                    rc.local脚本开机自启动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.67" data-path="SSH免密登录.html">
+            
+                <a href="SSH免密登录.html">
+            
+                    
+                    SSH免密登录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.68" data-path="Systemd日志管理journal和journalctl使用.html">
+            
+                <a href="Systemd日志管理journal和journalctl使用.html">
+            
+                    
+                    Systemd日志管理journal和journalctl使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.69" data-path="TCP_IP协议总结.html">
+            
+                <a href="TCP_IP协议总结.html">
+            
+                    
+                    TCP_IP协议总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.70" data-path="TCP_UDP结构.html">
+            
+                <a href="TCP_UDP结构.html">
+            
+                    
+                    TCP_UDP结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.71" data-path="VMware虚拟机克隆CentOS7并分别设置静态IP.html">
+            
+                <a href="VMware虚拟机克隆CentOS7并分别设置静态IP.html">
+            
+                    
+                    VMware虚拟机克隆CentOS7并分别设置静态IP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.72" data-path="Vmware虚拟机问题解决方案.html">
+            
+                <a href="Vmware虚拟机问题解决方案.html">
+            
+                    
+                    Vmware虚拟机问题解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.73" data-path="window下面git公钥的配置.html">
+            
+                <a href="window下面git公钥的配置.html">
+            
+                    
+                    window下面git公钥的配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.74" data-path="文件描述符.html">
+            
+                <a href="文件描述符.html">
+            
+                    
+                    文件描述符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.75" data-path="最小化安装centos7.9.html">
+            
+                <a href="最小化安装centos7.9.html">
+            
+                    
+                    最小化安装centos7.9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.76" data-path="查看服务器状态工具.html">
+            
+                <a href="查看服务器状态工具.html">
+            
+                    
+                    查看服务器状态工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >24.软件包管理yum</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+<li><div><a href="#yum&#x5BA2;&#x6237;&#x7AEF;">yum&#x5BA2;&#x6237;&#x7AEF;:</a><i></i></div></li>
+<li><div><a href="#yum&#x547D;&#x4EE4;&#x7684;&#x7528;&#x6CD5;">yum&#x547D;&#x4EE4;&#x7684;&#x7528;&#x6CD5;:</a><i></i></div></li>
+<li><div><a href="#&#x4F7F;&#x7528;&#x672C;&#x5730;&#x5149;&#x76D8;&#x7684;yum&#x4ED3;&#x5E93;">&#x4F7F;&#x7528;&#x672C;&#x5730;&#x5149;&#x76D8;&#x7684;yum&#x4ED3;&#x5E93;</a><i></i></div></li>
+<li><div><a href="#yum&#x7684;&#x547D;&#x4EE4;&#x884C;&#x9009;&#x9879;">yum&#x7684;&#x547D;&#x4EE4;&#x884C;&#x9009;&#x9879;:</a><i></i></div></li>
+<li><div><a href="#yum&#x7684;repo&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x53EF;&#x7528;&#x7684;&#x53D8;&#x91CF;">yum&#x7684;repo&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x53EF;&#x7528;&#x7684;&#x53D8;&#x91CF;:</a><i></i></div></li>
+<li><div><a href="#&#x521B;&#x5EFA;yum&#x4ED3;&#x5E93;">&#x521B;&#x5EFA;yum&#x4ED3;&#x5E93;</a><i></i></div></li>
+<li><div><a href="#&#x7A0B;&#x5E8F;&#x5305;&#x7F16;&#x8BD1;&#x5B89;&#x88C5;">&#x7A0B;&#x5E8F;&#x5305;&#x7F16;&#x8BD1;&#x5B89;&#x88C5;:</a><i></i></div></li>
+<li><div><a href="#&#x5F00;&#x6E90;&#x7A0B;&#x5E8F;&#x6E90;&#x4EE3;&#x7801;&#x7684;&#x83B7;&#x53D6;">&#x5F00;&#x6E90;&#x7A0B;&#x5E8F;&#x6E90;&#x4EE3;&#x7801;&#x7684;&#x83B7;&#x53D6;:</a><i></i></div></li>
+</ul>
+</div>
+
+<h3 id="yum-yellow-dogyellowdog-update-modifier">YUM yellow dog,Yellowdog Update Modifier</h3>
+<p>yum repository:yum repo<br>&#x5B58;&#x50A8;&#x4E86;:<br>&#x4F17;&#x591A;rpm&#x5305;<br>&#x5305;&#x7684;&#x76F8;&#x5173;&#x7684;&#x5143;&#x6570;&#x636E;&#x6587;&#x4EF6;(&#x653E;&#x7F6E;&#x4E8E;&#x7279;&#x5B9A;&#x76EE;&#x5F55;&#x4E0B;:repodata)  </p>
+<p>&#x6587;&#x4EF6;&#x670D;&#x52A1;&#x5668;:<br>ftp://<br>http://<br>nfs://<br>file:///</p>
+<h3 id="yum&#x5BA2;&#x6237;&#x7AEF;">yum&#x5BA2;&#x6237;&#x7AEF;:</h3>
+<p>&#x914D;&#x7F6E;&#x6587;&#x4EF6;:<br>/etc/yum.conf:&#x4E3A;&#x6240;&#x6709;&#x4ED3;&#x5E93;&#x63D0;&#x4F9B;&#x516C;&#x5171;&#x914D;&#x7F6E;,&#x5982;&#x7F13;&#x5B58;&#x6587;&#x4EF6;&#x653E;&#x54EA;&#x91CC;&#x7B49;...<br>/etc/yum.repos.d/*.repo:&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;&#x4ED3;&#x5E93;&#x63D0;&#x4F9B;&#x7279;&#x6709;&#x914D;&#x7F6E;;        </p>
+<p>&#x4ED3;&#x5E93;&#x7684;&#x5B9A;&#x4E49;:<br>[repositoryID]<br>name=Some name for this repository<br>baseurl=url://path/to/repository/<br>enabled={1|0}:&#x662F;&#x5426;&#x542F;&#x7528;&#x6B64;&#x4ED3;&#x5E93;;&#x9ED8;&#x8BA4;&#x4E3A;1(&#x542F;&#x7528;),&#x4E0D;&#x5199;&#x4E3A;&#x542F;&#x7528;;<br>gpgcheck={1|0}:&#x5BF9;&#x4E8E;&#x6B64;&#x4ED3;&#x5E93;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x7A0B;&#x5E8F;&#x5305;,&#x5728;&#x5B89;&#x88C5;&#x4E4B;&#x524D;&#x662F;&#x5426;&#x505A;&#x5B8C;&#x6574;&#x6027;&#x9A8C;&#x8BC1;&#x548C;&#x6765;&#x6E90;&#x5408;&#x6CD5;&#x6027;;<br>gpgkey=URL:&#x7528;&#x4E8E;&#x6307;&#x660E;&#x5BC6;&#x94A5;&#x6587;&#x4EF6;,&#x4F7F;&#x7528;&#x6B64;&#x5BC6;&#x94A5;&#x6587;&#x4EF6;&#x6765;&#x505A;&#x5B8C;&#x6574;&#x6027;&#x9A8C;&#x8BC1;&#x548C;&#x6765;&#x6E90;&#x5408;&#x6CD5;&#x6027;<br>enablegroups={1|0}:&#x9ED8;&#x8BA4;&#x4E3A;1(&#x662F;),&#x662F;&#x5426;&#x5728;&#x6B64;&#x4ED3;&#x5E93;&#x4E0A;&#x4F7F;&#x7528;&#x7EC4;&#x6765;&#x6279;&#x91CF;&#x7BA1;&#x7406;&#x7A0B;&#x5E8F;&#x5305;<br>failovermethod={roundrobin|priority}:&#x6545;&#x969C;&#x8F6C;&#x79FB;&#x65B9;&#x6CD5;;&#x5F53;baseurl&#x6307;&#x5B9A;&#x591A;&#x4E2A;url&#x65F6;,&#x5982;&#x679C;&#x6765;&#x6311;&#x9009;;<br>&#x9ED8;&#x8BA4;&#x4E3A;:roundrobin,&#x610F;&#x4E3A;&#x968F;&#x673A;&#x6311;&#x9009;;<br>priority:&#x4F18;&#x5148;&#x7EA7;,&#x81F3;&#x4E0A;&#x800C;&#x4E0B;&#x7684;&#x6311;&#x9009;
+cost=1000:&#x4EE3;&#x8868;&#x5F00;&#x9500;,&#x5982;&#x679C;&#x5E0C;&#x671B;&#x8BBF;&#x95EE;&#x6B64;&#x4ED3;&#x5E93;&#x5F00;&#x9500;&#x5C0F;&#x4E00;&#x70B9;,&#x53EF;&#x4EE5;&#x8C03;&#x4F4E;&#x4E00;&#x4E9B;;<br>&#x9ED8;&#x8BA4;&#x4E3A;1000   </p>
+<h3 id="yum&#x547D;&#x4EE4;&#x7684;&#x7528;&#x6CD5;">yum&#x547D;&#x4EE4;&#x7684;&#x7528;&#x6CD5;:</h3>
+<p>yum [options] [command] [package ...]  </p>
+<p>repolist [all|enabled|disabled]:&#x663E;&#x793A;&#x4ED3;&#x5E93;&#x5217;&#x8868;&#x7684;&#x547D;&#x4EE4;;&#x9ED8;&#x8BA4;&#x663E;&#x793A;&#x542F;&#x7528;&#x7684;&#x4ED3;&#x5E93;&#x5373;:<code>yum repolist</code>&#x76F8;&#x5F53;&#x4E8E;<code>yum repolist enabled</code><br>list:&#x663E;&#x793A;&#x7A0B;&#x5E8F;&#x5305;<br>yum list [all | glob_exp1] [glob_exp2] [...] :&#x663E;&#x793A;&#x5339;&#x914D;&#x6307;&#x5B9A;glob&#x901A;&#x914D;&#x7B26;&#x7684;&#x6240;&#x6709;&#x7A0B;&#x5E8F;&#x5305;<br>yum list available [glob_exp1] [...]:&#x663E;&#x793A;&#x5339;&#x914D;&#x6307;&#x5B9A;glob&#x901A;&#x914D;&#x7B26;,&#x4ED3;&#x5E93;&#x4E2D;&#x6709;&#x5C1A;&#x672A;&#x5B89;&#x88C5;&#x7684;&#x7A0B;&#x5E8F;&#x5305;(&#x5373;&#x53EF;&#x7528;&#x7684;&#x5B89;&#x88C5;&#x5305;)<br>yum list updates [glob_exp1] [...]:&#x53EF;&#x7528;&#x7684;&#x5347;&#x7EA7;&#x5305;<br>yum list installed [glob_exp1] [...]:&#x5DF2;&#x5B89;&#x88C5;&#x7684;&#x5305;<br>yum list extras [glob_exp1] [...]:&#x989D;&#x5916;&#x7684;&#x5B89;&#x88C5;&#x5305;<br>yum list obsoletes [glob_exp1] [...]:&#x5E9F;&#x5F03;&#x7684;&#x5B89;&#x88C5;&#x5305;  </p>
+<pre><code class="lang-shell">#&#x5217;&#x51FA;&#x6240;&#x6709;&#x53EF;&#x7528;&#x4ED3;&#x5E93;
+yum repolist
+#&#x663E;&#x793A;&#x6240;&#x6709;&#x7A0B;&#x5E8F;&#x5305;
+yum list | less
+#&#x663E;&#x793A;php&#x5F00;&#x5934;&#x7684;&#x6240;&#x6709;&#x7A0B;&#x5E8F;&#x5305;,&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x4E86;glob&#x901A;&#x914D;&#x7B26;
+yum list php*
+</code></pre>
+<p>&#x5B89;&#x88C5;&#x7A0B;&#x5E8F;&#x5305;:<br>install package1 [package2] [...]  </p>
+<pre><code class="lang-shell">yum install gcc
+yum -y install gcc
+</code></pre>
+<p>&#x91CD;&#x65B0;&#x5B89;&#x88C5;(&#x8986;&#x76D6;&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x5B89;&#x88C5;):<br>reinstall package1 [package2] [...]  </p>
+<p>&#x5347;&#x7EA7;&#x7A0B;&#x5E8F;&#x5305;:<br>update package1 [package2] [...]  </p>
+<p>&#x964D;&#x7EA7;&#x7A0B;&#x5E8F;&#x5305;:<br>downgrad package1 [package2] [...]   </p>
+<p>&#x68C0;&#x67E5;&#x53EF;&#x7528;&#x5347;&#x7EA7;:  </p>
+<p>check-update  </p>
+<pre><code class="lang-shell">yum update gcc
+</code></pre>
+<p>&#x5378;&#x8F7D;&#x6307;&#x5B9A;&#x7A0B;&#x5E8F;&#x5305;:<br>remove | erase package1 [package2] [...]   </p>
+<pre><code class="lang-shell">yum remove gcc
+</code></pre>
+<p>&#x67E5;&#x770B;&#x7A0B;&#x5E8F;&#x5305;information:<br>info package1 [...]  </p>
+<pre><code class="lang-shell">yum info gcc
+</code></pre>
+<p>&#x67E5;&#x770B;&#x6307;&#x5B9A;&#x7684;&#x7279;&#x6027;(&#x53EF;&#x4EE5;&#x662F;&#x67D0;&#x6587;&#x4EF6;)&#x662F;&#x7531;&#x90A3;&#x4E2A;&#x7A0B;&#x5E8F;&#x5305;&#x6240;&#x63D0;&#x4F9B;&#x7684;:<br>provides | whatprovides feature1 [feature2] [...]  </p>
+<pre><code class="lang-shell">yum provides /bin/ls
+yum provides /bin/ls /bin/cat
+</code></pre>
+<p>&#x6E05;&#x7A7A;&#x672C;&#x5730;&#x7F13;&#x5B58;:<br>clean [packages | metadata | expire-cache | rpmdb | plugins | all]   </p>
+<p>&#x6784;&#x5EFA;&#x7F13;&#x5B58;:(&#x8FD9;&#x90E8;&#x4E00;&#x822C;&#x4E0D;&#x9700;&#x8981;&#x624B;&#x5DE5;&#x505A;,&#x5728;&#x6211;&#x4EEC;&#x6BCF;&#x4E00;&#x6B21;&#x4F7F;&#x7528;yum&#x5B89;&#x88C5;&#x65F6;,&#x5B83;&#x4F1A;&#x81EA;&#x52A8;&#x53BB;&#x627E;&#x6240;&#x6709;&#x7684;yum&#x4ED3;&#x5E93;,&#x5E76;&#x628A;&#x5B83;&#x4EEC;&#x76F8;&#x5173;&#x7684;&#x6587;&#x4EF6;&#x7F13;&#x5B58;&#x5728;&#x672C;&#x5730;)<br>makecahe  </p>
+<p>&#x4E00;&#x822C;&#x5728;&#x914D;&#x7F6E;&#x5B8C;&#x65B0;&#x7684;yum&#x4ED3;&#x5E93;&#x540E;&#x53EF;&#x4EE5;&#x505A;&#x4EE5;&#x4E0B;&#x64CD;&#x4F5C;:  </p>
+<pre><code class="lang-shell">#&#x6E05;&#x7A7A;&#x6240;&#x6709;&#x672C;&#x5730;&#x7F13;&#x5B58;
+yum clean all
+#&#x6784;&#x5EFA;&#x7F13;&#x5B58;
+yum makecache
+#&#x663E;&#x793A;yum&#x4ED3;&#x5E93;&#x5217;&#x8868;
+yum repolist
+</code></pre>
+<p>&#x641C;&#x7D22;:&#x4EE5;&#x6307;&#x5B9A;&#x7684;&#x5173;&#x952E;&#x5B57;&#x641C;&#x7D22;&#x7A0B;&#x5E8F;&#x5305;&#x540D;&#x53CA;summary&#x4FE1;&#x606F;<br>search string1 [string2] [...]  </p>
+<pre><code class="lang-shell">yum search bash
+</code></pre>
+<p>&#x663E;&#x793A;&#x7A0B;&#x5E8F;&#x5305;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;<br>deplist package1 [package2] [...]   </p>
+<pre><code class="lang-shell">yum deplist gcc
+</code></pre>
+<p>history [info | list | packages-info | summary | addon-info | redo | undo | rollback | new | sync | stats ]<br>&#x67E5;&#x770B;yum&#x4E8B;&#x52A1;&#x5386;&#x53F2;(&#x6BCF;&#x4E00;&#x6B21;yum&#x547D;&#x4EE4;&#x6267;&#x884C;&#x90FD;&#x662F;&#x542F;&#x52A8;&#x4E86;&#x4E00;&#x6B21;yum&#x4E8B;&#x52A1;,&#x5982;&#x5B89;&#x88C5;&#x3001;&#x5347;&#x7EA7;&#x3001;&#x5378;&#x8F7D;&#x624D;&#x4F1A;&#x542F;&#x52A8;&#x4E8B;&#x52A1;,&#x67E5;&#x8BE2;&#x4E0D;&#x4F1A;&#x542F;&#x52A8;&#x4E8B;&#x52A1;)  </p>
+<pre><code class="lang-shell">yum history
+yum history stats
+</code></pre>
+<p>&#x5B89;&#x88C5;&#x53CA;&#x5347;&#x7EA7;&#x672C;&#x5730;&#x7A0B;&#x5E8F;&#x5305;<br>&#x5047;&#x8BBE;yum&#x4ED3;&#x5E93;&#x6CA1;&#x6709;&#x60F3;&#x8981;&#x7684;&#x5305;,&#x4ECE;&#x7F51;&#x7EDC;&#x4E0A;&#x4E0B;&#x8F7D;&#x4E0B;&#x6765;&#x7684;rpm&#x5305;,&#x6211;&#x4EEC;&#x901A;&#x8FC7;<code>rpm -ivh rpm&#x5305;&#x540D;</code>&#x6765;&#x5B89;&#x88C5;,&#x95EE;&#x9898;&#x8FD9;&#x4E2A;&#x5305;&#x6709;&#x5F88;&#x591A;&#x4F9D;&#x8D56;&#x600E;&#x4E48;&#x529E;&#x5462;?&#x5982;&#x679C;&#x88AB;&#x5B83;&#x4F9D;&#x8D56;&#x7684;&#x5305;&#x5728;yum&#x4ED3;&#x5E93;&#x91CC;,&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>yum localinstall  rpm&#x5305;&#x540D;</code>&#x6765;&#x5B89;&#x88C5;&#x672C;&#x5730;&#x7684;rpm&#x5305;,&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x8BE5;&#x5305;&#x7684;&#x4F9D;&#x8D56;&#x95EE;&#x9898;.<code>localinstall</code>&#x5B89;&#x88C5;&#x672C;&#x5730;&#x5305;&#x65F6;&#x80FD;&#x89E3;&#x51B3;&#x672C;&#x5730;&#x5305;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;;<br>localinstall rpmfile1 [rpmfile2] [...]<br>(maintained for legacy reasons only - use install)<br>localupdate rpmfile1 [rpmfile2] [...]<br>(maintained for legacy reasons only - use update)<br>&#x6CE8;&#x610F;:&#x5728;CentOS6&#x3001;CentOS7&#x4EE5;&#x540E;,&#x672C;&#x5730;&#x5B89;&#x88C5;rpm&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;localinstall&#x4E86;,&#x76F4;&#x63A5;&#x4F7F;&#x7528;<code>yum install rpm&#x5305;&#x540D;</code>&#x5373;&#x53EF;;&#x76EE;&#x524D;<code>localinstall</code>&#x548C;<code>localupdate</code>&#x4EC5;&#x4EC5;&#x4E3A;&#x4E86;&#x517C;&#x5BB9;&#x624D;&#x4FDD;&#x7559;<br>&#x4F8B;&#x5982;:<code>yum install /usr/local/src/testapp-3.2.1-1.el7.x86_64.rpm</code>  </p>
+<p>&#x5305;&#x7EC4;&#x7BA1;&#x7406;&#x7684;&#x76F8;&#x5173;&#x547D;&#x4EE4;:<br>groupinstall group1 [group2] [...]<br>groupupdate group1 [group2] [...]<br>grouplist [hidden] [groupwilcar] [...]<br>groupremove group1 [group2] [...]<br>groupinfo group1 [...]   </p>
+<pre><code class="lang-shell">#&#x67E5;&#x770B;&#x5305;&#x7EC4;&#x5217;&#x8868;
+yum grouplist  
+#&#x5B89;&#x88C5;&#x5305;&#x7EC4;
+yum groupinstall &quot;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&quot;
+#&#x67E5;&#x770B;&#x5305;&#x7EC4;&#x4FE1;&#x606F;
+yum groupinfo &quot;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&quot;
+</code></pre>
+<h3 id="&#x4F7F;&#x7528;&#x672C;&#x5730;&#x5149;&#x76D8;&#x7684;yum&#x4ED3;&#x5E93;">&#x4F7F;&#x7528;&#x672C;&#x5730;&#x5149;&#x76D8;&#x7684;yum&#x4ED3;&#x5E93;</h3>
+<pre><code class="lang-shell">mount -r /dev/cdrom /media/cdrom  
+cd /media/cdrom
+ls
+</code></pre>
+<p>&#x4E0B;&#x56FE;&#x67E5;&#x770B;&#x4EE5;&#x4E0A;&#x547D;&#x4EE4;&#x7684;&#x4FE1;&#x606F;:<br><a href="https://images.gitee.com/uploads/images/2019/0724/095252_fb91ed79_1479682.png" data-lightbox="97812e0b-cc1d-401f-812f-b54a324474b2" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0724/095252_fb91ed79_1479682.png" alt=""></a>  </p>
+<pre><code class="lang-shell">#&#x5907;&#x4EFD;&#x7CFB;&#x7EDF;&#x81EA;&#x5E26;&#x7684;yum&#x6E90;  
+mv CentOS-Base.repo  CentOS-Base.repo.bak
+cd /etc/yum.repos.d/
+vim local.repo
+</code></pre>
+<p>local.repo&#x6587;&#x4EF6;&#x5982;&#x4E0B;:  </p>
+<pre><code class="lang-shell">[base]
+name=CentOS 7 Release
+baseurl=file:///media/cdrom
+enable=1
+gpgcheck=0
+</code></pre>
+<pre><code class="lang-shell">yum repolist
+</code></pre>
+<p><a href="https://images.gitee.com/uploads/images/2019/0724/100054_53540b0e_1479682.png" data-lightbox="a12b7fbc-1ab2-4dc1-b6a7-5640035cc3ea" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0724/100054_53540b0e_1479682.png" alt=""></a></p>
+<h3 id="yum&#x7684;&#x547D;&#x4EE4;&#x884C;&#x9009;&#x9879;">yum&#x7684;&#x547D;&#x4EE4;&#x884C;&#x9009;&#x9879;:</h3>
+<p>--nogpgcheck:&#x7981;&#x6B62;&#x8FDB;&#x884C;gpg check;<br>-y:&#x81EA;&#x52A8;&#x56DE;&#x7B54;&#x4E3A;&quot;yes&quot;;<br>-q:&#x9759;&#x9ED8;&#x6A21;&#x5F0F;;<br>--disablerepo=repoidglob:&#x4E34;&#x65F6;&#x7981;&#x6D8C;&#x6B64;&#x5904;&#x6307;&#x5B9A;&#x7684;repo;<br>--enablerepo=repoidglob:&#x4E34;&#x65F6;&#x542F;&#x7528;&#x6B64;&#x5904;&#x6307;&#x5B9A;&#x7684;repo;<br>--noplugins:&#x7981;&#x7528;&#x6240;&#x6709;&#x63D2;&#x4EF6;;  </p>
+<h3 id="yum&#x7684;repo&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x53EF;&#x7528;&#x7684;&#x53D8;&#x91CF;">yum&#x7684;repo&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x53EF;&#x7528;&#x7684;&#x53D8;&#x91CF;:</h3>
+<p><code>$releaserver</code>:&#x5F53;&#x524D;OS&#x7684;&#x53D1;&#x884C;&#x7248;&#x7684;&#x4E3B;&#x7248;&#x672C;&#x53F7;;<br><code>$arch</code>:CPU&#x67B6;&#x6784;&#x5E73;&#x53F0;<br>CPU&#x67B6;&#x6784;&#x5E73;&#x53F0;:<br>i386 32&#x4F4D;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;<br>i686 &#x662F;i386&#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x96C6;<br>x86_64 64&#x4F4D;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;<br>noarch &#x8DE8;&#x5E73;&#x53F0;<br><code>$basearch</code>:&#x57FA;&#x7840;&#x5E73;&#x53F0;;<br><code>$YUM0-$YUM9</code>:&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;;  </p>
+<p>&#x5982;:<code>http://mirrors.abc.com/centos/$releasever/$basearch/os</code>     </p>
+<h3 id="&#x521B;&#x5EFA;yum&#x4ED3;&#x5E93;">&#x521B;&#x5EFA;yum&#x4ED3;&#x5E93;</h3>
+<p>createrepo&#x7528;&#x4E8E;&#x7EC4;&#x7EC7;&#x548C;&#x7BA1;&#x7406;rpm&#x5305;,&#x521B;&#x5EFA;&#x76F8;&#x5173;&#x7684;repodata&#x76EE;&#x5F55;&#x7684;&#x6587;&#x4EF6;   </p>
+<pre><code class="lang-shell">yum install createrepo
+</code></pre>
+<p>createrepo [options] <directory></directory></p>
+<pre><code class="lang-shell">mkdir -p /yum/repo
+#&#x62F7;&#x8D1D;php-&#x5F00;&#x5934;&#x7684;rpm&#x6587;&#x4EF6;
+cp /media/cdrom/Packages/php-* /yum/repo
+cd /yum/repo
+#&#x521B;&#x5EFA;repodata&#x76EE;&#x5F55;&#x7684;&#x6587;&#x4EF6;
+createrepo ./
+</code></pre>
+<p><a href="https://images.gitee.com/uploads/images/2019/0724/153249_74642919_1479682.png" data-lightbox="25dc36f5-36ab-48f7-81df-4dfba8902243" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0724/153249_74642919_1479682.png" alt=""></a>  </p>
+<p>&#x6709;&#x4E86;repodata&#x6587;&#x4EF6;&#x5C31;&#x80FD;&#x6307;&#x5B9A;yum&#x6E90;&#x4E86;  </p>
+<pre><code class="lang-shell">cd /etc/yum.repos.d/
+vim local.repo
+</code></pre>
+<p>local.repo&#x6587;&#x4EF6;&#x5982;&#x4E0B;:  </p>
+<pre><code class="lang-shell">[php-centos]
+name=CentOS 7 php
+baseurl=file:///yum/repo/
+enable=1
+gpgcheck=0
+</code></pre>
+<pre><code class="lang-shell">#&#x67E5;&#x770B;&#x5E76;&#x83B7;&#x53D6;&#x65B0;&#x7684;yum&#x6E90;
+yum repolist
+</code></pre>
+<p><a href="https://images.gitee.com/uploads/images/2019/0724/154253_c4e46fee_1479682.png" data-lightbox="350c4370-cdf2-4509-97fe-cc7f3d377bbd" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0724/154253_c4e46fee_1479682.png" alt=""></a></p>
+<h3 id="&#x7A0B;&#x5E8F;&#x5305;&#x7F16;&#x8BD1;&#x5B89;&#x88C5;">&#x7A0B;&#x5E8F;&#x5305;&#x7F16;&#x8BD1;&#x5B89;&#x88C5;:</h3>
+<p>&#x6E90;&#x4EE3;&#x7801;&#x7684;rpm&#x5305;&#x683C;&#x5F0F;:testapp-VERSION-release.src.rpm  --&gt; &#x5B89;&#x88C5;&#x540E;,&#x4F7F;&#x7528;rpmbuild&#x547D;&#x4EE4;&#x5236;&#x4F5C;&#x6210;&#x4E8C;&#x8FDB;&#x5236;&#x683C;&#x5F0F;&#x7684;rpm&#x5305;,&#x800C;&#x540E;&#x518D;&#x5B89;&#x88C5;;  </p>
+<p>&#x6E90;&#x4EE3;&#x7801; --&gt; &#x9884;&#x5904;&#x7406; --&gt; &#x7F16;&#x8BD1;(gcc) --&gt; &#x6C47;&#x7F16; --&gt; &#x94FE;&#x63A5; --&gt; &#x6267;&#x884C;  </p>
+<p>&#x6E90;&#x4EE3;&#x7801;&#x7EC4;&#x7EC7;&#x683C;&#x5F0F;:<br>&#x591A;&#x6587;&#x4EF6;:&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x4E4B;&#x95F4;,&#x5F88;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x8DE8;&#x6587;&#x4EF6;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;;  </p>
+<p>C&#x3001;C++: make (configure --&gt; Makefile.in --&gt; makefile)<br>java:maven  </p>
+<p>C&#x4EE3;&#x7801;,&#x7F16;&#x8BD1;&#x5B89;&#x88C5;&#x4E09;&#x6B65;&#x9AA4;:<br>./configure:<br>(1) &#x901A;&#x8FC7;&#x9009;&#x9879;&#x4F20;&#x9012;&#x53C2;&#x6570;,&#x6307;&#x5B9A;&#x542F;&#x7528;&#x7279;&#x6027;&#x3001;&#x5B89;&#x88C5;&#x8DEF;&#x5F84;&#x7B49;;&#x6267;&#x884C;&#x65F6;&#x4F1A;&#x53C2;&#x8003;&#x7528;&#x6237;&#x7684;&#x6307;&#x5B9A;&#x4EE5;&#x53CA;Makefile.in&#x6587;&#x4EF6;&#x751F;&#x6210;makefile;<br>(2) &#x68C0;&#x67E5;&#x4F9D;&#x8D56;&#x5230;&#x7684;&#x5916;&#x90E8;&#x73AF;&#x5883;;  </p>
+<p>make:<br>&#x6839;&#x636E;makefile&#x6587;&#x4EF6;,&#x6784;&#x5EFA;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;;  </p>
+<p>make install  </p>
+<p>&#x5F00;&#x53D1;&#x5DE5;&#x5177;:<br>autoconf:&#x751F;&#x6210;configure&#x811A;&#x672C;<br>automake:&#x751F;&#x6210;Makefile.in&#x6587;&#x4EF6;    </p>
+<p>&#x5EFA;&#x8BAE;:&#x5B89;&#x88C5;&#x524D;&#x67E5;&#x770B;INSTALL&#x3001;README&#x6587;&#x4EF6;  </p>
+<h3 id="&#x5F00;&#x6E90;&#x7A0B;&#x5E8F;&#x6E90;&#x4EE3;&#x7801;&#x7684;&#x83B7;&#x53D6;">&#x5F00;&#x6E90;&#x7A0B;&#x5E8F;&#x6E90;&#x4EE3;&#x7801;&#x7684;&#x83B7;&#x53D6;:</h3>
+<p>&#x5B98;&#x65B9;&#x81EA;&#x5EFA;&#x7AD9;&#x70B9;:<br>apache.org (ASF)<br>mariadb.org<br>...<br>&#x4EE3;&#x7801;&#x6258;&#x7BA1;:<br>SourceForge<br>Github.com<br>code.google.com  </p>
+<p>c/c++:gcc (GNU C Complier)  </p>
+<p>&#x7F16;&#x8BD1;C&#x6E90;&#x4EE3;&#x7801;:<br>&#x524D;&#x63D0;:&#x63D0;&#x4F9B;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x53CA;&#x5F00;&#x53D1;&#x73AF;&#x5883;<br>&#x5F00;&#x53D1;&#x5DE5;&#x5177;:make,gcc&#x7B49;<br>&#x5F00;&#x53D1;&#x73AF;&#x5883;:&#x5F00;&#x53D1;&#x5E93;,&#x5934;&#x6587;&#x4EF6;<br>glibc:&#x6807;&#x51C6;&#x5E93;  </p>
+<p>&#x901A;&#x8FC7;&quot;&#x5305;&#x7EC4;&quot;&#x63D0;&#x4F9B;&#x5F00;&#x53D1;&#x7EC4;&#x4EF6;<br>&quot;Development Tools&quot;,&#x4E2D;&#x6587;&#x7248;&#x53EB;&quot;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&quot;  </p>
+<pre><code class="lang-shell">yum groupinstall &#x5F00;&#x53D1;&#x5DE5;&#x5177;
+rpm -q make
+rpm -q gcc
+gcc --version
+</code></pre>
+<p>&#x7B2C;&#x4E00;&#x6B65;:configure&#x811A;&#x672C;<br>&#x9009;&#x9879;:&#x6307;&#x5B9A;&#x5B89;&#x88C5;&#x4F4D;&#x7F6E;&#x3001;&#x6307;&#x5B9A;&#x542F;&#x7528;&#x7684;&#x7279;&#x6027;<br>--help:&#x83B7;&#x53D6;&#x5176;&#x652F;&#x6301;&#x4F7F;&#x7528;&#x7684;&#x9009;&#x9879;<br>&#x9009;&#x9879;&#x5206;&#x7C7B;:<br>&#x5B89;&#x88C5;&#x8DEF;&#x5F84;&#x8BBE;&#x5B9A;:<br>--prefix=/PATH/TO/SOMEWHERE:&#x6307;&#x5B9A;&#x9ED8;&#x8BA4;&#x5B89;&#x88C5;&#x4F4D;&#x7F6E;;&#x4E0D;&#x6307;&#x5B9A;&#x901A;&#x5E38;&#x9ED8;&#x8BA4;&#x4E3A;/usr/local/<br>--sysconfdir=/PATH/TO/SOMEWHERE:&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x5B89;&#x88C5;&#x8DEF;&#x5F84;;  </p>
+<p>&#x53EF;&#x9009;&#x7279;&#x6027;(Optional Features):<br>--disable-FEATURE<br>--enable-FEATURE[=ARG]    </p>
+<p>&#x53EF;&#x9009;&#x7A0B;&#x5E8F;&#x5305;(Optional Packages):<br>--with-PACKAGE[=ARG]<br>--without-PACKAGE  </p>
+<p>&#x7B2C;&#x4E8C;&#x6B65;:make  </p>
+<p>&#x7B2C;&#x4E09;&#x6B65;:make install  </p>
+<pre><code class="lang-shell">#&#x4E0A;&#x4F20;&#x6E90;&#x7801;&#x5305;&#x4F7F;&#x7528;rz&#x9009;&#x62E9;httpd-2.2.29.tar.bz2&#x4E0A;&#x4F20;
+#&#x89E3;&#x538B;&#x6E90;&#x7801;&#x5305;
+tar jxf httpd-2.2.29.tar.bz2
+cd httpd-2.2.29/
+#&#x6307;&#x5B9A;&#x5B89;&#x88C5;&#x8DEF;&#x5F84;&#x548C;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5B89;&#x88C5;&#x8DEF;&#x5F84;
+./configure --prefix=/usr/local/apache2  --sysconfdir=/etc/httpd2
+make
+make install 
+
+#&#x5207;&#x6362;&#x5230;apache&#x7684;bin&#x76EE;&#x5F55;
+cd /usr/local/apache2/bin
+#&#x542F;&#x52A8;apache
+./apachectl start
+#&#x67E5;&#x770B;80&#x7AEF;&#x53E3;&#x662F;&#x5426;&#x542F;&#x7528;&#x4E14;&#x662F;&#x5426;&#x662F;httpd&#x8FDB;&#x7A0B;
+netstat -tnlp
+#&#x5173;&#x95ED;&#x9632;&#x706B;&#x5899;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;ip&#x5730;&#x5740;&#x8BBF;&#x95EE;&#x4E86;
+systemctl stop firewalld
+</code></pre>
+<p>&#x5B89;&#x88C5;&#x540E;&#x914D;&#x7F6E;(&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6307;&#x5B9A;/usr/local/&#x76EE;&#x5F55;,&#x4EE5;&#x4E0B;&#x6587;&#x4EF6;&#x9700;&#x8981;&#x5BFC;&#x51FA;,&#x5426;&#x5219;&#x65E0;&#x6CD5;&#x5168;&#x5C40;&#x4F7F;&#x7528;):<br>(1) &#x5BFC;&#x51FA;&#x4E8C;&#x8FDB;&#x5236;&#x7A0B;&#x5E8F;&#x76EE;&#x5F55;&#x81F3;PATH&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;:<br>&#x7F16;&#x8F91;&#x6587;&#x4EF6;/etc/profile.d/NAME.sh<br>export PATH=/PATH/TO/BIN:$PATH  </p>
+<p>(2) &#x5BFC;&#x51FA;&#x5E93;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;<br>&#x7F16;&#x8F91;/etc/ld.so.conf.d/NAME.conf<br>&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x5E93;&#x6587;&#x4EF6;&#x6240;&#x5728;&#x76EE;&#x5F55;&#x81F3;&#x6B64;&#x6587;&#x4EF6;&#x4E2D;;  </p>
+<p>&#x8BA9;&#x7CFB;&#x7EDF;&#x91CD;&#x65B0;&#x751F;&#x6210;&#x7F13;&#x5B58;:ldconfig [-v]  </p>
+<p>(3) &#x5BFC;&#x51FA;&#x5934;&#x6587;&#x4EF6;<br>&#x57FA;&#x4E8E;&#x94FE;&#x63A5;&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;:ln -sv  </p>
+<p>(4) &#x5BFC;&#x51FA;&#x5E2E;&#x52A9;&#x624B;&#x518C;<br>&#x7F16;&#x8F91;/etc/man.config&#x6587;&#x4EF6;<br>&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;MANPATH  </p>
+
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="23.软件包管理rpm.html" class="navigation navigation-prev " aria-label="Previous page: 23.软件包管理rpm">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="25.shell多分支if和for循环.html" class="navigation navigation-next " aria-label="Next page: 25.shell多分支if和for循环">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"24.软件包管理yum","level":"1.25","depth":1,"next":{"title":"25.shell多分支if和for循环","level":"1.26","depth":1,"path":"pages/25.shell多分支if和for循环.md","ref":"pages/25.shell多分支if和for循环.md","articles":[]},"previous":{"title":"23.软件包管理rpm","level":"1.24","depth":1,"path":"pages/23.软件包管理rpm.md","ref":"pages/23.软件包管理rpm.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","lightbox","page-treeview","-lunr","-search","search-pro","-sharing","sharing-plus","back-to-top-button","code","splitter","chapter-fold","popup","custom-favicon","livereload"],"pluginsConfig":{"page-treeview":{"collapsed":false,"copyright":"Copyright &#169; aleen42","minHeaderCount":"2","minHeaderDeep":"2"},"chapter-fold":{},"styles":{"website":"styles/website.css"},"livereload":{},"splitter":{},"search-pro":{},"author":"sonin","sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"images/Title/favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"back-to-top-button":{},"title":"面试","custom-favicon":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":true,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":false,"qzone":true},"description":"面试宝典","theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/24.软件包管理yum.md","mtime":"2023-07-13T05:42:09.557Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-07-13T06:53:25.815Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

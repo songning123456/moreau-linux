@@ -1,0 +1,1346 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>37.Linux系统自动化安装无人值守环境配置部署 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="38.函数编程和case语句.html" />
+    
+    
+    <link rel="prev" href="36.Linux自动化安装anaconda配置定制.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Linux宝典
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01.linux基本操作使用.html">
+            
+                <a href="01.linux基本操作使用.html">
+            
+                    
+                    01.linux基本操作使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="02.linux获取命令使用帮助.html">
+            
+                <a href="02.linux获取命令使用帮助.html">
+            
+                    
+                    02.linux获取命令使用帮助
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="03.linux常用基础命令.html">
+            
+                <a href="03.linux常用基础命令.html">
+            
+                    
+                    03.linux常用基础命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04.根文件系统.html">
+            
+                <a href="04.根文件系统.html">
+            
+                    
+                    04.根文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05.Linux系统上的文件类型和历史命令.html">
+            
+                <a href="05.Linux系统上的文件类型和历史命令.html">
+            
+                    
+                    05.Linux系统上的文件类型和历史命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="06.目录文本查看命令.html">
+            
+                <a href="06.目录文本查看命令.html">
+            
+                    
+                    06.目录文本查看命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="07.文件管理命令.html">
+            
+                <a href="07.文件管理命令.html">
+            
+                    
+                    07.文件管理命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="08.glob通配及IO重定向.html">
+            
+                <a href="08.glob通配及IO重定向.html">
+            
+                    
+                    08.glob通配及IO重定向
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="09.用户和组管理概念.html">
+            
+                <a href="09.用户和组管理概念.html">
+            
+                    
+                    09.用户和组管理概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="10.用户和组管理命令.html">
+            
+                <a href="10.用户和组管理命令.html">
+            
+                    
+                    10.用户和组管理命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="11.用户权限管理.html">
+            
+                <a href="11.用户权限管理.html">
+            
+                    
+                    11.用户权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="12.shell变量,算数和逻辑运算及配置文件.html">
+            
+                <a href="12.shell变量,算数和逻辑运算及配置文件.html">
+            
+                    
+                    12.shell变量,算数和逻辑运算及配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="13.grep和基本正则表达式.html">
+            
+                <a href="13.grep和基本正则表达式.html">
+            
+                    
+                    13.grep和基本正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="14.vim编辑器.html">
+            
+                <a href="14.vim编辑器.html">
+            
+                    
+                    14.vim编辑器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="15.文件查找find和特殊权限及facl.html">
+            
+                <a href="15.文件查找find和特殊权限及facl.html">
+            
+                    
+                    15.文件查找find和特殊权限及facl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="16.磁盘及文件系统管理.html">
+            
+                <a href="16.磁盘及文件系统管理.html">
+            
+                    
+                    16.磁盘及文件系统管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="17.shell条件测试,逻辑判断,参数传递.html">
+            
+                <a href="17.shell条件测试,逻辑判断,参数传递.html">
+            
+                    
+                    17.shell条件测试,逻辑判断,参数传递
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="18.RAID技术.html">
+            
+                <a href="18.RAID技术.html">
+            
+                    
+                    18.RAID技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="19.LVM2.html">
+            
+                <a href="19.LVM2.html">
+            
+                    
+                    19.LVM2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="20.btrfs文件系统.html">
+            
+                <a href="20.btrfs文件系统.html">
+            
+                    
+                    20.btrfs文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="21.压缩工具.html">
+            
+                <a href="21.压缩工具.html">
+            
+                    
+                    21.压缩工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="22.Liunx任务计划crontab.html">
+            
+                <a href="22.Liunx任务计划crontab.html">
+            
+                    
+                    22.Liunx任务计划crontab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="23.软件包管理rpm.html">
+            
+                <a href="23.软件包管理rpm.html">
+            
+                    
+                    23.软件包管理rpm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="24.软件包管理yum.html">
+            
+                <a href="24.软件包管理yum.html">
+            
+                    
+                    24.软件包管理yum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="25.shell多分支if和for循环.html">
+            
+                <a href="25.shell多分支if和for循环.html">
+            
+                    
+                    25.shell多分支if和for循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="26.文本处理神器sed.html">
+            
+                <a href="26.文本处理神器sed.html">
+            
+                    
+                    26.文本处理神器sed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="27.计算机网络基础.html">
+            
+                <a href="27.计算机网络基础.html">
+            
+                    
+                    27.计算机网络基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="28.Linux网络属性配置.html">
+            
+                <a href="28.Linux网络属性配置.html">
+            
+                    
+                    28.Linux网络属性配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="29.Linux进程及作业管理.html">
+            
+                <a href="29.Linux进程及作业管理.html">
+            
+                    
+                    29.Linux进程及作业管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="30.Linux进程及作业管理二.html">
+            
+                <a href="30.Linux进程及作业管理二.html">
+            
+                    
+                    30.Linux进程及作业管理二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.32" data-path="31.网络客户端工具和while、untill循环.html">
+            
+                <a href="31.网络客户端工具和while、untill循环.html">
+            
+                    
+                    31.网络客户端工具和while、untill循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33" data-path="32.CentOS系统启动流程.html">
+            
+                <a href="32.CentOS系统启动流程.html">
+            
+                    
+                    32.CentOS系统启动流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.34" data-path="33.grub系统配置与使用.html">
+            
+                <a href="33.grub系统配置与使用.html">
+            
+                    
+                    33.grub系统配置与使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.35" data-path="34.Linux内核功能及模块应用.html">
+            
+                <a href="34.Linux内核功能及模块应用.html">
+            
+                    
+                    34.Linux内核功能及模块应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.36" data-path="35.Linux内核模块功能定制.html">
+            
+                <a href="35.Linux内核模块功能定制.html">
+            
+                    
+                    35.Linux内核模块功能定制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.37" data-path="36.Linux自动化安装anaconda配置定制.html">
+            
+                <a href="36.Linux自动化安装anaconda配置定制.html">
+            
+                    
+                    36.Linux自动化安装anaconda配置定制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.38" data-path="37.Linux系统自动化安装无人值守环境配置部署.html">
+            
+                <a href="37.Linux系统自动化安装无人值守环境配置部署.html">
+            
+                    
+                    37.Linux系统自动化安装无人值守环境配置部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.39" data-path="38.函数编程和case语句.html">
+            
+                <a href="38.函数编程和case语句.html">
+            
+                    
+                    38.函数编程和case语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.40" data-path="39.systemd及systemctl实战.html">
+            
+                <a href="39.systemd及systemctl实战.html">
+            
+                    
+                    39.systemd及systemctl实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.41" data-path="40.SELinux简介.html">
+            
+                <a href="40.SELinux简介.html">
+            
+                    
+                    40.SELinux简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.42" data-path="41.shell数组和字符串处理工具.html">
+            
+                <a href="41.shell数组和字符串处理工具.html">
+            
+                    
+                    41.shell数组和字符串处理工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.43" data-path="42.shell信号捕捉实战.html">
+            
+                <a href="42.shell信号捕捉实战.html">
+            
+                    
+                    42.shell信号捕捉实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.44" data-path="43.awk使用与实践.html">
+            
+                <a href="43.awk使用与实践.html">
+            
+                    
+                    43.awk使用与实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.45" data-path="44.通信加密和解密、公钥、私钥、CA.html">
+            
+                <a href="44.通信加密和解密、公钥、私钥、CA.html">
+            
+                    
+                    44.通信加密和解密、公钥、私钥、CA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.46" data-path="45.OpenSSL.html">
+            
+                <a href="45.OpenSSL.html">
+            
+                    
+                    45.OpenSSL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.47" data-path="46.DNS.html">
+            
+                <a href="46.DNS.html">
+            
+                    
+                    46.DNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.48" data-path="47.DNS and Bind.html">
+            
+                <a href="47.DNS and Bind.html">
+            
+                    
+                    47.DNS and Bind
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.49" data-path="48.http协议及Web服务.html">
+            
+                <a href="48.http协议及Web服务.html">
+            
+                    
+                    48.http协议及Web服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.50" data-path="49.Apache.html">
+            
+                <a href="49.Apache.html">
+            
+                    
+                    49.Apache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.51" data-path="50.LAMP.html">
+            
+                <a href="50.LAMP.html">
+            
+                    
+                    50.LAMP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.52" data-path="51.MariaDB.html">
+            
+                <a href="51.MariaDB.html">
+            
+                    
+                    51.MariaDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.53" data-path="52.php-fpm基础应用与实战.html">
+            
+                <a href="52.php-fpm基础应用与实战.html">
+            
+                    
+                    52.php-fpm基础应用与实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.54" data-path="53.文件共享服务、ftp、vsftp.html">
+            
+                <a href="53.文件共享服务、ftp、vsftp.html">
+            
+                    
+                    53.文件共享服务、ftp、vsftp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.55" data-path="54.nfs服务配置应用与实战.html">
+            
+                <a href="54.nfs服务配置应用与实战.html">
+            
+                    
+                    54.nfs服务配置应用与实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.56" data-path="55.samba服务基础应用.html">
+            
+                <a href="55.samba服务基础应用.html">
+            
+                    
+                    55.samba服务基础应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.57" data-path="56.iptables.html">
+            
+                <a href="56.iptables.html">
+            
+                    
+                    56.iptables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.58" data-path="57.iptables网络防火墙.html">
+            
+                <a href="57.iptables网络防火墙.html">
+            
+                    
+                    57.iptables网络防火墙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.59" data-path="58.iptables_nat路由.html">
+            
+                <a href="58.iptables_nat路由.html">
+            
+                    
+                    58.iptables_nat路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.60" data-path="59.Linux时间服务-chrony.html">
+            
+                <a href="59.Linux时间服务-chrony.html">
+            
+                    
+                    59.Linux时间服务-chrony
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.61" data-path="GitLab安装_CentOS7.html">
+            
+                <a href="GitLab安装_CentOS7.html">
+            
+                    
+                    GitLab安装_CentOS7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.62" data-path="JDK安装.html">
+            
+                <a href="JDK安装.html">
+            
+                    
+                    JDK安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.63" data-path="Linux中kill -2和kill -9的区别.html">
+            
+                <a href="Linux中kill -2和kill -9的区别.html">
+            
+                    
+                    Linux中kill -2和kill -9的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.64" data-path="linux中修改环境变量及生效方法.html">
+            
+                <a href="linux中修改环境变量及生效方法.html">
+            
+                    
+                    linux中修改环境变量及生效方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.65" data-path="Linux查看设置系统时区.html">
+            
+                <a href="Linux查看设置系统时区.html">
+            
+                    
+                    Linux查看设置系统时区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.66" data-path="rc.local脚本开机自启动.html">
+            
+                <a href="rc.local脚本开机自启动.html">
+            
+                    
+                    rc.local脚本开机自启动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.67" data-path="SSH免密登录.html">
+            
+                <a href="SSH免密登录.html">
+            
+                    
+                    SSH免密登录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.68" data-path="Systemd日志管理journal和journalctl使用.html">
+            
+                <a href="Systemd日志管理journal和journalctl使用.html">
+            
+                    
+                    Systemd日志管理journal和journalctl使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.69" data-path="TCP_IP协议总结.html">
+            
+                <a href="TCP_IP协议总结.html">
+            
+                    
+                    TCP_IP协议总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.70" data-path="TCP_UDP结构.html">
+            
+                <a href="TCP_UDP结构.html">
+            
+                    
+                    TCP_UDP结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.71" data-path="VMware虚拟机克隆CentOS7并分别设置静态IP.html">
+            
+                <a href="VMware虚拟机克隆CentOS7并分别设置静态IP.html">
+            
+                    
+                    VMware虚拟机克隆CentOS7并分别设置静态IP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.72" data-path="Vmware虚拟机问题解决方案.html">
+            
+                <a href="Vmware虚拟机问题解决方案.html">
+            
+                    
+                    Vmware虚拟机问题解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.73" data-path="window下面git公钥的配置.html">
+            
+                <a href="window下面git公钥的配置.html">
+            
+                    
+                    window下面git公钥的配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.74" data-path="文件描述符.html">
+            
+                <a href="文件描述符.html">
+            
+                    
+                    文件描述符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.75" data-path="最小化安装centos7.9.html">
+            
+                <a href="最小化安装centos7.9.html">
+            
+                    
+                    最小化安装centos7.9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.76" data-path="查看服务器状态工具.html">
+            
+                <a href="查看服务器状态工具.html">
+            
+                    
+                    查看服务器状态工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >37.Linux系统自动化安装无人值守环境配置部署</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+<li><div><a href="#&#x5B89;&#x88C5;&#x5F15;&#x5BFC;&#x9009;&#x9879;">&#x5B89;&#x88C5;&#x5F15;&#x5BFC;&#x9009;&#x9879;:</a><i></i></div></li>
+<li><div><a href="#kickstart&#x6587;&#x4EF6;&#x7684;&#x683C;&#x5F0F;">kickstart&#x6587;&#x4EF6;&#x7684;&#x683C;&#x5F0F;</a><i></i></div></li>
+<li><div><a href="#&#x547D;&#x4EE4;&#x6BB5;&#x4E2D;&#x7684;&#x5FC5;&#x5907;&#x547D;&#x4EE4;">&#x547D;&#x4EE4;&#x6BB5;&#x4E2D;&#x7684;&#x5FC5;&#x5907;&#x547D;&#x4EE4;</a><i></i></div></li>
+<li><div><a href="#&#x8865;&#x5145;&#x5206;&#x533A;&#x76F8;&#x5173;&#x7684;&#x5176;&#x5B83;&#x6307;&#x4EE4;">&#x8865;&#x5145;:&#x5206;&#x533A;&#x76F8;&#x5173;&#x7684;&#x5176;&#x5B83;&#x6307;&#x4EE4;</a><i></i></div></li>
+<li><div><a href="#&#x53EF;&#x9009;&#x547D;&#x4EE4;">&#x53EF;&#x9009;&#x547D;&#x4EE4;:</a><i></i></div></li>
+<li><div><a href="#&#x7CFB;&#x7EDF;&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x7981;&#x7528;&#x9632;&#x706B;&#x5899;">&#x7CFB;&#x7EDF;&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x7981;&#x7528;&#x9632;&#x706B;&#x5899;:</a><i></i></div></li>
+<li><div><a href="#&#x7CFB;&#x7EDF;&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x540E;&#x7981;&#x7528;selinux">&#x7CFB;&#x7EDF;&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x540E;&#x7981;&#x7528;SELinux</a><i></i></div></li>
+<li><div><a href="#&#x5B9A;&#x5236;kickstart&#x6587;&#x4EF6;">&#x5B9A;&#x5236;kickstart&#x6587;&#x4EF6;:</a><i></i></div></li>
+<li><div><a href="#&#x6839;&#x636E;kickstart&#x6587;&#x4EF6;&#x5B89;&#x88C5;&#x7CFB;&#x7EDF;">&#x6839;&#x636E;kickstart&#x6587;&#x4EF6;&#x5B89;&#x88C5;&#x7CFB;&#x7EDF;</a><i></i></div></li>
+</ul>
+</div>
+
+<h3 id="centos&#x7CFB;&#x7EDF;&#x5B89;&#x88C5;">CentOS&#x7CFB;&#x7EDF;&#x5B89;&#x88C5;:</h3>
+<p>CentOS 6.8 x86_64:<br>minimal install  </p>
+<p>&#x5B89;&#x88C5;&#x65F6;&#x6309;ESC&#x952E;,&#x8BBE;&#x7F6E;&#x7F51;&#x7EDC;&#x5F15;&#x5BFC;&#x9009;&#x9879;:<br><a href="https://images.gitee.com/uploads/images/2019/0809/094035_0543a1c0_1479682.png" data-lightbox="acb9fa7e-b202-4127-af0c-eed4eb4fd65f" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0809/094035_0543a1c0_1479682.png" alt=""></a></p>
+<p>&#x5206;&#x533A;:<br><a href="https://images.gitee.com/uploads/images/2019/0809/095835_41ad3a9f_1479682.png" data-lightbox="b0155529-c4a7-447e-8d3b-b2bd04f21bc3" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0809/095835_41ad3a9f_1479682.png" alt=""></a></p>
+<h3 id="&#x5B89;&#x88C5;&#x5F15;&#x5BFC;&#x9009;&#x9879;">&#x5B89;&#x88C5;&#x5F15;&#x5BFC;&#x9009;&#x9879;:</h3>
+<p>ks:&#x6307;&#x660E;kickstart&#x6587;&#x4EF6;&#x7684;&#x4F4D;&#x7F6E;;<br>ks=<br>DVD drive:ks=cdrom:/PATH/TO/KICKSTART_FILE<br>Hard drive:ks=hd:/DEVICE/PATH/TO/KICKSTART_FILE<br>HTTP Server:ks=<a href="http://HOST[:PORT]/PATH/TO/KICKSTART_FILE" target="_blank">http://HOST[:PORT]/PATH/TO/KICKSTART_FILE</a><br>FTP Server:ks=ftp://HOST[:PORT]/PATH/TO/KICKSTART_FILE<br>HTTPS Server:ks=<a href="https://HOST[:PORT]/PATH/TO/KICKSTART_FILE" target="_blank">https://HOST[:PORT]/PATH/TO/KICKSTART_FILE</a>   </p>
+<h3 id="kickstart&#x6587;&#x4EF6;&#x7684;&#x683C;&#x5F0F;">kickstart&#x6587;&#x4EF6;&#x7684;&#x683C;&#x5F0F;</h3>
+<p>&#x547D;&#x4EE4;&#x6BB5;:<br>&#x6307;&#x5B9A;&#x5404;&#x79CD;&#x5B89;&#x88C5;&#x524D;&#x914D;&#x7F6E;&#x9009;&#x9879;,&#x5982;&#x952E;&#x76D8;&#x7C7B;&#x578B;&#x7B49;;<br>&#x5FC5;&#x5907;&#x547D;&#x4EE4;<br>&#x53EF;&#x9009;&#x547D;&#x4EE4;  </p>
+<p>&#x7A0B;&#x5E8F;&#x5305;&#x6BB5;:<br>&#x6307;&#x660E;&#x8981;&#x5B89;&#x88C5;&#x7A0B;&#x5E8F;&#x5305;,&#x4EE5;&#x53CA;&#x5305;&#x7EC4;,&#x4E5F;&#x5305;&#x62EC;&#x4E0D;&#x5B89;&#x88C5;&#x7684;&#x7A0B;&#x5E8F;&#x5305;;<br><code>%packages</code>  &#x7A0B;&#x5E8F;&#x5305;&#x5F00;&#x59CB;<br><code>@group_name</code>  &#x8981;&#x5B89;&#x88C5;&#x7684;&#x7A0B;&#x5E8F;&#x5305;&#x7EC4;<br><code>package</code>  &#x8981;&#x5B89;&#x88C5;&#x7684;&#x7A0B;&#x5E8F;&#x5305;<br><code>-package</code> &#x4E0D;&#x5B89;&#x88C5;&#x7684;&#x7A0B;&#x5E8F;&#x5305;<br><code>%end</code>  &#x7A0B;&#x5E8F;&#x5305;&#x7ED3;&#x675F;<br>&#x811A;&#x672C;&#x6BB5;<br><code>%pre</code>:&#x5B89;&#x88C5;&#x524D;&#x811A;&#x672C;(&#x5B89;&#x88C5;&#x524D;&#x7684;&#x547D;&#x4EE4;&#x975E;&#x5E38;&#x6709;&#x9650;,&#x56E0;&#x4E3A;&#x662F;&#x8FD0;&#x884C;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x5C0F;&#x7CFB;&#x7EDF;&#x63D0;&#x4F9B;&#x7684;)<br>&#x8FD0;&#x884C;&#x73AF;&#x5883;:&#x8FD0;&#x884C;&#x5B89;&#x88C5;&#x4ECB;&#x8D28;&#x4E0A;&#x7684;&#x5FAE;&#x578B;Linux&#x7CFB;&#x7EDF;&#x73AF;&#x5883;;  </p>
+<p><code>%post</code>:&#x5B89;&#x88C5;&#x540E;&#x811A;&#x672C;<br>&#x8FD0;&#x884C;&#x73AF;&#x5883;:&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x7684;&#x7CFB;&#x7EDF;;  </p>
+<h3 id="&#x547D;&#x4EE4;&#x6BB5;&#x4E2D;&#x7684;&#x5FC5;&#x5907;&#x547D;&#x4EE4;">&#x547D;&#x4EE4;&#x6BB5;&#x4E2D;&#x7684;&#x5FC5;&#x5907;&#x547D;&#x4EE4;</h3>
+<p>authconfig:&#x8BA4;&#x8BC1;&#x65B9;&#x5F0F;&#x914D;&#x7F6E;<br><code>authconfig --enableshadow --passalgo=sha512</code>    </p>
+<p>bootloader:&#x5B9A;&#x4E49;bootloader&#x7684;&#x5B89;&#x88C5;&#x4F4D;&#x7F6E;&#x53CA;&#x76F8;&#x5173;&#x914D;&#x7F6E;<br><code>bootloader --location=mbr --driveorder=sda --append=&quot;crashkernel=auto rhgb quiet&quot;</code>  </p>
+<p>keyboard:&#x8BBE;&#x7F6E;&#x952E;&#x76D8;&#x7C7B;&#x578B;<br><code>keyboard us</code>  </p>
+<p>lang:&#x8BED;&#x8A00;&#x7C7B;&#x578B;<br><code>lang zh_CN.UTF-8</code>  </p>
+<p>part:&#x5206;&#x533A;&#x5E03;&#x5C40;<br><code>part /boot --fstype=ext4 --size=500</code><br><code>part pv.008002 --size=50000</code> pv&#x4EE3;&#x8868;&#x7269;&#x7406;&#x5377;,008002&#x4EE3;&#x8868;&#x5377;&#x53F7;  </p>
+<p>rootpw:&#x7BA1;&#x7406;&#x5458;&#x5BC6;&#x7801;<br><code>rootpw  --iscrypted $6$1jPjchbF9ylkguG4$oCsx23WRO916/WoZCGgAmkHGzRrOdvq441CR1KSgqNVqZhU9gAaTOhmSw5IZ4W.M6HynqLXhtp.O3oV6QI2xn.</code></p>
+<p>&#x751F;&#x6210;&#x52A0;&#x5BC6;&#x5BC6;&#x7801;&#x7684;&#x65B9;&#x5F0F;:  </p>
+<pre><code class="lang-shell">#-1:&#x4EE3;&#x8868;&#x4F7F;&#x7528;md5&#x52A0;&#x5BC6;,&#x6307;&#x5B9A;&#x76D0;&#x4E3A;&#x968F;&#x673A;4&#x4E2A;&#x5B57;&#x8282;16&#x8FDB;&#x5236;,&#x4E5F;&#x5C31;&#x662F;8&#x4F4D;&#x76D0;
+openssl passwd -1 -salt `openssl rand -hex 4`
+</code></pre>
+<p>timezone:&#x6307;&#x5B9A;&#x65F6;&#x533A;<br><code>timezone --utc Asia/Shanghai</code>   </p>
+<h3 id="&#x8865;&#x5145;&#x5206;&#x533A;&#x76F8;&#x5173;&#x7684;&#x5176;&#x5B83;&#x6307;&#x4EE4;">&#x8865;&#x5145;:&#x5206;&#x533A;&#x76F8;&#x5173;&#x7684;&#x5176;&#x5B83;&#x6307;&#x4EE4;</h3>
+<p><code>clearpart --none --drives=sda</code> &#x6E05;&#x7A7A;&#x6307;&#x5B9A;&#x78C1;&#x76D8;&#x4E0A;&#x7684;&#x6240;&#x6709;&#x5206;&#x533A;<br><code>volgroup lv_vg --pesize=4096 pv.008002</code> &#x521B;&#x5EFA;&#x5377;&#x7EC4;,&#x5377;&#x7EC4;&#x540D;:lv_vg,--pesize=4096:pe&#x5927;&#x5C0F;4096,pv.008002:&#x7269;&#x7406;&#x5377;&#x53F7;<br><code>logvol /home --fstype=ext4 --name=lv_home --vgname=lv_vg --size=9996</code> &#x521B;&#x5EFA;&#x903B;&#x8F91;&#x5377;  </p>
+<h3 id="&#x53EF;&#x9009;&#x547D;&#x4EE4;">&#x53EF;&#x9009;&#x547D;&#x4EE4;:</h3>
+<p><code>install</code>:&#x5B89;&#x88C5;<br><code>install OR upgrade</code>:&#x5B89;&#x88C5;&#x6216;&#x5347;&#x7EA7;  </p>
+<p><code>text</code>:&#x5B89;&#x88C5;&#x754C;&#x9762;&#x7C7B;&#x578B;,text&#x4E3A;tui,&#x9ED8;&#x8BA4;&#x4E3A;GUI  </p>
+<p><code>network</code>:&#x914D;&#x7F6E;&#x7F51;&#x7EDC;&#x63A5;&#x53E3;<br><code>network --onboot yes --device eth0 --bootproto dhcp --noipv6</code><br><code>--onboot no</code>:&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5F00;&#x673A;&#x65F6;&#x662F;&#x5426;&#x81EA;&#x52A8;&#x542F;&#x52A8;&#x7F51;&#x7EDC;&#x63A5;&#x53E3;,[yes|no]    </p>
+<p><code>firewall</code>:&#x9632;&#x706B;&#x5899;<br><code>firewall --service=ssh</code><br><code>--service=ssh</code>:&#x4EE3;&#x8868;&#x9632;&#x706B;&#x5899;&#x542F;&#x7528;&#x4E86;,&#x4F46;&#x8FD9;&#x4E2A;&#x9632;&#x706B;&#x5899;&#x653E;&#x884C;&#x4E86;&#x5BF9;&#x672C;&#x673A;ssh&#x7684;&#x8BBF;&#x95EE;<br>&#x5982;&#x679C;&#x8981;&#x7981;&#x7528;&#x9632;&#x706B;&#x5899;,&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x914D;&#x7F6E;:<code>firewall --disabled</code>  </p>
+<p><code>selinux</code>:SELinux,&#x5B89;&#x5168;&#x52A0;&#x5F3A;&#x7684;linux,&#x57FA;&#x4E8E;&#x5185;&#x6838;&#x7684;&#x5B89;&#x5168;&#x8BBF;&#x95EE;&#x52A0;&#x56FA;&#x7B56;&#x7565;&#x5E93;<br><code>selinux --enforcing</code><br>&#x7981;&#x7528;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x914D;&#x7F6E;:<code>selinux --disabled</code>  </p>
+<p><code>halt&#x3001;poweroff</code>&#x6216;<code>reboot</code>:&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x7684;&#x884C;&#x4E3A;(&#x5173;&#x673A;&#x6216;&#x91CD;&#x542F;);   </p>
+<p><code>repo</code>:&#x6307;&#x660E;&#x5B89;&#x88C5;&#x65F6;&#x4F7F;&#x7528;&#x7684;repository:<br><code>repo --name=&quot;CentOS&quot;  --baseurl=cdrom:sr0 --cost=100</code>  &#x8FD9;&#x91CC;&#x6307;&#x5B9A;&#x4E3A;&#x5149;&#x76D8;,cost&#x5F00;&#x9500;&#x9ED8;&#x8BA4;&#x4E3A;1000,&#x8FD9;&#x91CC;&#x6307;&#x5B9A;100&#x8868;&#x793A;&#x4F18;&#x5148;&#x4F7F;&#x7528;;  </p>
+<p><code>url</code>:&#x6307;&#x660E;&#x5B89;&#x88C5;&#x65F6;&#x4F7F;&#x7528;&#x7684;repository,&#x4F46;&#x4E3A;url&#x683C;&#x5F0F;;(&#x914D;&#x7F6E;&#x8BE5;&#x9879;&#x7F51;&#x5361;&#x8981;&#x5728;&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x914D;&#x7F6E;&#x597D;)<br><code>url --url=http://172.16.0.1/cobbler/ks_mirror/CentOS-6.7-x86_64/</code>    </p>
+<h3 id="&#x7CFB;&#x7EDF;&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x7981;&#x7528;&#x9632;&#x706B;&#x5899;">&#x7CFB;&#x7EDF;&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x7981;&#x7528;&#x9632;&#x706B;&#x5899;:</h3>
+<p>CentOS 6:  </p>
+<pre><code class="lang-shell">#&#x7981;&#x7528;&#x9632;&#x706B;&#x5899;
+service iptables stop 
+#&#x4EE5;&#x540E;&#x4E0D;&#x518D;&#x81EA;&#x542F;&#x52A8;&#x9632;&#x706B;&#x5899;
+chkconfig iptables off
+</code></pre>
+<p>CentOS 7:  </p>
+<pre><code class="lang-shell">#&#x7981;&#x7528;&#x9632;&#x706B;&#x5899;
+systemctl stop firewalld.service  
+##&#x4EE5;&#x540E;&#x4E0D;&#x518D;&#x81EA;&#x542F;&#x52A8;&#x9632;&#x706B;&#x5899;
+systemctl disable firewalld.service
+</code></pre>
+<h3 id="&#x7CFB;&#x7EDF;&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x540E;&#x7981;&#x7528;selinux">&#x7CFB;&#x7EDF;&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x540E;&#x7981;&#x7528;SELinux</h3>
+<p>&#x7F16;&#x8F91;&#x914D;&#x7F6E;&#x6587;&#x4EF6;:<code>/etc/selinux/config</code>&#x6216;&#x94FE;&#x63A5;&#x6587;&#x4EF6;<code>/etc/sysconfig/selinux</code><br>&#x53EA;&#x9700;&#x7F16;&#x8F91;:<code>vim /etc/sysconfig/selinux</code>,&#x4FEE;&#x6539;<code>SELINUX=disabled</code>:    </p>
+<pre><code class="lang-shell"># This file controls the state of SELinux on the system.
+# SELINUX= can take one of these three values:
+#     enforcing - SELinux security policy is enforced.
+#     permissive - SELinux prints warnings instead of enforcing.
+#     disabled - No SELinux policy is loaded.
+SELINUX=disabled
+# SELINUXTYPE= can take one of three two values:
+#     targeted - Targeted processes are protected,
+#     minimum - Modification of targeted policy. Only selected processes are protected. 
+#     mls - Multi Level Security protection.
+SELINUXTYPE=targeted
+</code></pre>
+<p>&#x6CE8;:&#x4EE5;&#x4E0A;&#x4FEE;&#x6539;&#x9700;&#x8981;&#x91CD;&#x542F;&#x624D;&#x6709;&#x6548;,&#x9700;&#x8981;&#x6C38;&#x4E45;&#x6709;&#x6548;,&#x9700;&#x8981;<code>setenforce 0</code>,&#x4F7F;&#x4FEE;&#x6539;&#x7ACB;&#x5373;&#x751F;&#x6548;:</p>
+<pre><code class="lang-shell">#SELinux&#x4FEE;&#x6539;&#x7ACB;&#x5373;&#x751F;&#x6548;
+setenforce 0
+#&#x67E5;&#x770B;SELinux&#x72B6;&#x6001;,&#x53EA;&#x8981;&#x7ED3;&#x679C;&#x662F;Permissive&#x5C31;&#x53EF;&#x4EE5;,&#x91CD;&#x542F;&#x4EE5;&#x540E;&#x4F1A;&#x6539;&#x4E3A;Disabled
+getenforce
+</code></pre>
+<h3 id="&#x5B9A;&#x5236;kickstart&#x6587;&#x4EF6;">&#x5B9A;&#x5236;kickstart&#x6587;&#x4EF6;:</h3>
+<p>windows&#x4E0A;&#x9700;&#x8981;&#x5148;&#x5B89;&#x88C5;xmanager,&#x7136;&#x540E;xshell&#x8BBE;&#x7F6E;&#x5982;&#x4E0B;:<br><a href="https://images.gitee.com/uploads/images/2019/0809/153542_cc5184f7_1479682.png" data-lightbox="ded5fa9a-e640-4887-a824-d93cd67695c4" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0809/153542_cc5184f7_1479682.png" alt=""></a></p>
+<pre><code class="lang-shell">#&#x5B89;&#x88C5;
+yum install system-config-kickstart  
+#&#x8BA9;&#x5B83;&#x5728;&#x540E;&#x53F0;&#x8FD0;&#x884C;&#x56FE;&#x5F62;&#x5316;&#x914D;&#x7F6E;&#x754C;&#x9762;
+system-config-kickstart &amp;
+</code></pre>
+<p>&#x6253;&#x5F00;&#x56FE;&#x5F62;&#x5316;&#x754C;&#x9762;&#x540E;,&#x6587;&#x4EF6;--&gt;&#x6253;&#x5F00;&#x6587;&#x4EF6;,&#x6253;&#x5F00;root&#x76EE;&#x5F55;&#x4E0B;&#x7684;,anaconda-ks.cfg&#x6587;&#x4EF6;,&#x57FA;&#x4E8E;&#x8BE5;&#x6587;&#x4EF6;&#x7684;&#x914D;&#x7F6E;&#x4FEE;&#x6539;:<br><a href="https://images.gitee.com/uploads/images/2019/0809/153927_467fde5e_1479682.png" data-lightbox="01227744-2850-40d6-abd7-672102a3c15b" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0809/153927_467fde5e_1479682.png" alt=""></a>  </p>
+<p><a href="https://images.gitee.com/uploads/images/2019/0809/165539_a13d1241_1479682.png" data-lightbox="8f225efb-1a97-440a-8e96-85ed115a8f96" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0809/165539_a13d1241_1479682.png" alt=""></a></p>
+<p>&#x6700;&#x540E;&#x4FDD;&#x5B58;&#x6587;&#x4EF6;&#x540D;&#x4E3A;ks.cfg&#x5230;/root&#x76EE;&#x5F55;&#x4E0B;:  </p>
+<pre><code class="lang-shell">#&#x68C0;&#x67E5;kickstart&#x6587;&#x4EF6;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;
+ksvalidator ks.cfg
+</code></pre>
+<h3 id="&#x6839;&#x636E;kickstart&#x6587;&#x4EF6;&#x5B89;&#x88C5;&#x7CFB;&#x7EDF;">&#x6839;&#x636E;kickstart&#x6587;&#x4EF6;&#x5B89;&#x88C5;&#x7CFB;&#x7EDF;</h3>
+<p>&#x914D;&#x7F6E;&#x597D;&#x865A;&#x62DF;&#x673A;&#x540E;,&#x6309;ESC&#x4E2D;&#x8F93;&#x5165;&#x5982;&#x4E0B;&#x5185;&#x5BB9;&#x5B89;&#x88C5;:<br><a href="https://images.gitee.com/uploads/images/2019/0809/164735_4d316b38_1479682.png" data-lightbox="a1e9083a-6673-4cfe-8c49-4d1944f7e177" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0809/164735_4d316b38_1479682.png" alt=""></a></p>
+<p>&#x6CE8;:&#x8FD9;&#x91CC;&#x5728;192.168.147.157&#x865A;&#x62DF;&#x673A;&#x4E0A;&#x5B89;&#x88C5;httpd&#x670D;&#x52A1;,&#x5728;&#x5176;/var/www/html&#x76EE;&#x5F55;&#x4E0B;&#x653E;&#x7F6E;&#x4E86;&#x914D;&#x7F6E;&#x597D;&#x7684;ks.cfg&#x6587;&#x4EF6;  </p>
+
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="36.Linux自动化安装anaconda配置定制.html" class="navigation navigation-prev " aria-label="Previous page: 36.Linux自动化安装anaconda配置定制">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="38.函数编程和case语句.html" class="navigation navigation-next " aria-label="Next page: 38.函数编程和case语句">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"37.Linux系统自动化安装无人值守环境配置部署","level":"1.38","depth":1,"next":{"title":"38.函数编程和case语句","level":"1.39","depth":1,"path":"pages/38.函数编程和case语句.md","ref":"pages/38.函数编程和case语句.md","articles":[]},"previous":{"title":"36.Linux自动化安装anaconda配置定制","level":"1.37","depth":1,"path":"pages/36.Linux自动化安装anaconda配置定制.md","ref":"pages/36.Linux自动化安装anaconda配置定制.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","lightbox","page-treeview","-lunr","-search","search-pro","-sharing","sharing-plus","back-to-top-button","code","splitter","chapter-fold","popup","custom-favicon","livereload"],"pluginsConfig":{"page-treeview":{"collapsed":false,"copyright":"Copyright &#169; aleen42","minHeaderCount":"2","minHeaderDeep":"2"},"chapter-fold":{},"styles":{"website":"styles/website.css"},"livereload":{},"splitter":{},"search-pro":{},"author":"sonin","sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"images/Title/favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"back-to-top-button":{},"title":"面试","custom-favicon":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":true,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":false,"qzone":true},"description":"面试宝典","theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/37.Linux系统自动化安装无人值守环境配置部署.md","mtime":"2023-07-13T05:42:09.561Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-07-13T06:53:25.815Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

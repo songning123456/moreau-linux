@@ -1,0 +1,1502 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>12.shell变量,算数和逻辑运算及配置文件 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="13.grep和基本正则表达式.html" />
+    
+    
+    <link rel="prev" href="11.用户权限管理.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Linux宝典
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01.linux基本操作使用.html">
+            
+                <a href="01.linux基本操作使用.html">
+            
+                    
+                    01.linux基本操作使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="02.linux获取命令使用帮助.html">
+            
+                <a href="02.linux获取命令使用帮助.html">
+            
+                    
+                    02.linux获取命令使用帮助
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="03.linux常用基础命令.html">
+            
+                <a href="03.linux常用基础命令.html">
+            
+                    
+                    03.linux常用基础命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04.根文件系统.html">
+            
+                <a href="04.根文件系统.html">
+            
+                    
+                    04.根文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05.Linux系统上的文件类型和历史命令.html">
+            
+                <a href="05.Linux系统上的文件类型和历史命令.html">
+            
+                    
+                    05.Linux系统上的文件类型和历史命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="06.目录文本查看命令.html">
+            
+                <a href="06.目录文本查看命令.html">
+            
+                    
+                    06.目录文本查看命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="07.文件管理命令.html">
+            
+                <a href="07.文件管理命令.html">
+            
+                    
+                    07.文件管理命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="08.glob通配及IO重定向.html">
+            
+                <a href="08.glob通配及IO重定向.html">
+            
+                    
+                    08.glob通配及IO重定向
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="09.用户和组管理概念.html">
+            
+                <a href="09.用户和组管理概念.html">
+            
+                    
+                    09.用户和组管理概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="10.用户和组管理命令.html">
+            
+                <a href="10.用户和组管理命令.html">
+            
+                    
+                    10.用户和组管理命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="11.用户权限管理.html">
+            
+                <a href="11.用户权限管理.html">
+            
+                    
+                    11.用户权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.13" data-path="12.shell变量,算数和逻辑运算及配置文件.html">
+            
+                <a href="12.shell变量,算数和逻辑运算及配置文件.html">
+            
+                    
+                    12.shell变量,算数和逻辑运算及配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="13.grep和基本正则表达式.html">
+            
+                <a href="13.grep和基本正则表达式.html">
+            
+                    
+                    13.grep和基本正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="14.vim编辑器.html">
+            
+                <a href="14.vim编辑器.html">
+            
+                    
+                    14.vim编辑器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="15.文件查找find和特殊权限及facl.html">
+            
+                <a href="15.文件查找find和特殊权限及facl.html">
+            
+                    
+                    15.文件查找find和特殊权限及facl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="16.磁盘及文件系统管理.html">
+            
+                <a href="16.磁盘及文件系统管理.html">
+            
+                    
+                    16.磁盘及文件系统管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="17.shell条件测试,逻辑判断,参数传递.html">
+            
+                <a href="17.shell条件测试,逻辑判断,参数传递.html">
+            
+                    
+                    17.shell条件测试,逻辑判断,参数传递
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="18.RAID技术.html">
+            
+                <a href="18.RAID技术.html">
+            
+                    
+                    18.RAID技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="19.LVM2.html">
+            
+                <a href="19.LVM2.html">
+            
+                    
+                    19.LVM2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="20.btrfs文件系统.html">
+            
+                <a href="20.btrfs文件系统.html">
+            
+                    
+                    20.btrfs文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="21.压缩工具.html">
+            
+                <a href="21.压缩工具.html">
+            
+                    
+                    21.压缩工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="22.Liunx任务计划crontab.html">
+            
+                <a href="22.Liunx任务计划crontab.html">
+            
+                    
+                    22.Liunx任务计划crontab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="23.软件包管理rpm.html">
+            
+                <a href="23.软件包管理rpm.html">
+            
+                    
+                    23.软件包管理rpm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="24.软件包管理yum.html">
+            
+                <a href="24.软件包管理yum.html">
+            
+                    
+                    24.软件包管理yum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="25.shell多分支if和for循环.html">
+            
+                <a href="25.shell多分支if和for循环.html">
+            
+                    
+                    25.shell多分支if和for循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="26.文本处理神器sed.html">
+            
+                <a href="26.文本处理神器sed.html">
+            
+                    
+                    26.文本处理神器sed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="27.计算机网络基础.html">
+            
+                <a href="27.计算机网络基础.html">
+            
+                    
+                    27.计算机网络基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="28.Linux网络属性配置.html">
+            
+                <a href="28.Linux网络属性配置.html">
+            
+                    
+                    28.Linux网络属性配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="29.Linux进程及作业管理.html">
+            
+                <a href="29.Linux进程及作业管理.html">
+            
+                    
+                    29.Linux进程及作业管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="30.Linux进程及作业管理二.html">
+            
+                <a href="30.Linux进程及作业管理二.html">
+            
+                    
+                    30.Linux进程及作业管理二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.32" data-path="31.网络客户端工具和while、untill循环.html">
+            
+                <a href="31.网络客户端工具和while、untill循环.html">
+            
+                    
+                    31.网络客户端工具和while、untill循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33" data-path="32.CentOS系统启动流程.html">
+            
+                <a href="32.CentOS系统启动流程.html">
+            
+                    
+                    32.CentOS系统启动流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.34" data-path="33.grub系统配置与使用.html">
+            
+                <a href="33.grub系统配置与使用.html">
+            
+                    
+                    33.grub系统配置与使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.35" data-path="34.Linux内核功能及模块应用.html">
+            
+                <a href="34.Linux内核功能及模块应用.html">
+            
+                    
+                    34.Linux内核功能及模块应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.36" data-path="35.Linux内核模块功能定制.html">
+            
+                <a href="35.Linux内核模块功能定制.html">
+            
+                    
+                    35.Linux内核模块功能定制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.37" data-path="36.Linux自动化安装anaconda配置定制.html">
+            
+                <a href="36.Linux自动化安装anaconda配置定制.html">
+            
+                    
+                    36.Linux自动化安装anaconda配置定制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.38" data-path="37.Linux系统自动化安装无人值守环境配置部署.html">
+            
+                <a href="37.Linux系统自动化安装无人值守环境配置部署.html">
+            
+                    
+                    37.Linux系统自动化安装无人值守环境配置部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.39" data-path="38.函数编程和case语句.html">
+            
+                <a href="38.函数编程和case语句.html">
+            
+                    
+                    38.函数编程和case语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.40" data-path="39.systemd及systemctl实战.html">
+            
+                <a href="39.systemd及systemctl实战.html">
+            
+                    
+                    39.systemd及systemctl实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.41" data-path="40.SELinux简介.html">
+            
+                <a href="40.SELinux简介.html">
+            
+                    
+                    40.SELinux简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.42" data-path="41.shell数组和字符串处理工具.html">
+            
+                <a href="41.shell数组和字符串处理工具.html">
+            
+                    
+                    41.shell数组和字符串处理工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.43" data-path="42.shell信号捕捉实战.html">
+            
+                <a href="42.shell信号捕捉实战.html">
+            
+                    
+                    42.shell信号捕捉实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.44" data-path="43.awk使用与实践.html">
+            
+                <a href="43.awk使用与实践.html">
+            
+                    
+                    43.awk使用与实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.45" data-path="44.通信加密和解密、公钥、私钥、CA.html">
+            
+                <a href="44.通信加密和解密、公钥、私钥、CA.html">
+            
+                    
+                    44.通信加密和解密、公钥、私钥、CA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.46" data-path="45.OpenSSL.html">
+            
+                <a href="45.OpenSSL.html">
+            
+                    
+                    45.OpenSSL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.47" data-path="46.DNS.html">
+            
+                <a href="46.DNS.html">
+            
+                    
+                    46.DNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.48" data-path="47.DNS and Bind.html">
+            
+                <a href="47.DNS and Bind.html">
+            
+                    
+                    47.DNS and Bind
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.49" data-path="48.http协议及Web服务.html">
+            
+                <a href="48.http协议及Web服务.html">
+            
+                    
+                    48.http协议及Web服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.50" data-path="49.Apache.html">
+            
+                <a href="49.Apache.html">
+            
+                    
+                    49.Apache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.51" data-path="50.LAMP.html">
+            
+                <a href="50.LAMP.html">
+            
+                    
+                    50.LAMP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.52" data-path="51.MariaDB.html">
+            
+                <a href="51.MariaDB.html">
+            
+                    
+                    51.MariaDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.53" data-path="52.php-fpm基础应用与实战.html">
+            
+                <a href="52.php-fpm基础应用与实战.html">
+            
+                    
+                    52.php-fpm基础应用与实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.54" data-path="53.文件共享服务、ftp、vsftp.html">
+            
+                <a href="53.文件共享服务、ftp、vsftp.html">
+            
+                    
+                    53.文件共享服务、ftp、vsftp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.55" data-path="54.nfs服务配置应用与实战.html">
+            
+                <a href="54.nfs服务配置应用与实战.html">
+            
+                    
+                    54.nfs服务配置应用与实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.56" data-path="55.samba服务基础应用.html">
+            
+                <a href="55.samba服务基础应用.html">
+            
+                    
+                    55.samba服务基础应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.57" data-path="56.iptables.html">
+            
+                <a href="56.iptables.html">
+            
+                    
+                    56.iptables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.58" data-path="57.iptables网络防火墙.html">
+            
+                <a href="57.iptables网络防火墙.html">
+            
+                    
+                    57.iptables网络防火墙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.59" data-path="58.iptables_nat路由.html">
+            
+                <a href="58.iptables_nat路由.html">
+            
+                    
+                    58.iptables_nat路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.60" data-path="59.Linux时间服务-chrony.html">
+            
+                <a href="59.Linux时间服务-chrony.html">
+            
+                    
+                    59.Linux时间服务-chrony
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.61" data-path="GitLab安装_CentOS7.html">
+            
+                <a href="GitLab安装_CentOS7.html">
+            
+                    
+                    GitLab安装_CentOS7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.62" data-path="JDK安装.html">
+            
+                <a href="JDK安装.html">
+            
+                    
+                    JDK安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.63" data-path="Linux中kill -2和kill -9的区别.html">
+            
+                <a href="Linux中kill -2和kill -9的区别.html">
+            
+                    
+                    Linux中kill -2和kill -9的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.64" data-path="linux中修改环境变量及生效方法.html">
+            
+                <a href="linux中修改环境变量及生效方法.html">
+            
+                    
+                    linux中修改环境变量及生效方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.65" data-path="Linux查看设置系统时区.html">
+            
+                <a href="Linux查看设置系统时区.html">
+            
+                    
+                    Linux查看设置系统时区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.66" data-path="rc.local脚本开机自启动.html">
+            
+                <a href="rc.local脚本开机自启动.html">
+            
+                    
+                    rc.local脚本开机自启动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.67" data-path="SSH免密登录.html">
+            
+                <a href="SSH免密登录.html">
+            
+                    
+                    SSH免密登录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.68" data-path="Systemd日志管理journal和journalctl使用.html">
+            
+                <a href="Systemd日志管理journal和journalctl使用.html">
+            
+                    
+                    Systemd日志管理journal和journalctl使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.69" data-path="TCP_IP协议总结.html">
+            
+                <a href="TCP_IP协议总结.html">
+            
+                    
+                    TCP_IP协议总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.70" data-path="TCP_UDP结构.html">
+            
+                <a href="TCP_UDP结构.html">
+            
+                    
+                    TCP_UDP结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.71" data-path="VMware虚拟机克隆CentOS7并分别设置静态IP.html">
+            
+                <a href="VMware虚拟机克隆CentOS7并分别设置静态IP.html">
+            
+                    
+                    VMware虚拟机克隆CentOS7并分别设置静态IP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.72" data-path="Vmware虚拟机问题解决方案.html">
+            
+                <a href="Vmware虚拟机问题解决方案.html">
+            
+                    
+                    Vmware虚拟机问题解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.73" data-path="window下面git公钥的配置.html">
+            
+                <a href="window下面git公钥的配置.html">
+            
+                    
+                    window下面git公钥的配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.74" data-path="文件描述符.html">
+            
+                <a href="文件描述符.html">
+            
+                    
+                    文件描述符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.75" data-path="最小化安装centos7.9.html">
+            
+                <a href="最小化安装centos7.9.html">
+            
+                    
+                    最小化安装centos7.9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.76" data-path="查看服务器状态工具.html">
+            
+                <a href="查看服务器状态工具.html">
+            
+                    
+                    查看服务器状态工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >12.shell变量,算数和逻辑运算及配置文件</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+<li><div><a href="#&#x53D8;&#x91CF;">&#x53D8;&#x91CF;</a><i></i></div></li>
+<li><div><a href="#&#x672C;&#x5730;&#x53D8;&#x91CF;">&#x672C;&#x5730;&#x53D8;&#x91CF;:</a><i></i></div></li>
+<li><div><a href="#&#x73AF;&#x5883;&#x53D8;&#x91CF;">&#x73AF;&#x5883;&#x53D8;&#x91CF;:</a><i></i></div></li>
+<li><div><a href="#&#x53EA;&#x8BFB;&#x53D8;&#x91CF;&#x65E0;&#x6CD5;&#x64A4;&#x9500;&#x65E0;&#x6CD5;&#x91CD;&#x65B0;&#x8D4B;&#x503C;&#x5F53;&#x524D;shell&#x8FDB;&#x7A0B;&#x7EC8;&#x6B62;&#x624D;&#x4F1A;&#x9500;&#x6BC1;">&#x53EA;&#x8BFB;&#x53D8;&#x91CF;:&#x65E0;&#x6CD5;&#x64A4;&#x9500;,&#x65E0;&#x6CD5;&#x91CD;&#x65B0;&#x8D4B;&#x503C;,&#x5F53;&#x524D;shell&#x8FDB;&#x7A0B;&#x7EC8;&#x6B62;&#x624D;&#x4F1A;&#x9500;&#x6BC1;</a><i></i></div></li>
+<li><div><a href="#&#x591A;&#x547D;&#x4EE4;&#x6267;&#x884C;">&#x591A;&#x547D;&#x4EE4;&#x6267;&#x884C;:</a><i></i></div></li>
+<li><div><a href="#shell&#x811A;&#x672C;&#x7F16;&#x7A0B;">shell&#x811A;&#x672C;&#x7F16;&#x7A0B;:</a><i></i></div></li>
+<li><div><a href="#&#x5982;&#x4F55;&#x5199;shell&#x811A;&#x672C;">&#x5982;&#x4F55;&#x5199;shell&#x811A;&#x672C;:</a><i></i></div></li>
+<li><div><a href="#shell&#x811A;&#x672C;&#x662F;&#x4EC0;&#x4E48;">shell&#x811A;&#x672C;&#x662F;&#x4EC0;&#x4E48;?</a><i></i></div></li>
+<li><div><a href="#&#x8FD0;&#x884C;&#x811A;&#x672C;">&#x8FD0;&#x884C;&#x811A;&#x672C;</a><i></i></div></li>
+<li><div><a href="#bash&#x548C;&#x811A;&#x672C;&#x7F16;&#x7A0B;&#x4E4B;&#x7B97;&#x6570;&#x8FD0;&#x7B97;">bash&#x548C;&#x811A;&#x672C;&#x7F16;&#x7A0B;&#x4E4B;&#x7B97;&#x6570;&#x8FD0;&#x7B97;</a><i></i></div></li>
+<li><div><a href="#bash&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;">bash&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;:</a><i></i></div></li>
+<li><div><a href="#profile&#x7C7B;">profile&#x7C7B;:</a><i></i></div></li>
+<li><div><a href="#bashrc&#x7C7B;">bashrc&#x7C7B;</a><i></i></div></li>
+<li><div><a href="#&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x6267;&#x884C;&#x987A;&#x5E8F;">&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x6267;&#x884C;&#x987A;&#x5E8F;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#&#x5B9A;&#x4E49;&#x522B;&#x540D;&#x793A;&#x4F8B;">&#x5B9A;&#x4E49;&#x522B;&#x540D;&#x793A;&#x4F8B;</a><i></i></div></li>
+<li><div><a href="#&#x5B9A;&#x4E49;java&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x793A;&#x4F8B;">&#x5B9A;&#x4E49;java&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x793A;&#x4F8B;</a><i></i></div></li>
+</ul></li>
+</ul>
+</div>
+
+<h3 id="&#x547D;&#x4EE4;hashshell&#x7684;&#x5185;&#x90E8;&#x547D;&#x4EE4;">&#x547D;&#x4EE4;hash:shell&#x7684;&#x5185;&#x90E8;&#x547D;&#x4EE4;</h3>
+<p>&#x7F13;&#x5B58;&#x6B64;&#x524D;&#x547D;&#x4EE4;&#x7684;&#x67E5;&#x627E;&#x7ED3;&#x679C;:key-value,&#x4FDD;&#x5B58;&#x4E86;&#x547D;&#x4EE4;&#x6240;&#x5728;&#x7684;&#x8DEF;&#x5F84;;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x65F6;&#x4F1A;&#x5148;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x7F13;&#x5B58;&#x4E2D;&#x7684;&#x547D;&#x4EE4;;<br>key:&#x641C;&#x7D22;&#x952E;<br>value:&#x503C;  </p>
+<p>hash&#x547D;&#x4EE4;:<br>has:&#x5217;&#x51FA;&#x7F13;&#x5B58;&#x5217;&#x8868;<br>hash -d COMMAND:&#x5220;&#x9664;&#x67D0;&#x4E2A;&#x547D;&#x4EE4;&#x7684;&#x7F13;&#x5B58;
+hash -r:&#x6E05;&#x7A7A;&#x7F13;&#x5B58;&#x5217;&#x8868;</p>
+<pre><code class="lang-shell">#&#x5220;&#x9664;ls&#x547D;&#x4EE4;&#x7F13;&#x5B58;
+hash -d ls
+hash
+#&#x5220;&#x9664;&#x6240;&#x6709;&#x7F13;&#x5B58;
+hash -r
+hash
+</code></pre>
+<h3 id="&#x53D8;&#x91CF;">&#x53D8;&#x91CF;</h3>
+<p>&#x53D8;&#x91CF;&#x540D;+&#x6307;&#x5411;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;<br>&#x53D8;&#x91CF;&#x8D4B;&#x503C;:name=value<br>&#x53D8;&#x91CF;&#x7C7B;&#x578B;:&#x5B58;&#x50A8;&#x683C;&#x5F0F;&#x3001;&#x8868;&#x793A;&#x6570;&#x636E;&#x8303;&#x56F4;&#x3001;&#x53C2;&#x4E0E;&#x7684;&#x8FD0;&#x7B97;  </p>
+<p>&#x7F16;&#x7A0B;&#x8BED;&#x8A00;:<br>&#x5F3A;&#x7C7B;&#x578B;&#x53D8;&#x91CF;<br>&#x5F31;&#x7C7B;&#x578B;&#x53D8;&#x91CF;:<br>bash&#x628A;&#x6240;&#x6709;&#x53D8;&#x91CF;&#x7EDF;&#x7EDF;&#x89C6;&#x4F5C;&#x5B57;&#x7B26;&#x578B;;<br>bash&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x65E0;&#x9700;&#x4E8B;&#x5148;&#x58F0;&#x660E;;&#x76F8;&#x5F53;&#x4E8E;,&#x628A;&#x58F0;&#x660E;&#x548C;&#x8D4B;&#x503C;&#x8FC7;&#x7A0B;&#x540C;&#x65F6;&#x5B9E;&#x73B0;;  </p>
+<p>&#x53D8;&#x91CF;&#x66FF;&#x6362;:&#x628A;&#x53D8;&#x91CF;&#x540D;&#x51FA;&#x73B0;&#x7684;&#x4F4D;&#x7F6E;&#x66FF;&#x6362;&#x4E3A;&#x5176;&#x6240;&#x6307;&#x5411;&#x7684;&#x5185;&#x5B58;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x6570;&#x636E;;  </p>
+<p>&#x53D8;&#x91CF;&#x5F15;&#x7528;:<code>${var_name}</code>,<code>$var_name</code>  </p>
+<p>bash&#x53D8;&#x91CF;&#x7C7B;&#x578B;:<br>&#x672C;&#x5730;&#x53D8;&#x91CF;:&#x4F5C;&#x7528;&#x57DF;&#x8303;&#x56F4;&#x4EC5;&#x4E3A;&#x5F53;&#x524D;shell&#x8FDB;&#x7A0B;;<br>&#x73AF;&#x5883;&#x53D8;&#x91CF;:&#x4F5C;&#x7528;&#x57DF;&#x4E3A;&#x5F53;&#x524D;shell&#x8FDB;&#x7A0B;&#x53CA;&#x5176;&#x5B50;&#x8FDB;&#x7A0B;;<br>&#x5C40;&#x90E8;&#x53D8;&#x91CF;:&#x4F5C;&#x7528;&#x57DF;&#x4EC5;&#x4E3A;&#x67D0;&#x4EE3;&#x7801;&#x7247;&#x6BB5;(&#x51FD;&#x6570;&#x4E0A;&#x4E0B;&#x6587;);    </p>
+<p>&#x4F4D;&#x7F6E;&#x53C2;&#x6570;&#x53D8;&#x91CF;:&#x5F53;&#x6267;&#x884C;&#x811A;&#x672C;&#x7684;shell&#x8FDB;&#x7A0B;&#x4F20;&#x9012;&#x7684;&#x53C2;&#x6570;;<br>&#x7279;&#x6B8A;&#x53D8;&#x91CF;:shell&#x5185;&#x7F6E;&#x7684;&#x6709;&#x7279;&#x6B8A;&#x529F;&#x7528;&#x7684;&#x53D8;&#x91CF;;<br>&#x5982;<code>$?</code>&#x5C31;&#x662F;&#x7279;&#x6B8A;&#x53D8;&#x91CF;:<br>$?:&#x4E0A;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x7684;&#x6267;&#x884C;&#x72B6;&#x6001;&#x7ED3;&#x679C;;0:&#x6210;&#x529F;;1-255:&#x5931;&#x8D25;  </p>
+<h3 id="&#x672C;&#x5730;&#x53D8;&#x91CF;">&#x672C;&#x5730;&#x53D8;&#x91CF;:</h3>
+<p>&#x53D8;&#x91CF;&#x8D4B;&#x503C;:name=value<br>&#x53D8;&#x91CF;&#x5F15;&#x7528;:<code>${name}</code>,<code>$name</code><br>&quot;&quot;:&#x53D8;&#x91CF;&#x540D;&#x4F1A;&#x66FF;&#x6362;&#x4E3A;&#x5176;&#x503C;;<br>&apos;&apos;:&#x53D8;&#x91CF;&#x540D;&#x4E0D;&#x4F1A;&#x66FF;&#x6362;&#x4E3A;&#x5176;&#x503C;;<br>&#x67E5;&#x770B;&#x53D8;&#x91CF;:set<br>&#x64A4;&#x9500;&#x53D8;&#x91CF;:unset name  &#x6CE8;&#x610F;:&#x6B64;&#x5904;&#x975E;&#x53D8;&#x91CF;&#x5F15;&#x7528;;&#x6240;&#x6709;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;$&#x7B26;  </p>
+<pre><code class="lang-shell">firstName=jesse
+echo $firstName
+unset firstName
+echo $firstName
+</code></pre>
+<pre><code class="lang-shell">animal=sheep
+#&#x53D8;&#x91CF;&#x7684;&#x5F15;&#x7528;
+echo &quot;There are some $animal&quot;
+#&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x8F93;&#x51FA;Thre are some sheeps
+echo &quot;There are some $animals&quot;
+#&#x4EE5;&#x4E0A;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x4E0D;&#x662F;&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x7684;,&#x8FD9;&#x65F6;&#x5019;&#x5C31;&#x4E0D;&#x80FD;&#x7701;&#x7565;&quot;{}&quot;&#x4E86;
+echo &quot;There are some ${animal}s&quot;
+</code></pre>
+<h3 id="&#x73AF;&#x5883;&#x53D8;&#x91CF;">&#x73AF;&#x5883;&#x53D8;&#x91CF;:</h3>
+<p>&#x53D8;&#x91CF;&#x8D4B;&#x503C;:<br>(1) export name=value<br>(2) name=value<br>&#xA0;&#xA0;&#xA0;&#xA0;export name<br>(3) declare -x name=value<br>declare&#x662F;shell&#x5185;&#x5D4C;&#x547D;&#x4EE4;,&#x5185;&#x5D4C;&#x547D;&#x4EE4;&#x4F7F;&#x7528;<code>help declare</code>&#x67E5;&#x770B;&#x5E2E;&#x52A9;<br>(4) name=value<br>&#xA0;&#xA0;&#xA0;&#xA0;declare -x name  </p>
+<p>&#x53D8;&#x91CF;&#x5F15;&#x7528;:<code>${name}</code>,<code>$name</code>  </p>
+<p>&#x6CE8;&#x610F;:bash&#x5185;&#x5D4C;&#x4E86;&#x8BB8;&#x591A;&#x73AF;&#x5883;&#x53D8;&#x91CF;(&#x901A;&#x5E38;&#x4E3A;&#x5168;&#x5927;&#x5199;&#x5B57;&#x7B26;),&#x7528;&#x4E8E;&#x5B9A;&#x4E49;bash&#x7684;&#x5DE5;&#x4F5C;&#x73AF;&#x5883;<br>&#x5982;:PATH&#x3001;HISTFILE,HISTSIZE,HISTFILESIZE,HISTCONTROL,SHELL,HOME,UID,PWD,OLDPWD  </p>
+<pre><code class="lang-shell">#&#x67E5;&#x770B;&#x73AF;&#x5883;&#x53D8;&#x91CF;PATH
+echo $PATH
+#&#x7ED9;PATH&#x9644;&#x52A0;:/usr/local/apache/bin
+PATH=&quot;$PATH:/usr/local/apache/bin&quot;
+#&#x67E5;&#x770B;&#x73AF;&#x5883;&#x53D8;&#x91CF;PATH
+echo $PATH
+</code></pre>
+<pre><code class="lang-shell">#&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;
+declare -x name=ojbk
+echo $name
+#&#x8FDB;&#x5165;&#x5B50;shell
+bash
+echo $name
+</code></pre>
+<p>&#x67E5;&#x770B;&#x6240;&#x6709;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x7684;&#x547D;&#x4EE4;:</p>
+<pre><code class="lang-shell">export
+
+declare -x
+
+printenv
+
+env
+</code></pre>
+<p>&#x64A4;&#x9500;&#x73AF;&#x5883;&#x53D8;&#x91CF;:unset name  </p>
+<h3 id="&#x53EA;&#x8BFB;&#x53D8;&#x91CF;&#x65E0;&#x6CD5;&#x64A4;&#x9500;&#x65E0;&#x6CD5;&#x91CD;&#x65B0;&#x8D4B;&#x503C;&#x5F53;&#x524D;shell&#x8FDB;&#x7A0B;&#x7EC8;&#x6B62;&#x624D;&#x4F1A;&#x9500;&#x6BC1;">&#x53EA;&#x8BFB;&#x53D8;&#x91CF;:&#x65E0;&#x6CD5;&#x64A4;&#x9500;,&#x65E0;&#x6CD5;&#x91CD;&#x65B0;&#x8D4B;&#x503C;,&#x5F53;&#x524D;shell&#x8FDB;&#x7A0B;&#x7EC8;&#x6B62;&#x624D;&#x4F1A;&#x9500;&#x6BC1;</h3>
+<p>declare -r name=value<br>readonly name=value<br><a href="https://images.gitee.com/uploads/images/2019/0704/153436_c82dffd0_1479682.png" data-lightbox="5f9870b6-1adf-40b5-93c6-f12cf58d5bc9" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0704/153436_c82dffd0_1479682.png" alt=""></a></p>
+<h3 id="&#x591A;&#x547D;&#x4EE4;&#x6267;&#x884C;">&#x591A;&#x547D;&#x4EE4;&#x6267;&#x884C;:</h3>
+<p>COMMAND1;COMMAND2;COMMAND3;...  </p>
+<p>&#x903B;&#x8F91;&#x8FD0;&#x7B97;:<br>&#x8FD0;&#x7B97;&#x6570;:<br>&#x771F;(true,yes,on,1)<br>&#x5047;(false,no,off,0)</p>
+<p>COMMAND1 &amp;&amp; COMMAND2<br>&#x77ED;&#x8DEF;&#x6CD5;&#x5219;:COMMAND1&#x4E3A;&quot;&#x5047;&quot;,&#x5219;COMMAND2&#x4E0D;&#x4F1A;&#x518D;&#x6267;&#x884C;;&#x5426;&#x5219;,COMMAND1&#x4E3A;&quot;&#x771F;&quot;, &#x5219;COMMAND2&#x5FC5;&#x987B;&#x6267;&#x884C;;  </p>
+<pre><code class="lang-shell">#/tmp/test.etc&#x521B;&#x5EFA;&#x6210;&#x529F;,&#x5C06;ls /etc&#x7ED3;&#x679C;&#x91CD;&#x5B9A;&#x5411;&#x81F3;/tmp/test.etc
+touch /tmp/test.etc &amp;&amp; ls /etc &gt; /tmp/test.etc
+more /tmp/test.etc
+
+#user1&#x7528;&#x6237;&#x4E0D;&#x5B58;&#x5728;,&#x521B;&#x5EFA;user1
+id user1 || useradd user1
+tail -1 /etc/passwd
+</code></pre>
+<h3 id="shell&#x811A;&#x672C;&#x7F16;&#x7A0B;">shell&#x811A;&#x672C;&#x7F16;&#x7A0B;:</h3>
+<p>&#x9762;&#x5411;&#x8FC7;&#x7A0B;<br>&#x89E3;&#x91CA;&#x8FD0;&#x884C;<br>&#x4F9D;&#x8D56;&#x4E8E;&#x5916;&#x90E8;&#x7A0B;&#x5E8F;&#x6587;&#x4EF6;&#x8FD0;&#x884C;<br>&#x5229;&#x7528;&#x7CFB;&#x7EDF;&#x4E0A;&#x7684;&#x547D;&#x4EE4;&#x53CA;&#x7F16;&#x7A0B;&#x7EC4;&#x4EF6;&#x8FDB;&#x884C;&#x7F16;&#x7A0B;  </p>
+<h3 id="&#x5982;&#x4F55;&#x5199;shell&#x811A;&#x672C;">&#x5982;&#x4F55;&#x5199;shell&#x811A;&#x672C;:</h3>
+<p>&#x811A;&#x672C;&#x6587;&#x4EF6;&#x7684;&#x7B2C;&#x4E00;&#x884C;,&#x9876;&#x683C;:&#x7ED9;&#x51FA;shebang,&#x89E3;&#x91CA;&#x5668;&#x8DEF;&#x5F84;,&#x7528;&#x4E8E;&#x6307;&#x660E;&#x89E3;&#x91CA;&#x5668;&#x6267;&#x884C;&#x5F53;&#x524D;&#x811A;&#x672C;&#x7684;&#x89E3;&#x91CA;&#x5668;&#x7A0B;&#x5E8F;&#x6587;&#x4EF6;<br>&#x5E38;&#x89C1;&#x7684;&#x89E3;&#x91CA;&#x5668;:<br><code>#!/bin/bash</code><br><code>#!/usr/bin/python</code><br><code>#!/usr/bin/perl</code>  </p>
+<p>&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;:<br>&#x884C;&#x7F16;&#x8F91;&#x5668;:sed<br>&#x5168;&#x5C4F;&#x5E55;&#x7F16;&#x8F91;&#x5668;:nano,vi,vim  </p>
+<h3 id="shell&#x811A;&#x672C;&#x662F;&#x4EC0;&#x4E48;">shell&#x811A;&#x672C;&#x662F;&#x4EC0;&#x4E48;?</h3>
+<p>&#x547D;&#x4EE4;&#x7684;&#x5806;&#x79EF;;<br>&#x4F46;&#x5F88;&#x591A;&#x547D;&#x4EE4;&#x4E0D;&#x5177;&#x6709;&#x5E42;&#x7B49;&#x6027;,&#x9700;&#x8981;&#x7528;&#x7A0B;&#x5E8F;&#x903B;&#x8F91;&#x6765;&#x5224;&#x65AD;&#x8FD0;&#x884C;&#x6761;&#x4EF6;&#x662F;&#x5426;&#x6EE1;&#x8DB3;,&#x4EE5;&#x907F;&#x514D;&#x5176;&#x8FD0;&#x884C;&#x4E2D;&#x53D1;&#x751F;&#x9519;&#x8BEF;  </p>
+<p>&#x4F7F;&#x7528;<code>vim myfirst.sh</code>&#x5E38;&#x89C1;shell&#x6587;&#x4EF6;<br>&#x7F16;&#x5199;shell&#x811A;&#x672C;:  </p>
+<pre><code class="lang-shell">#!/bin/bash
+
+id user3 || useradd user3
+echo &quot;user3&quot; | passwd --stdin user3
+
+mktemp -d /tmp/test.xxxxxx
+</code></pre>
+<p>&#x4F7F;&#x7528;<code>chmod u+x myfirst.sh</code>&#x8BBE;&#x7F6E;myfirst.sh&#x4E3A;&#x53EF;&#x6267;&#x884C;<br>&#x4F7F;&#x7528;<code>./myfirst.sh</code>&#x6267;&#x884C;&#x6240;&#x7F16;&#x5199;&#x7684;shell&#x811A;&#x672C;<br>&#x6CE8;:&#x4E3A;&#x4EC0;&#x4E48;&#x6267;&#x884C;&#x811A;&#x672C;&#x7684;&#x524D;&#x8981;&#x52A0;&#x4E0A;<code>./</code>?&#x4EE5;&#x524D;&#x6211;&#x4EEC;&#x8BF4;&#x8FC7;,&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;&#x662F;&#x901A;&#x8FC7;&#x73AF;&#x5883;&#x53D8;&#x91CF;<code>$PATH</code>&#x4E2D;&#x7684;&#x8DEF;&#x5F84;&#x53BB;&#x67E5;&#x627E;&#x7684;,&#x56E0;&#x4E3A;&#x5F53;&#x524D;&#x8DEF;&#x5F84;&#x5E76;&#x4E0D;&#x5728;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x7684;&#x8DEF;&#x5F84;&#x4E2D;,&#x6240;&#x4EE5;&#x9700;&#x8981;&#x6307;&#x5B9A;shell&#x6587;&#x4EF6;&#x4E3A;&#x5F53;&#x524D;&#x76EE;&#x5F55;<code>./</code>&#x6216;&#x8005;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;<code>/root/myfirst.sh</code>  </p>
+<h3 id="&#x8FD0;&#x884C;&#x811A;&#x672C;">&#x8FD0;&#x884C;&#x811A;&#x672C;</h3>
+<p>(1) &#x8D4B;&#x4E88;&#x6267;&#x884C;&#x6743;&#x9650;,&#x5E76;&#x76F4;&#x63A5;&#x8FD0;&#x884C;&#x6B64;&#x7A0B;&#x5E8F;&#x6587;&#x4EF6;;<br>chmod+x /PATH/TO/SCRIPT_FILE<br>/PATH/TO/SCRIPT_FILE<br>./SCRIPT_FILE<br>(2) &#x76F4;&#x63A5;&#x8FD0;&#x884C;&#x89E3;&#x91CA;&#x5668;,&#x5C06;&#x811A;&#x672C;&#x4EE5;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7ED9;&#x89E3;&#x91CA;&#x5668;&#x7A0B;&#x5E8F;;<br>bash /PATH/TO/SCRIPT_FILE<br>bash SCRIPT_FILE  </p>
+<pre><code class="lang-shell">#&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x6267;&#x884C;
+bash /root/myfirst.sh
+#&#x5982;&#x679C;&#x6587;&#x4EF6;&#x5C31;&#x5728;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;
+bash myfirst.sh
+</code></pre>
+<p>&#x6CE8;:&#x4F7F;&#x7528;bash&#x547D;&#x4EE4;&#x6267;&#x884C;&#x811A;&#x672C;,&#x5373;&#x4F7F;&#x811A;&#x672C;&#x6587;&#x4EF6;&#x6CA1;&#x6709;&#x6267;&#x884C;&#x6743;&#x9650;,&#x4E5F;&#x80FD;&#x88AB;&#x6267;&#x884C;</p>
+<pre><code class="lang-shell">chmod -x myfirst.sh
+ll myfirst.sh 
+bash myfirst.sh
+</code></pre>
+<p>&#x6CE8;&#x610F;:&#x811A;&#x672C;&#x4E2D;&#x7684;&#x7A7A;&#x767D;&#x884C;&#x4F1A;&#x88AB;&#x89E3;&#x91CA;&#x5668;&#x5FFD;&#x7565;,&#x5982;&#x679C;&#x9700;&#x8981;&#x663E;&#x793A;&#x7A7A;&#x767D;&#x884C;,&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>echo</code><br>&#x811A;&#x672C;&#x4E2D;,&#x9664;&#x4E86;shebang,&#x4F59;&#x4E0B;&#x6240;&#x6709;&#x4EE5;#&#x5F00;&#x5934;&#x7684;&#x884C;,&#x90FD;&#x4F1A;&#x88AB;&#x89C6;&#x4F5C;&#x6CE8;&#x91CA;&#x884C;&#x800C;&#x88AB;&#x5FFD;&#x7565;;&#x6B64;&#x5373;&#x4E3A;&#x6CE8;&#x91CA;&#x884C;;<br>shell&#x811A;&#x672C;&#x7684;&#x8FD0;&#x884C;&#x662F;&#x901A;&#x8FC7;&#x8FD0;&#x884C;&#x4E00;&#x4E2A;&#x5B50;shell&#x8FDB;&#x7A0B;&#x5B9E;&#x73B0;&#x7684;;  </p>
+<p>&#x7EC3;&#x4E60;1:&#x5199;&#x4E00;&#x4E2A;&#x811A;&#x672C;,&#x5B9E;&#x73B0;&#x5982;&#x4E0B;&#x529F;&#x80FD;;<br>(1) &#x663E;&#x793A;/etc/&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;&#x4EE5;&#x5927;&#x5199;P&#x6216;&#x8005;&#x5C0F;&#x5199;p&#x5F00;&#x5934;&#x7684;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x672C;&#x8EAB;;<br>(2) &#x663E;&#x793A;/var&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x6216;&#x8005;&#x76EE;&#x5F55;&#x672C;&#x8EAB;,&#x5E76;&#x5C06;&#x663E;&#x793A;&#x7ED3;&#x679C;&#x4E2D;&#x7684;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x8F6C;&#x6362;&#x4E3A;&#x5927;&#x5199;&#x540E;&#x663E;&#x793A;;<br>(3) &#x521B;&#x5EFA;&#x4E34;&#x65F6;&#x6587;&#x4EF6;/tmp/myfile.XXXX;  </p>
+<pre><code class="lang-shell">#!/bin/bash
+ls -d /etc/[pP]*
+#&#x8FD9;&#x4E2A;echo&#x5F53;&#x6362;&#x884C;&#x4F7F;&#x7528;
+echo
+ls -d /var/* | tr &apos;a-z&apos; &apos;A-Z&apos;
+echo
+mktemp /tmp/myfile.XXXX
+</code></pre>
+<h3 id="bash&#x548C;&#x811A;&#x672C;&#x7F16;&#x7A0B;&#x4E4B;&#x7B97;&#x6570;&#x8FD0;&#x7B97;">bash&#x548C;&#x811A;&#x672C;&#x7F16;&#x7A0B;&#x4E4B;&#x7B97;&#x6570;&#x8FD0;&#x7B97;</h3>
+<p>let&#x662F;&#x5185;&#x5D4C;&#x547D;&#x4EE4;,&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>help let</code>&#x6765;&#x67E5;&#x770B;&#x5E2E;&#x52A9;  </p>
+<p>+,-,<em>,/,<em>*,%<br>&#x6CE8;:</em></em>&#x662F;&#x51E0;&#x6B21;&#x5E42;  </p>
+<p><a href="https://images.gitee.com/uploads/images/2019/0717/150415_3a5c3606_1479682.png" data-lightbox="4ecc2f1e-4926-4323-baca-52d83be1e15f" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0717/150415_3a5c3606_1479682.png" alt=""></a></p>
+<p>&#x7B97;&#x6570;&#x8FD0;&#x7B97;&#x683C;&#x5F0F;:<br>(1) let VAR=&#x7B97;&#x6570;&#x8FD0;&#x7B97;&#x8868;&#x8FBE;&#x5F0F;<br><a href="https://images.gitee.com/uploads/images/2019/0717/150108_895bc4ca_1479682.png" data-lightbox="2288f82c-0b0a-4e2f-99df-054da5367319" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0717/150108_895bc4ca_1479682.png" alt=""></a></p>
+<p>(2) VAR=$[&#x7B97;&#x6570;&#x8FD0;&#x7B97;&#x8868;&#x8FBE;&#x5F0F;]<br><a href="https://images.gitee.com/uploads/images/2019/0717/150609_45e7e13b_1479682.png" data-lightbox="285ea117-f4ee-4af3-813d-34da97ce2544" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0717/150609_45e7e13b_1479682.png" alt=""></a></p>
+<p>(3) VAR=$((&#x7B97;&#x6570;&#x8FD0;&#x7B97;&#x8868;&#x8FBE;&#x5F0F;))  </p>
+<pre><code class="lang-shell">echo $(($num2+$num3))
+#&#x8D4B;&#x503C;&#x5199;&#x6CD5;
+sum=$(($num2+$num3))
+echo $sum
+</code></pre>
+<p>(4) <code>VAR=$(expr $ARG1 $OP $ARG2)</code>
+<a href="https://images.gitee.com/uploads/images/2019/0717/151417_d53c56de_1479682.png" data-lightbox="7e0f690a-a85a-4a31-a0e4-d7835b163d75" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0717/151417_d53c56de_1479682.png" alt=""></a>  </p>
+<p>&#x6CE8;&#x610F;:&#x4E58;&#x6CD5;&#x7B26;&#x53F7;&#x5728;&#x6709;&#x4E9B;&#x573A;&#x666F;&#x4E2D;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x8F6C;&#x4E49;&#x7B26;;  </p>
+<p>&#x589E;&#x5F3A;&#x578B;&#x8D4B;&#x503C;(&#x9700;&#x8981;&#x4F7F;&#x7528;let):<br>&#x53D8;&#x91CF;&#x505A;&#x67D0;&#x79CD;&#x7B97;&#x6570;&#x8FD0;&#x7B97;&#x540E;&#x56DE;&#x5B58;&#x81F3;&#x6B64;&#x53D8;&#x91CF;;<br>+=,-=,*=,/=,%=  </p>
+<pre><code class="lang-shell">i=1
+let i=$i+1  
+let i+=1
+</code></pre>
+<p>&#x81EA;&#x589E;:<br>VAR=$[$VAR+1]<br>let VAR+=1<br>let VAR++  </p>
+<p>&#x81EA;&#x51CF;:<br>VAR=$[$VAR-1]<br>let VAR-=1<br>let VAR--  </p>
+<pre><code class="lang-shell">i=1
+i=$[$i+1]
+let i+=1
+let i++
+echo $i
+</code></pre>
+<p>&#x7EC3;&#x4E60;:<br>1&#x3001;&#x5199;&#x4E00;&#x4E2A;&#x811A;&#x672C;,&#x5B8C;&#x6210;&#x5982;&#x4E0B;&#x529F;&#x80FD;:<br>&#x6DFB;&#x52A0;&#x4E09;&#x4E2A;&#x7528;&#x6237;;<br>&#x6C42;&#x6B64;&#x4E09;&#x4E2A;&#x7528;&#x6237;&#x7684;UID&#x4E4B;&#x548C;;  </p>
+<pre><code class="lang-shell">#!/bin/bash
+
+id user1 &amp;&gt; /dev/null || useradd user1
+echo &quot;user1 id:$(id -u user1)&quot;
+id user2 &amp;&gt; /dev/null || useradd user2
+echo &quot;user2 id:$(id -u user2)&quot;
+id user3 &amp;&gt; /dev/null || useradd user3
+echo &quot;user3 id:$(id -u user3)&quot;
+
+id_user1=$(id -u user1)
+id_user2=$(id -u user2)
+id_user3=$(id -u user3)
+
+id_sum=$[id_user1+id_user2+id_user3]
+
+echo &quot;The id sum:$id_sum&quot;
+</code></pre>
+<p>2&#x3001;&#x5199;&#x4E00;&#x4E2A;&#x811A;&#x672C;<br>&#x8BA1;&#x7B97;/etc/passwd&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x7B2C;10&#x4E2A;&#x7528;&#x6237;&#x548C;&#x7B2C;20&#x4E2A;&#x7528;&#x6237;&#x7684;id&#x53F7;&#x4E4B;&#x548C;;  </p>
+<pre><code class="lang-shell">#!/bin/bash
+
+id1=$(head -10 /etc/passwd | tail -1 | cut -d: -f3)
+echo &quot;id1:$id1&quot;
+id2=$(head -20 /etc/passwd | tail -1 | cut -d: -f3)
+echo &quot;id2:$id2&quot;
+
+idsum=$[$id1+$id2]
+
+echo &quot;The id sum:$idsum&quot;
+</code></pre>
+<p>3&#x3001;&#x5199;&#x4E00;&#x4E2A;&#x811A;&#x672C;
+&#x8BA1;&#x7B97;/etc/passwd&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x6700;&#x5927;&#x7684;&#x4E24;&#x4E2A;id&#x53F7;&#x4E4B;&#x548C;;  </p>
+<pre><code class="lang-shell">#!/bin/bash
+
+max1=$(cut -d: -f3 /etc/passwd | sort -n | tail -1 | head -1)
+max2=$(cut -d: -f3 /etc/passwd | sort -n | tail -1)
+
+echo &quot;&#x6700;&#x5927;&#x4E24;&#x4E2A;id&#x53F7;&#x4E4B;&#x548C;:$[$max1+$max2]&quot;
+</code></pre>
+<p>4&#x3001;&#x5199;&#x4E00;&#x4E2A;&#x811A;&#x672C;<br>&#x8BA1;&#x7B97;/etc/rc.d/init.d/functions&#x548C;/etc/inittab&#x6587;&#x4EF6;&#x7684;&#x7A7A;&#x767D;&#x884C;&#x6570;&#x4E4B;&#x548C;;  </p>
+<pre><code class="lang-shell">#!/bin/bash
+
+wcl1=$(grep &quot;^[[:space:]]*$&quot; /etc/rc.d/init.d/functions | wc -l)
+wcl2=$(grep &quot;^[[:space:]]*$&quot; /etc/inittab | wc -l)
+
+echo &quot;&#x7A7A;&#x767D;&#x884C;&#x4E4B;&#x548C;:$[$wcl1+$wcl2]&quot;
+</code></pre>
+<h3 id="bash&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;">bash&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;:</h3>
+<p>&#x4E24;&#x7C7B;:<br>profile&#x7C7B;:&#x4E3A;&#x4EA4;&#x4E92;&#x5F0F;&#x767B;&#x5F55;&#x7684;shell&#x8FDB;&#x7A0B;&#x63D0;&#x4F9B;&#x914D;&#x7F6E;<br>bashrc&#x7C7B;:&#x4E3A;&#x975E;&#x4EA4;&#x4E92;&#x5F0F;&#x767B;&#x5F55;&#x7684;shell&#x8FDB;&#x7A0B;&#x63D0;&#x4F9B;&#x914D;&#x7F6E;  </p>
+<p>&#x767B;&#x5F55;&#x7C7B;&#x578B;:<br>&#x4EA4;&#x4E92;&#x5F0F;&#x767B;&#x5F55;shell&#x8FDB;&#x7A0B;:<br>&#x76F4;&#x63A5;&#x901A;&#x8FC7;&#x67D0;&#x7EC8;&#x7AEF;&#x8F93;&#x5165;&#x7684;&#x8D26;&#x53F7;&#x548C;&#x5BC6;&#x7801;&#x540E;&#x767B;&#x5F55;&#x6253;&#x5F00;&#x7684;shell&#x8FDB;&#x7A0B;;<br>&#x4F7F;&#x7528;su&#x547D;&#x4EE4;:su - USERNAME,&#x6216;&#x8005;&#x4F7F;&#x7528;si -l USERNAME&#x6267;&#x884C;&#x7684;&#x767B;&#x5F55;&#x5207;&#x6362;;  </p>
+<p>&#x975E;&#x4EA4;&#x4E92;&#x5F0F;&#x767B;&#x5F55;&#x7684;shell&#x8FDB;&#x7A0B;:<br>su USERNAME&#x6267;&#x884C;&#x7684;&#x767B;&#x5F55;&#x5207;&#x6362;;<br>&#x56FE;&#x5F62;&#x754C;&#x9762;&#x4E0B;&#x6253;&#x5F00;&#x7684;&#x7EC8;&#x7AEF;;<br>&#x8FD0;&#x884C;&#x811A;&#x672C;&#x5982;:bash script_file;&#x4E4B;&#x524D;&#x8BF4;&#x8FC7;shell&#x811A;&#x672C;&#x7684;&#x8FD0;&#x884C;&#x662F;&#x901A;&#x8FC7;&#x8FD0;&#x884C;&#x4E00;&#x4E2A;&#x5B50;shell&#x8FDB;&#x7A0B;&#x5B9E;&#x73B0;&#x7684;;  </p>
+<h3 id="profile&#x7C7B;">profile&#x7C7B;:</h3>
+<p>&#x5168;&#x5C40;:&#x5BF9;&#x6240;&#x6709;&#x7528;&#x6237;&#x90FD;&#x751F;&#x6548;;<br>/etc/profile<br>/etc/profile.d/*.sh  </p>
+<p>&#x7528;&#x6237;&#x4E2A;&#x4EBA;:&#x4EC5;&#x5BF9;&#x5F53;&#x524D;&#x7528;&#x6237;&#x6709;&#x6548;;<br>~/.bash_profile  </p>
+<p>&#x529F;&#x7528;:<br>1.&#x7528;&#x4E8E;&#x5B9A;&#x4E49;&#x73AF;&#x5883;&#x53D8;&#x91CF;;<br>2.&#x8FD0;&#x884C;&#x547D;&#x4EE4;&#x6216;&#x811A;&#x672C;;  </p>
+<h3 id="bashrc&#x7C7B;">bashrc&#x7C7B;</h3>
+<p>&#x5168;&#x5C40;:&#x5BF9;&#x6240;&#x6709;&#x7528;&#x6237;&#x90FD;&#x751F;&#x6548;;<br>/etc/bashrc  </p>
+<p>&#x7528;&#x6237;&#x4E2A;&#x4EBA;:<br>~/.bashrc  </p>
+<p>&#x529F;&#x7528;:<br>1.&#x5B9A;&#x4E49;&#x672C;&#x5730;&#x53D8;&#x91CF;;<br>2.&#x5B9A;&#x4E49;&#x547D;&#x4EE4;&#x522B;&#x540D;;  </p>
+<p>&#x6CE8;&#x610F;:&#x4EC5;&#x7BA1;&#x7406;&#x5458;&#x53EF;&#x4FEE;&#x6539;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x6587;&#x4EF6;;  </p>
+<h3 id="&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x6267;&#x884C;&#x987A;&#x5E8F;">&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x6267;&#x884C;&#x987A;&#x5E8F;</h3>
+<p>&#x4EA4;&#x4E92;&#x5F0F;&#x767B;&#x5F55;shell&#x8FDB;&#x7A0B;:<br>/etc/profile --&gt; /etc/profile.d/* --&gt; ~/.bash_profile --&gt; ~/.bashrc --&gt; /etc/bashrc  </p>
+<p>&#x975E;&#x4EA4;&#x4E92;&#x5F0F;&#x767B;&#x5F55;&#x7684;shell&#x8FDB;&#x7A0B;:<br>~/.bashrc --&gt; /etc/bashrc --&gt; /etc/profile.d/*  </p>
+<p>&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x7279;&#x6027;,&#x4F8B;&#x5982;&#x53D8;&#x91CF;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x4E3A;&#x5F53;&#x524D;shell&#x8FDB;&#x7A0B;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;;<br>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5B9A;&#x4E49;&#x7684;&#x7279;&#x6027;,&#x53EA;&#x5BF9;&#x968F;&#x540E;&#x65B0;&#x542F;&#x52A8;&#x7684;shell&#x8FDB;&#x7A0B;&#x6709;&#x6548;;  </p>
+<p>&#x8BA9;&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5B9A;&#x4E49;&#x7684;&#x7279;&#x6027;,&#x81F3;&#x5BF9;&#x968F;&#x540E;&#x65B0;&#x542F;&#x52A8;&#x7684;shell&#x8FDB;&#x7A0B;&#x751F;&#x6548;:<br>(1) &#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x91CD;&#x590D;&#x5B9A;&#x4E49;&#x4E00;&#x6B21;;<br>(2) &#x8BA9;shell&#x8FDB;&#x7A0B;&#x91CD;&#x8BFB;&#x914D;&#x7F6E;&#x6587;&#x4EF6;;<br>source /PATH/FROM/CONF_FILE<br>. /PATH/FORM/CONF_FILE &#x8FD9;&#x91CC;&#x7684;&quot;.&quot;&#x5C31;&#x4EE3;&#x8868;source   </p>
+<h4 id="&#x5B9A;&#x4E49;&#x522B;&#x540D;&#x793A;&#x4F8B;">&#x5B9A;&#x4E49;&#x522B;&#x540D;&#x793A;&#x4F8B;</h4>
+<pre><code class="lang-shell">#&#x5230;&#x7528;&#x6237;&#x5BB6;&#x76EE;&#x5F55;
+cd ~
+#&#x7F16;&#x8F91;.bashrc&#x914D;&#x7F6E;&#x6587;&#x4EF6;,&#x6253;&#x5F00;&#x6587;&#x4EF6;&#x5982;&#x4E0B;&#x56FE;  
+vim .bashrc
+</code></pre>
+<p><a href="https://images.gitee.com/uploads/images/2019/0704/210814_dd60c897_1479682.png" data-lightbox="8b0a874f-c8f1-4bc8-99c1-9a78184fdedd" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0704/210814_dd60c897_1479682.png" alt=""></a><br>&#x7531;&#x4E8E;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5B9A;&#x4E49;&#x7684;&#x7279;&#x6027;,&#x53EA;&#x5BF9;&#x968F;&#x540E;&#x65B0;&#x542F;&#x52A8;&#x7684;shell&#x8FDB;&#x7A0B;&#x6709;&#x6548;;&#x5982;&#x679C;&#x8981;&#x7ACB;&#x5373;&#x751F;&#x6548;&#x9700;&#x8981;&#x4F7F;&#x7528;source&#x547D;&#x4EE4;:  </p>
+<pre><code class="lang-shell">#&quot;.&quot;&#x76F8;&#x5F53;&#x4E8E;source&#x547D;&#x4EE4;
+. /root/.bashrc
+#&#x4F7F;&#x7528;alias&#x67E5;&#x770B;cls&#x522B;&#x540D;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;
+alias
+</code></pre>
+<h4 id="&#x5B9A;&#x4E49;java&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x793A;&#x4F8B;">&#x5B9A;&#x4E49;java&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x793A;&#x4F8B;</h4>
+<pre><code class="lang-shell">vim /etc/profile.d/java.sh
+</code></pre>
+<p>&#x5728;&#x6587;&#x4EF6;&#x4E2D;&#x52A0;&#x5165;:<br><a href="https://images.gitee.com/uploads/images/2019/0704/213140_3d1aea7a_1479682.png" data-lightbox="52a201f7-317f-4a73-8d29-302e39060a45" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0704/213140_3d1aea7a_1479682.png" alt=""></a>  </p>
+<pre><code class="lang-shell">#&#x4F7F;&#x7528;source&#x4F7F;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7ACB;&#x5373;&#x751F;&#x6548;
+. /etc/profile.d/java.sh
+#&#x5728;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;&#x67E5;&#x627E;JAVA_HOME&#x53D8;&#x91CF;
+export|grep JAVA_HOME
+</code></pre>
+<p>&#x95EE;&#x9898;1:&#x5B9A;&#x4E49;&#x5BF9;&#x6240;&#x6709;&#x7528;&#x6237;&#x90FD;&#x751F;&#x6548;&#x7684;&#x547D;&#x4EE4;&#x522B;&#x540D;,&#x4F8B;&#x5982;:lftps=&apos;lftp 172.16.0.1/pub&apos;  </p>
+<p>&#x95EE;&#x9898;2:&#x8BA9;centos&#x7528;&#x6237;&#x767B;&#x5F55;&#x65F6;,&#x63D0;&#x4F9B;&#x5176;&#x5DF2;&#x7ECF;&#x767B;&#x5F55;,&#x5E76;&#x663E;&#x793A;&#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x65F6;&#x95F4;?  </p>
+
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="11.用户权限管理.html" class="navigation navigation-prev " aria-label="Previous page: 11.用户权限管理">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="13.grep和基本正则表达式.html" class="navigation navigation-next " aria-label="Next page: 13.grep和基本正则表达式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"12.shell变量,算数和逻辑运算及配置文件","level":"1.13","depth":1,"next":{"title":"13.grep和基本正则表达式","level":"1.14","depth":1,"path":"pages/13.grep和基本正则表达式.md","ref":"pages/13.grep和基本正则表达式.md","articles":[]},"previous":{"title":"11.用户权限管理","level":"1.12","depth":1,"path":"pages/11.用户权限管理.md","ref":"pages/11.用户权限管理.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","lightbox","page-treeview","-lunr","-search","search-pro","-sharing","sharing-plus","back-to-top-button","code","splitter","chapter-fold","popup","custom-favicon","livereload"],"pluginsConfig":{"page-treeview":{"collapsed":false,"copyright":"Copyright &#169; aleen42","minHeaderCount":"2","minHeaderDeep":"2"},"chapter-fold":{},"styles":{"website":"styles/website.css"},"livereload":{},"splitter":{},"search-pro":{},"author":"sonin","sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"images/Title/favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"back-to-top-button":{},"title":"面试","custom-favicon":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":true,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":false,"qzone":true},"description":"面试宝典","theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/12.shell变量,算数和逻辑运算及配置文件.md","mtime":"2023-07-13T05:42:09.552Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-07-13T06:53:25.815Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

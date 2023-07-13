@@ -1,0 +1,1316 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>33.grub系统配置与使用 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="34.Linux内核功能及模块应用.html" />
+    
+    
+    <link rel="prev" href="32.CentOS系统启动流程.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Linux宝典
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01.linux基本操作使用.html">
+            
+                <a href="01.linux基本操作使用.html">
+            
+                    
+                    01.linux基本操作使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="02.linux获取命令使用帮助.html">
+            
+                <a href="02.linux获取命令使用帮助.html">
+            
+                    
+                    02.linux获取命令使用帮助
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="03.linux常用基础命令.html">
+            
+                <a href="03.linux常用基础命令.html">
+            
+                    
+                    03.linux常用基础命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04.根文件系统.html">
+            
+                <a href="04.根文件系统.html">
+            
+                    
+                    04.根文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05.Linux系统上的文件类型和历史命令.html">
+            
+                <a href="05.Linux系统上的文件类型和历史命令.html">
+            
+                    
+                    05.Linux系统上的文件类型和历史命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="06.目录文本查看命令.html">
+            
+                <a href="06.目录文本查看命令.html">
+            
+                    
+                    06.目录文本查看命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="07.文件管理命令.html">
+            
+                <a href="07.文件管理命令.html">
+            
+                    
+                    07.文件管理命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="08.glob通配及IO重定向.html">
+            
+                <a href="08.glob通配及IO重定向.html">
+            
+                    
+                    08.glob通配及IO重定向
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="09.用户和组管理概念.html">
+            
+                <a href="09.用户和组管理概念.html">
+            
+                    
+                    09.用户和组管理概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="10.用户和组管理命令.html">
+            
+                <a href="10.用户和组管理命令.html">
+            
+                    
+                    10.用户和组管理命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="11.用户权限管理.html">
+            
+                <a href="11.用户权限管理.html">
+            
+                    
+                    11.用户权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="12.shell变量,算数和逻辑运算及配置文件.html">
+            
+                <a href="12.shell变量,算数和逻辑运算及配置文件.html">
+            
+                    
+                    12.shell变量,算数和逻辑运算及配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="13.grep和基本正则表达式.html">
+            
+                <a href="13.grep和基本正则表达式.html">
+            
+                    
+                    13.grep和基本正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="14.vim编辑器.html">
+            
+                <a href="14.vim编辑器.html">
+            
+                    
+                    14.vim编辑器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="15.文件查找find和特殊权限及facl.html">
+            
+                <a href="15.文件查找find和特殊权限及facl.html">
+            
+                    
+                    15.文件查找find和特殊权限及facl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="16.磁盘及文件系统管理.html">
+            
+                <a href="16.磁盘及文件系统管理.html">
+            
+                    
+                    16.磁盘及文件系统管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="17.shell条件测试,逻辑判断,参数传递.html">
+            
+                <a href="17.shell条件测试,逻辑判断,参数传递.html">
+            
+                    
+                    17.shell条件测试,逻辑判断,参数传递
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="18.RAID技术.html">
+            
+                <a href="18.RAID技术.html">
+            
+                    
+                    18.RAID技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="19.LVM2.html">
+            
+                <a href="19.LVM2.html">
+            
+                    
+                    19.LVM2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="20.btrfs文件系统.html">
+            
+                <a href="20.btrfs文件系统.html">
+            
+                    
+                    20.btrfs文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="21.压缩工具.html">
+            
+                <a href="21.压缩工具.html">
+            
+                    
+                    21.压缩工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="22.Liunx任务计划crontab.html">
+            
+                <a href="22.Liunx任务计划crontab.html">
+            
+                    
+                    22.Liunx任务计划crontab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="23.软件包管理rpm.html">
+            
+                <a href="23.软件包管理rpm.html">
+            
+                    
+                    23.软件包管理rpm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="24.软件包管理yum.html">
+            
+                <a href="24.软件包管理yum.html">
+            
+                    
+                    24.软件包管理yum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="25.shell多分支if和for循环.html">
+            
+                <a href="25.shell多分支if和for循环.html">
+            
+                    
+                    25.shell多分支if和for循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="26.文本处理神器sed.html">
+            
+                <a href="26.文本处理神器sed.html">
+            
+                    
+                    26.文本处理神器sed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="27.计算机网络基础.html">
+            
+                <a href="27.计算机网络基础.html">
+            
+                    
+                    27.计算机网络基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="28.Linux网络属性配置.html">
+            
+                <a href="28.Linux网络属性配置.html">
+            
+                    
+                    28.Linux网络属性配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="29.Linux进程及作业管理.html">
+            
+                <a href="29.Linux进程及作业管理.html">
+            
+                    
+                    29.Linux进程及作业管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="30.Linux进程及作业管理二.html">
+            
+                <a href="30.Linux进程及作业管理二.html">
+            
+                    
+                    30.Linux进程及作业管理二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.32" data-path="31.网络客户端工具和while、untill循环.html">
+            
+                <a href="31.网络客户端工具和while、untill循环.html">
+            
+                    
+                    31.网络客户端工具和while、untill循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33" data-path="32.CentOS系统启动流程.html">
+            
+                <a href="32.CentOS系统启动流程.html">
+            
+                    
+                    32.CentOS系统启动流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.34" data-path="33.grub系统配置与使用.html">
+            
+                <a href="33.grub系统配置与使用.html">
+            
+                    
+                    33.grub系统配置与使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.35" data-path="34.Linux内核功能及模块应用.html">
+            
+                <a href="34.Linux内核功能及模块应用.html">
+            
+                    
+                    34.Linux内核功能及模块应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.36" data-path="35.Linux内核模块功能定制.html">
+            
+                <a href="35.Linux内核模块功能定制.html">
+            
+                    
+                    35.Linux内核模块功能定制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.37" data-path="36.Linux自动化安装anaconda配置定制.html">
+            
+                <a href="36.Linux自动化安装anaconda配置定制.html">
+            
+                    
+                    36.Linux自动化安装anaconda配置定制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.38" data-path="37.Linux系统自动化安装无人值守环境配置部署.html">
+            
+                <a href="37.Linux系统自动化安装无人值守环境配置部署.html">
+            
+                    
+                    37.Linux系统自动化安装无人值守环境配置部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.39" data-path="38.函数编程和case语句.html">
+            
+                <a href="38.函数编程和case语句.html">
+            
+                    
+                    38.函数编程和case语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.40" data-path="39.systemd及systemctl实战.html">
+            
+                <a href="39.systemd及systemctl实战.html">
+            
+                    
+                    39.systemd及systemctl实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.41" data-path="40.SELinux简介.html">
+            
+                <a href="40.SELinux简介.html">
+            
+                    
+                    40.SELinux简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.42" data-path="41.shell数组和字符串处理工具.html">
+            
+                <a href="41.shell数组和字符串处理工具.html">
+            
+                    
+                    41.shell数组和字符串处理工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.43" data-path="42.shell信号捕捉实战.html">
+            
+                <a href="42.shell信号捕捉实战.html">
+            
+                    
+                    42.shell信号捕捉实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.44" data-path="43.awk使用与实践.html">
+            
+                <a href="43.awk使用与实践.html">
+            
+                    
+                    43.awk使用与实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.45" data-path="44.通信加密和解密、公钥、私钥、CA.html">
+            
+                <a href="44.通信加密和解密、公钥、私钥、CA.html">
+            
+                    
+                    44.通信加密和解密、公钥、私钥、CA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.46" data-path="45.OpenSSL.html">
+            
+                <a href="45.OpenSSL.html">
+            
+                    
+                    45.OpenSSL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.47" data-path="46.DNS.html">
+            
+                <a href="46.DNS.html">
+            
+                    
+                    46.DNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.48" data-path="47.DNS and Bind.html">
+            
+                <a href="47.DNS and Bind.html">
+            
+                    
+                    47.DNS and Bind
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.49" data-path="48.http协议及Web服务.html">
+            
+                <a href="48.http协议及Web服务.html">
+            
+                    
+                    48.http协议及Web服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.50" data-path="49.Apache.html">
+            
+                <a href="49.Apache.html">
+            
+                    
+                    49.Apache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.51" data-path="50.LAMP.html">
+            
+                <a href="50.LAMP.html">
+            
+                    
+                    50.LAMP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.52" data-path="51.MariaDB.html">
+            
+                <a href="51.MariaDB.html">
+            
+                    
+                    51.MariaDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.53" data-path="52.php-fpm基础应用与实战.html">
+            
+                <a href="52.php-fpm基础应用与实战.html">
+            
+                    
+                    52.php-fpm基础应用与实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.54" data-path="53.文件共享服务、ftp、vsftp.html">
+            
+                <a href="53.文件共享服务、ftp、vsftp.html">
+            
+                    
+                    53.文件共享服务、ftp、vsftp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.55" data-path="54.nfs服务配置应用与实战.html">
+            
+                <a href="54.nfs服务配置应用与实战.html">
+            
+                    
+                    54.nfs服务配置应用与实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.56" data-path="55.samba服务基础应用.html">
+            
+                <a href="55.samba服务基础应用.html">
+            
+                    
+                    55.samba服务基础应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.57" data-path="56.iptables.html">
+            
+                <a href="56.iptables.html">
+            
+                    
+                    56.iptables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.58" data-path="57.iptables网络防火墙.html">
+            
+                <a href="57.iptables网络防火墙.html">
+            
+                    
+                    57.iptables网络防火墙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.59" data-path="58.iptables_nat路由.html">
+            
+                <a href="58.iptables_nat路由.html">
+            
+                    
+                    58.iptables_nat路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.60" data-path="59.Linux时间服务-chrony.html">
+            
+                <a href="59.Linux时间服务-chrony.html">
+            
+                    
+                    59.Linux时间服务-chrony
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.61" data-path="GitLab安装_CentOS7.html">
+            
+                <a href="GitLab安装_CentOS7.html">
+            
+                    
+                    GitLab安装_CentOS7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.62" data-path="JDK安装.html">
+            
+                <a href="JDK安装.html">
+            
+                    
+                    JDK安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.63" data-path="Linux中kill -2和kill -9的区别.html">
+            
+                <a href="Linux中kill -2和kill -9的区别.html">
+            
+                    
+                    Linux中kill -2和kill -9的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.64" data-path="linux中修改环境变量及生效方法.html">
+            
+                <a href="linux中修改环境变量及生效方法.html">
+            
+                    
+                    linux中修改环境变量及生效方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.65" data-path="Linux查看设置系统时区.html">
+            
+                <a href="Linux查看设置系统时区.html">
+            
+                    
+                    Linux查看设置系统时区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.66" data-path="rc.local脚本开机自启动.html">
+            
+                <a href="rc.local脚本开机自启动.html">
+            
+                    
+                    rc.local脚本开机自启动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.67" data-path="SSH免密登录.html">
+            
+                <a href="SSH免密登录.html">
+            
+                    
+                    SSH免密登录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.68" data-path="Systemd日志管理journal和journalctl使用.html">
+            
+                <a href="Systemd日志管理journal和journalctl使用.html">
+            
+                    
+                    Systemd日志管理journal和journalctl使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.69" data-path="TCP_IP协议总结.html">
+            
+                <a href="TCP_IP协议总结.html">
+            
+                    
+                    TCP_IP协议总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.70" data-path="TCP_UDP结构.html">
+            
+                <a href="TCP_UDP结构.html">
+            
+                    
+                    TCP_UDP结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.71" data-path="VMware虚拟机克隆CentOS7并分别设置静态IP.html">
+            
+                <a href="VMware虚拟机克隆CentOS7并分别设置静态IP.html">
+            
+                    
+                    VMware虚拟机克隆CentOS7并分别设置静态IP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.72" data-path="Vmware虚拟机问题解决方案.html">
+            
+                <a href="Vmware虚拟机问题解决方案.html">
+            
+                    
+                    Vmware虚拟机问题解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.73" data-path="window下面git公钥的配置.html">
+            
+                <a href="window下面git公钥的配置.html">
+            
+                    
+                    window下面git公钥的配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.74" data-path="文件描述符.html">
+            
+                <a href="文件描述符.html">
+            
+                    
+                    文件描述符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.75" data-path="最小化安装centos7.9.html">
+            
+                <a href="最小化安装centos7.9.html">
+            
+                    
+                    最小化安装centos7.9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.76" data-path="查看服务器状态工具.html">
+            
+                <a href="查看服务器状态工具.html">
+            
+                    
+                    查看服务器状态工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >33.grub系统配置与使用</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+<li><div><a href="#grubboot-loader">GRUB(Boot Loader):</a><i></i></div></li>
+<li><div><a href="#grub-legacy">grub legacy:</a><i></i></div></li>
+<li><div><a href="#grub&#x5982;&#x4F55;&#x8BC6;&#x522B;&#x8BBE;&#x5907;">grub&#x5982;&#x4F55;&#x8BC6;&#x522B;&#x8BBE;&#x5907;:</a><i></i></div></li>
+<li><div><a href="#grub&#x7684;&#x547D;&#x4EE4;&#x884C;&#x63A5;&#x53E3;">grub&#x7684;&#x547D;&#x4EE4;&#x884C;&#x63A5;&#x53E3;</a><i></i></div></li>
+<li><div><a href="#&#x624B;&#x52A8;&#x5728;grub&#x547D;&#x4EE4;&#x884C;&#x63A5;&#x53E3;&#x542F;&#x52A8;&#x7CFB;&#x7EDF;">&#x624B;&#x52A8;&#x5728;grub&#x547D;&#x4EE4;&#x884C;&#x63A5;&#x53E3;&#x542F;&#x52A8;&#x7CFB;&#x7EDF;:</a><i></i></div></li>
+<li><div><a href="#&#x914D;&#x7F6E;&#x6587;&#x4EF6;-bootgrubgrubconf-lt---etcgrubconf&#x7B26;&#x53F7;&#x94FE;&#x63A5;&#x6587;&#x4EF6;">&#x914D;&#x7F6E;&#x6587;&#x4EF6;: /boot/grub/grub.conf &lt;-- /etc/grub.conf(&#x7B26;&#x53F7;&#x94FE;&#x63A5;&#x6587;&#x4EF6;)</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#&#x793A;&#x4F8B;grubconf&#x4E2D;&#x6DFB;&#x52A0;&#x83DC;&#x5355;&#x7F16;&#x8F91;&#x8BA4;&#x8BC1;&#x548C;&#x9009;&#x5B9A;&#x7684;&#x5185;&#x6838;&#x6216;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x65F6;&#x8FDB;&#x884C;&#x8BA4;&#x8BC1;">&#x793A;&#x4F8B;:grub.conf&#x4E2D;&#x6DFB;&#x52A0;&#x83DC;&#x5355;&#x7F16;&#x8F91;&#x8BA4;&#x8BC1;&#x548C;&#x9009;&#x5B9A;&#x7684;&#x5185;&#x6838;&#x6216;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x65F6;&#x8FDB;&#x884C;&#x8BA4;&#x8BC1;</a><i></i></div></li>
+</ul></li>
+<li><div><a href="#&#x8FDB;&#x5165;&#x5355;&#x7528;&#x6237;&#x6A21;&#x5F0F;">&#x8FDB;&#x5165;&#x5355;&#x7528;&#x6237;&#x6A21;&#x5F0F;:</a><i></i></div></li>
+<li><div><a href="#&#x5B89;&#x88C5;grub">&#x5B89;&#x88C5;grub:</a><i></i></div></li>
+</ul>
+</div>
+
+<h3 id="&#x56DE;&#x987E;">&#x56DE;&#x987E;:</h3>
+<p>CentOS 6&#x542F;&#x52A8;&#x6D41;&#x7A0B;:<br>POST --&gt; Boot Sequence(BIOS) --&gt; Boot Loader (MBR) --&gt; Kernel(ramdisk) --&gt; rootfs --&gt; switchroot --&gt; /sbin/init --&gt; (/etc/inittab,/etc/init/*.conf) --&gt; &#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x8FD0;&#x884C;&#x7EA7;&#x522B; --&gt; &#x7CFB;&#x7EDF;&#x521D;&#x59CB;&#x5316;&#x811A;&#x672C; --&gt; &#x5173;&#x95ED;&#x6216;&#x542F;&#x52A8;&#x5BF9;&#x5E94;&#x7EA7;&#x522B;&#x4E0B;&#x7684;&#x670D;&#x52A1; --&gt; &#x542F;&#x52A8;&#x7EC8;&#x7AEF;   </p>
+<h3 id="grubboot-loader">GRUB(Boot Loader):</h3>
+<p>grub 0.x:grub legacy<br>grub 1.x:grub2  </p>
+<h3 id="grub-legacy">grub legacy:</h3>
+<p>stage1:mbr<br>stage1_5:mbr&#x4E4B;&#x540E;&#x7684;&#x6247;&#x533A;,&#x8BA9;stage1&#x4E2D;&#x7684;bootloader&#x80FD;&#x8BC6;&#x522B;stage2&#x6240;&#x5728;&#x7684;&#x5206;&#x533A;&#x4E0A;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;;<br>stage2:&#x78C1;&#x76D8;&#x5206;&#x533A;(/boot/grub)  </p>
+<p>&#x914D;&#x7F6E;&#x6587;&#x4EF6;:/boot/grub/grub.conf &lt;-- /etc/grub.conf(&#x7B26;&#x53F7;&#x94FE;&#x63A5;&#x6587;&#x4EF6;)  </p>
+<p>stage2&#x53CA;&#x5185;&#x6838;&#x7B49;&#x901A;&#x5E38;&#x653E;&#x7F6E;&#x4E8E;&#x4E00;&#x4E2A;&#x57FA;&#x672C;&#x78C1;&#x76D8;&#x5206;&#x533A;:<br>&#x529F;&#x7528;:<br>(1) &#x63D0;&#x4F9B;&#x83DC;&#x5355;&#x3001;&#x5E76;&#x63D0;&#x4F9B;&#x4EA4;&#x4E92;&#x5F0F;&#x63A5;&#x53E3;<br>e:&#x7F16;&#x8F91;&#x6A21;&#x5F0F;,&#x7528;&#x4E8E;&#x7F16;&#x8F91;&#x83DC;&#x5355;;<br>c:&#x547D;&#x4EE4;&#x6A21;&#x5F0F;,&#x4EA4;&#x4E92;&#x5F0F;&#x63A5;&#x53E3;;<br>(2) &#x52A0;&#x8F7D;&#x7528;&#x6237;&#x9009;&#x62E9;&#x7684;&#x5185;&#x6838;&#x6216;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;<br>&#x5141;&#x8BB8;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x7ED9;&#x5185;&#x6838;<br>&#x53EF;&#x9690;&#x85CF;&#x6B64;&#x83DC;&#x5355;<br>(3) &#x4E3A;&#x83DC;&#x5355;&#x63D0;&#x4F9B;&#x4E86;&#x4FDD;&#x62A4;&#x673A;&#x5236;<br>&#x4E3A;&#x7F16;&#x8F91;&#x83DC;&#x5355;&#x8FDB;&#x884C;&#x8BA4;&#x8BC1;<br>&#x4E3A;&#x542F;&#x7528;&#x5185;&#x6838;&#x6216;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8FDB;&#x884C;&#x8BA4;&#x8BC1;  </p>
+<h3 id="grub&#x5982;&#x4F55;&#x8BC6;&#x522B;&#x8BBE;&#x5907;">grub&#x5982;&#x4F55;&#x8BC6;&#x522B;&#x8BBE;&#x5907;:</h3>
+<p><code>(hd#,#)</code>:<br><code>hd#</code>:&#x78C1;&#x76D8;&#x7F16;&#x53F7;,&#x7528;&#x6570;&#x5B57;&#x8868;&#x793A;,&#x4ECE;0&#x5F00;&#x59CB;&#x7F16;&#x53F7;;<br><code>#</code>:&#x5206;&#x533A;&#x7F16;&#x53F7;,&#x7528;&#x6570;&#x5B57;&#x8868;&#x793A;,&#x4ECE;0&#x5F00;&#x59CB;&#x7F16;&#x53F7;;<br><code>(hd0,0)</code>:&#x7B2C;&#x4E00;&#x5757;&#x786C;&#x76D8;&#x7684;,&#x7B2C;&#x4E00;&#x4E2A;&#x5206;&#x533A;;  </p>
+<h3 id="grub&#x7684;&#x547D;&#x4EE4;&#x884C;&#x63A5;&#x53E3;">grub&#x7684;&#x547D;&#x4EE4;&#x884C;&#x63A5;&#x53E3;</h3>
+<p>&#x542F;&#x52A8;CentOS&#x65F6;,&#x6709;5&#x79D2;&#x7B49;&#x5F85;,&#x6309;&#x4EFB;&#x610F;&#x952E;&#x53EF;&#x4EE5;&#x8FDB;&#x5165;grab&#x9009;&#x9879;&#x754C;&#x9762;,&#x6309;<code>C</code>&#x952E;&#x53EF;&#x4EE5;&#x8FDB;&#x5165;grab&#x547D;&#x4EE4;&#x884C;<br><a href="https://images.gitee.com/uploads/images/2019/0806/143404_d48d5fc2_1479682.png" data-lightbox="dd3e20bb-bbce-47d9-8f4a-e9da94c7ca55" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0806/143404_d48d5fc2_1479682.png" alt=""></a><br>&#x6309;<code>e</code>&#x952E;:
+<a href="https://images.gitee.com/uploads/images/2019/0806/144113_bcd73248_1479682.png" data-lightbox="d2ae157d-6be7-41dc-ada0-fcb7d70f1269" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0806/144113_bcd73248_1479682.png" alt=""></a></p>
+<p>help:&#x83B7;&#x53D6;&#x5E2E;&#x52A9;&#x5217;&#x8868;;<br>help KEYWORD:&#x8BE6;&#x7EC6;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;;<br>find (hd#,#)/PATH/TO/SOMEFILE:&#x67E5;&#x627E;&#x5B9A;&#x4F4D;&#x67D0;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5B58;&#x5728;;<br>root (hd#,#):&#x628A;&#x54EA;&#x4E00;&#x4E2A;&#x78C1;&#x76D8;&#x5206;&#x533A;&#x8BBE;&#x5B9A;&#x4E3A;&#x6839;&#x8BBE;&#x5907;;<br>kernel /PATH/TO/KERNEL_FILE:&#x8BBE;&#x5B9A;&#x672C;&#x6B21;&#x542F;&#x52A8;&#x65F6;&#x7528;&#x5230;&#x7684;&#x5185;&#x6838;&#x6587;&#x4EF6;;&#x989D;&#x5916;&#x8FD8;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x8BB8;&#x591A;&#x5185;&#x6838;&#x652F;&#x6301;&#x4F7F;&#x7528;&#x7684;commandline&#x53C2;&#x6570;;<br>&#x4F8B;&#x5982;:init=/path/to/init,selinux=0<br>initrd /PATH/TO/INITRAMFS_FILE:&#x8BBE;&#x5B9A;&#x4E3A;&#x9009;&#x5B9A;&#x7684;&#x5185;&#x6838;&#x63D0;&#x4F9B;&#x989D;&#x5916;&#x6587;&#x4EF6;&#x7684;ramdisk;<br>boot:&#x5F15;&#x5BFC;&#x542F;&#x52A8;&#x9009;&#x5B9A;&#x7684;&#x5185;&#x6838;;  </p>
+<pre><code class="lang-shell">#&#x67E5;&#x770B;grub&#x7684;&#x547D;&#x4EE4;&#x5E2E;&#x52A9;
+help
+#&#x67E5;&#x770B;&#x5177;&#x4F53;&#x547D;&#x4EE4;find&#x5E2E;&#x52A9;
+help find
+#vmlinuz&#x5185;&#x6838;&#x4E3A;&#x5185;&#x6838;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x540D;&#x5F00;&#x5934;,&#x4E24;&#x6B21;tab,&#x53EF;&#x4EE5;&#x67E5;&#x627E;&#x662F;&#x5426;&#x6709;&#x5185;&#x6838;&#x7684;&#x538B;&#x7F29;&#x6587;&#x4EF6;:vmlinuz-version-el#.arch
+find (hd0,0)/vmlinuz
+#&#x8BBE;&#x7F6E;&#x7B2C;&#x4E00;&#x5757;&#x78C1;&#x76D8;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5206;&#x533A;&#x4E3A;&#x6839;&#x8BBE;&#x5907;
+root (hd0,0)
+#&#x8BBE;&#x7F6E;&#x5B8C;&#x6839;&#x8BBE;&#x5907;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;/&#x6765;&#x8BBF;&#x95EE;&#x4E86;,&#x4E24;&#x6B21;tab,&#x53EF;&#x4EE5;&#x67E5;&#x627E;&#x662F;&#x5426;&#x6709;&#x5185;&#x6838;&#x7684;&#x538B;&#x7F29;&#x6587;&#x4EF6;:vmlinuz-version-el#.arch
+find /vmlinuz
+</code></pre>
+<h3 id="&#x624B;&#x52A8;&#x5728;grub&#x547D;&#x4EE4;&#x884C;&#x63A5;&#x53E3;&#x542F;&#x52A8;&#x7CFB;&#x7EDF;">&#x624B;&#x52A8;&#x5728;grub&#x547D;&#x4EE4;&#x884C;&#x63A5;&#x53E3;&#x542F;&#x52A8;&#x7CFB;&#x7EDF;:</h3>
+<pre><code class="lang-shell">#&#x8BBE;&#x5B9A;&#x6839;&#x78C1;&#x76D8;&#x548C;&#x5206;&#x533A;
+root (hd0,0)
+#&#x8BBE;&#x7F6E;&#x5185;&#x6838;&#x6587;&#x4EF6;,&#x6307;&#x5B9A;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x8BBE;&#x5907;(&#x78C1;&#x76D8;),quiet&#x4EE3;&#x8868;&#x9759;&#x9ED8;&#x6A21;&#x5F0F;,&#x4E0D;&#x663E;&#x793A;&#x8BBE;&#x7F6E;&#x4FE1;&#x606F;
+kernel /vmlinuz-2.6.32-754.12.1.el6.x86_64 ro root=/dev/sda3 quiet
+#&#x6307;&#x5B9A;&#x5185;&#x6838;&#x8865;&#x5145;&#x6027;&#x7684;ramdisk&#x6587;&#x4EF6;
+initrd /initramfs-2.6.32-754.12.1.el6.x86_64.img
+#&#x542F;&#x52A8;
+boot
+</code></pre>
+<p>&#x5982;&#x4E0B;&#x56FE;:<br><a href="https://images.gitee.com/uploads/images/2019/0806/145507_8b7617be_1479682.png" data-lightbox="272d0398-dcfb-4e71-bde7-82d23e2b2746" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0806/145507_8b7617be_1479682.png" alt=""></a>  </p>
+<h3 id="&#x914D;&#x7F6E;&#x6587;&#x4EF6;-bootgrubgrubconf----etcgrubconf&#x7B26;&#x53F7;&#x94FE;&#x63A5;&#x6587;&#x4EF6;">&#x914D;&#x7F6E;&#x6587;&#x4EF6;: /boot/grub/grub.conf &lt;-- /etc/grub.conf(&#x7B26;&#x53F7;&#x94FE;&#x63A5;&#x6587;&#x4EF6;)</h3>
+<p>&#x914D;&#x7F6E;&#x9879;:<br>default=#:&#x8BBE;&#x5B9A;&#x9ED8;&#x8BA4;&#x542F;&#x52A8;&#x7684;&#x83DC;&#x5355;&#x9879;;&#x83DC;&#x5355;&#x9879;(title)&#x7F16;&#x53F7;&#x4ECE;0&#x5F00;&#x59CB;;<br>timeout=#:&#x6307;&#x5B9A;&#x83DC;&#x5355;&#x9879;&#x7B49;&#x5F85;&#x9009;&#x9879;&#x9009;&#x62E9;&#x65F6;&#x957F;;<br>splashimage=(hd#,#)/PATH/TO/XPM_PIC_FILE:&#x6307;&#x660E;&#x83DC;&#x5355;&#x80CC;&#x666F;&#x56FE;&#x7247;&#x7684;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;;<br>hiddenmenu:&#x9690;&#x85CF;&#x83DC;&#x5355;(&#x6709;&#x8FD9;&#x4E2A;&#x914D;&#x7F6E;&#x9879;&#x540E;,&#x9ED8;&#x8BA4;&#x7CFB;&#x7EDF;&#x542F;&#x52A8;&#x65F6;&#x65F6;&#x6CA1;&#x6709;&#x83DC;&#x5355;&#x9879;&#x9009;&#x62E9;&#x7684;);<br>password [--md5] STRING:&#x83DC;&#x5355;&#x7F16;&#x8F91;&#x8BA4;&#x8BC1;(&#x8FDB;&#x5165;&#x542F;&#x52A8;&#x83DC;&#x5355;&#x65F6;&#x9700;&#x8981;&#x952E;&#x5165;&#x5BC6;&#x7801;,&#x624D;&#x80FD;&#x7F16;&#x8F91;&#x83DC;&#x5355;);<br>title TITLE:&#x5B9A;&#x4E49;&#x83DC;&#x5355;&#x9879;&quot;&#x6807;&#x9898;&quot;<br>&#x3000;&#x3000;&#x3000;root (hd#,#):grub&#x67E5;&#x627E;stage2&#x53CA;kernel&#x6587;&#x4EF6;&#x6240;&#x5728;&#x7684;&#x8BBE;&#x5907;&#x5206;&#x533A;;&#x4E3A;grub&#x7684;&quot;&#x6839;&quot;;<br>&#x3000;&#x3000;&#x3000;kernel /PATH/TO/VMLINUZ_FILE [PARAMETERS]:&#x542F;&#x52A8;&#x7684;&#x5185;&#x6838;;<br>&#x3000;&#x3000;&#x3000;initrd /PATH/TO/INITRAMFS_FILE:&#x5185;&#x6838;&#x5339;&#x914D;&#x7684;ramfs&#x6587;&#x4EF6;;<br>&#x3000;&#x3000;&#x3000;password [--md5] STRING:&#x542F;&#x52A8;&#x9009;&#x5B9A;&#x7684;&#x5185;&#x6838;&#x6216;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x65F6;&#x8FDB;&#x884C;&#x8BA4;&#x8BC1;;  </p>
+<h4 id="&#x793A;&#x4F8B;grubconf&#x4E2D;&#x6DFB;&#x52A0;&#x83DC;&#x5355;&#x7F16;&#x8F91;&#x8BA4;&#x8BC1;&#x548C;&#x9009;&#x5B9A;&#x7684;&#x5185;&#x6838;&#x6216;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x65F6;&#x8FDB;&#x884C;&#x8BA4;&#x8BC1;">&#x793A;&#x4F8B;:grub.conf&#x4E2D;&#x6DFB;&#x52A0;&#x83DC;&#x5355;&#x7F16;&#x8F91;&#x8BA4;&#x8BC1;&#x548C;&#x9009;&#x5B9A;&#x7684;&#x5185;&#x6838;&#x6216;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x65F6;&#x8FDB;&#x884C;&#x8BA4;&#x8BC1;</h4>
+<p>grub-md5-crypt&#x547D;&#x4EE4;:<br><a href="https://images.gitee.com/uploads/images/2019/0806/153946_fbfeccfd_1479682.png" data-lightbox="2760f7b7-1415-48e8-a459-3729bdb2f08e" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0806/153946_fbfeccfd_1479682.png" alt=""></a></p>
+<p>vim /etc/grub.conf:<br><a href="https://images.gitee.com/uploads/images/2019/0806/155105_c5dbed5d_1479682.png" data-lightbox="add0824a-d486-4f2b-9be7-9d80a5be5bec" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0806/155105_c5dbed5d_1479682.png" alt=""></a></p>
+<p>reboot&#x91CD;&#x542F;&#x540E;:<br><a href="https://images.gitee.com/uploads/images/2019/0806/155328_d342ab6e_1479682.png" data-lightbox="97a22a9e-278e-4dbb-bc48-8ddd88293421" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0806/155328_d342ab6e_1479682.png" alt=""></a><br>&#x5982;&#x679C;&#x9009;&#x62E9;&#x7B2C;&#x4E8C;&#x4E2A;&#x9009;&#x9879;:<a href="https://images.gitee.com/uploads/images/2019/0806/155553_9d97b3b0_1479682.png" data-lightbox="95c9941d-c205-43e0-ae2a-517693d1a985" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0806/155553_9d97b3b0_1479682.png" alt=""></a>,&#x4F1A;&#x63D0;&#x793A;&#x8F93;&#x5165;&#x5BC6;&#x7801;&#x540E;&#x624D;&#x80FD;&#x767B;&#x5F55;&#x7CFB;&#x7EDF;;  </p>
+<h3 id="&#x8FDB;&#x5165;&#x5355;&#x7528;&#x6237;&#x6A21;&#x5F0F;">&#x8FDB;&#x5165;&#x5355;&#x7528;&#x6237;&#x6A21;&#x5F0F;:</h3>
+<p>(1) &#x7F16;&#x8F91;grub&#x83DC;&#x5355;(&#x9009;&#x5B9A;&#x8981;&#x7F16;&#x8F91;&#x7684;title,&#x800C;&#x540E;&#x4F7F;&#x7528;e&#x547D;&#x4EE4;);<br>(2) &#x5728;&#x9009;&#x5B9A;&#x7684;kernel&#x540E;&#x6309;e&#x952E;:
+&#x8FDB;&#x5165;&#x547D;&#x4EE4;&#x884C;,&#x8F93;&#x5165;&#x7A7A;&#x683C;+1,s,S&#x6216;single&#x90FD;&#x53EF;&#x4EE5;;<br>(3) &#x5728;kernel&#x6240;&#x5728;&#x884C;,&#x952E;&#x5165;&quot;b&quot;&#x547D;&#x4EE4;;  </p>
+<h3 id="&#x5B89;&#x88C5;grub">&#x5B89;&#x88C5;grub:</h3>
+<p>(1) grub-install<br>grub-install --root-directory=ROOT /dev/DISK  </p>
+<p>(2) grub<br>root (hd#,#)<br>setup (hd#)  </p>
+<p>&#x5B9E;&#x9A8C;1:&#x65B0;&#x52A0;&#x786C;&#x76D8;,&#x63D0;&#x4F9B;&#x76F4;&#x63A5;&#x5355;&#x72EC;&#x8FD0;&#x884C;bash&#x7CFB;&#x7EDF;;  </p>
+<p>&#x5B9E;&#x9A8C;2:&#x7834;&#x574F;&#x672C;&#x673A;grub stage1,&#x800C;&#x540E;&#x5728;&#x6551;&#x63F4;&#x6A21;&#x5F0F;&#x4E0B;&#x4FEE;&#x590D;&#x4E4B;;  </p>
+
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="32.CentOS系统启动流程.html" class="navigation navigation-prev " aria-label="Previous page: 32.CentOS系统启动流程">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="34.Linux内核功能及模块应用.html" class="navigation navigation-next " aria-label="Next page: 34.Linux内核功能及模块应用">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"33.grub系统配置与使用","level":"1.34","depth":1,"next":{"title":"34.Linux内核功能及模块应用","level":"1.35","depth":1,"path":"pages/34.Linux内核功能及模块应用.md","ref":"pages/34.Linux内核功能及模块应用.md","articles":[]},"previous":{"title":"32.CentOS系统启动流程","level":"1.33","depth":1,"path":"pages/32.CentOS系统启动流程.md","ref":"pages/32.CentOS系统启动流程.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","lightbox","page-treeview","-lunr","-search","search-pro","-sharing","sharing-plus","back-to-top-button","code","splitter","chapter-fold","popup","custom-favicon","livereload"],"pluginsConfig":{"page-treeview":{"collapsed":false,"copyright":"Copyright &#169; aleen42","minHeaderCount":"2","minHeaderDeep":"2"},"chapter-fold":{},"styles":{"website":"styles/website.css"},"livereload":{},"splitter":{},"search-pro":{},"author":"sonin","sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"images/Title/favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"back-to-top-button":{},"title":"面试","custom-favicon":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":true,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":false,"qzone":true},"description":"面试宝典","theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/33.grub系统配置与使用.md","mtime":"2023-07-13T05:42:09.560Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-07-13T06:53:25.815Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

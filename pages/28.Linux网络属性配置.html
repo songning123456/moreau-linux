@@ -1,0 +1,1641 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>28.Linux网络属性配置 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="29.Linux进程及作业管理.html" />
+    
+    
+    <link rel="prev" href="27.计算机网络基础.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Linux宝典
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01.linux基本操作使用.html">
+            
+                <a href="01.linux基本操作使用.html">
+            
+                    
+                    01.linux基本操作使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="02.linux获取命令使用帮助.html">
+            
+                <a href="02.linux获取命令使用帮助.html">
+            
+                    
+                    02.linux获取命令使用帮助
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="03.linux常用基础命令.html">
+            
+                <a href="03.linux常用基础命令.html">
+            
+                    
+                    03.linux常用基础命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04.根文件系统.html">
+            
+                <a href="04.根文件系统.html">
+            
+                    
+                    04.根文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05.Linux系统上的文件类型和历史命令.html">
+            
+                <a href="05.Linux系统上的文件类型和历史命令.html">
+            
+                    
+                    05.Linux系统上的文件类型和历史命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="06.目录文本查看命令.html">
+            
+                <a href="06.目录文本查看命令.html">
+            
+                    
+                    06.目录文本查看命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="07.文件管理命令.html">
+            
+                <a href="07.文件管理命令.html">
+            
+                    
+                    07.文件管理命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="08.glob通配及IO重定向.html">
+            
+                <a href="08.glob通配及IO重定向.html">
+            
+                    
+                    08.glob通配及IO重定向
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="09.用户和组管理概念.html">
+            
+                <a href="09.用户和组管理概念.html">
+            
+                    
+                    09.用户和组管理概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="10.用户和组管理命令.html">
+            
+                <a href="10.用户和组管理命令.html">
+            
+                    
+                    10.用户和组管理命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="11.用户权限管理.html">
+            
+                <a href="11.用户权限管理.html">
+            
+                    
+                    11.用户权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="12.shell变量,算数和逻辑运算及配置文件.html">
+            
+                <a href="12.shell变量,算数和逻辑运算及配置文件.html">
+            
+                    
+                    12.shell变量,算数和逻辑运算及配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="13.grep和基本正则表达式.html">
+            
+                <a href="13.grep和基本正则表达式.html">
+            
+                    
+                    13.grep和基本正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="14.vim编辑器.html">
+            
+                <a href="14.vim编辑器.html">
+            
+                    
+                    14.vim编辑器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="15.文件查找find和特殊权限及facl.html">
+            
+                <a href="15.文件查找find和特殊权限及facl.html">
+            
+                    
+                    15.文件查找find和特殊权限及facl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="16.磁盘及文件系统管理.html">
+            
+                <a href="16.磁盘及文件系统管理.html">
+            
+                    
+                    16.磁盘及文件系统管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="17.shell条件测试,逻辑判断,参数传递.html">
+            
+                <a href="17.shell条件测试,逻辑判断,参数传递.html">
+            
+                    
+                    17.shell条件测试,逻辑判断,参数传递
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="18.RAID技术.html">
+            
+                <a href="18.RAID技术.html">
+            
+                    
+                    18.RAID技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="19.LVM2.html">
+            
+                <a href="19.LVM2.html">
+            
+                    
+                    19.LVM2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="20.btrfs文件系统.html">
+            
+                <a href="20.btrfs文件系统.html">
+            
+                    
+                    20.btrfs文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="21.压缩工具.html">
+            
+                <a href="21.压缩工具.html">
+            
+                    
+                    21.压缩工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="22.Liunx任务计划crontab.html">
+            
+                <a href="22.Liunx任务计划crontab.html">
+            
+                    
+                    22.Liunx任务计划crontab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="23.软件包管理rpm.html">
+            
+                <a href="23.软件包管理rpm.html">
+            
+                    
+                    23.软件包管理rpm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="24.软件包管理yum.html">
+            
+                <a href="24.软件包管理yum.html">
+            
+                    
+                    24.软件包管理yum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="25.shell多分支if和for循环.html">
+            
+                <a href="25.shell多分支if和for循环.html">
+            
+                    
+                    25.shell多分支if和for循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="26.文本处理神器sed.html">
+            
+                <a href="26.文本处理神器sed.html">
+            
+                    
+                    26.文本处理神器sed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="27.计算机网络基础.html">
+            
+                <a href="27.计算机网络基础.html">
+            
+                    
+                    27.计算机网络基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.29" data-path="28.Linux网络属性配置.html">
+            
+                <a href="28.Linux网络属性配置.html">
+            
+                    
+                    28.Linux网络属性配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="29.Linux进程及作业管理.html">
+            
+                <a href="29.Linux进程及作业管理.html">
+            
+                    
+                    29.Linux进程及作业管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="30.Linux进程及作业管理二.html">
+            
+                <a href="30.Linux进程及作业管理二.html">
+            
+                    
+                    30.Linux进程及作业管理二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.32" data-path="31.网络客户端工具和while、untill循环.html">
+            
+                <a href="31.网络客户端工具和while、untill循环.html">
+            
+                    
+                    31.网络客户端工具和while、untill循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33" data-path="32.CentOS系统启动流程.html">
+            
+                <a href="32.CentOS系统启动流程.html">
+            
+                    
+                    32.CentOS系统启动流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.34" data-path="33.grub系统配置与使用.html">
+            
+                <a href="33.grub系统配置与使用.html">
+            
+                    
+                    33.grub系统配置与使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.35" data-path="34.Linux内核功能及模块应用.html">
+            
+                <a href="34.Linux内核功能及模块应用.html">
+            
+                    
+                    34.Linux内核功能及模块应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.36" data-path="35.Linux内核模块功能定制.html">
+            
+                <a href="35.Linux内核模块功能定制.html">
+            
+                    
+                    35.Linux内核模块功能定制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.37" data-path="36.Linux自动化安装anaconda配置定制.html">
+            
+                <a href="36.Linux自动化安装anaconda配置定制.html">
+            
+                    
+                    36.Linux自动化安装anaconda配置定制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.38" data-path="37.Linux系统自动化安装无人值守环境配置部署.html">
+            
+                <a href="37.Linux系统自动化安装无人值守环境配置部署.html">
+            
+                    
+                    37.Linux系统自动化安装无人值守环境配置部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.39" data-path="38.函数编程和case语句.html">
+            
+                <a href="38.函数编程和case语句.html">
+            
+                    
+                    38.函数编程和case语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.40" data-path="39.systemd及systemctl实战.html">
+            
+                <a href="39.systemd及systemctl实战.html">
+            
+                    
+                    39.systemd及systemctl实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.41" data-path="40.SELinux简介.html">
+            
+                <a href="40.SELinux简介.html">
+            
+                    
+                    40.SELinux简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.42" data-path="41.shell数组和字符串处理工具.html">
+            
+                <a href="41.shell数组和字符串处理工具.html">
+            
+                    
+                    41.shell数组和字符串处理工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.43" data-path="42.shell信号捕捉实战.html">
+            
+                <a href="42.shell信号捕捉实战.html">
+            
+                    
+                    42.shell信号捕捉实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.44" data-path="43.awk使用与实践.html">
+            
+                <a href="43.awk使用与实践.html">
+            
+                    
+                    43.awk使用与实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.45" data-path="44.通信加密和解密、公钥、私钥、CA.html">
+            
+                <a href="44.通信加密和解密、公钥、私钥、CA.html">
+            
+                    
+                    44.通信加密和解密、公钥、私钥、CA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.46" data-path="45.OpenSSL.html">
+            
+                <a href="45.OpenSSL.html">
+            
+                    
+                    45.OpenSSL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.47" data-path="46.DNS.html">
+            
+                <a href="46.DNS.html">
+            
+                    
+                    46.DNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.48" data-path="47.DNS and Bind.html">
+            
+                <a href="47.DNS and Bind.html">
+            
+                    
+                    47.DNS and Bind
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.49" data-path="48.http协议及Web服务.html">
+            
+                <a href="48.http协议及Web服务.html">
+            
+                    
+                    48.http协议及Web服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.50" data-path="49.Apache.html">
+            
+                <a href="49.Apache.html">
+            
+                    
+                    49.Apache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.51" data-path="50.LAMP.html">
+            
+                <a href="50.LAMP.html">
+            
+                    
+                    50.LAMP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.52" data-path="51.MariaDB.html">
+            
+                <a href="51.MariaDB.html">
+            
+                    
+                    51.MariaDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.53" data-path="52.php-fpm基础应用与实战.html">
+            
+                <a href="52.php-fpm基础应用与实战.html">
+            
+                    
+                    52.php-fpm基础应用与实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.54" data-path="53.文件共享服务、ftp、vsftp.html">
+            
+                <a href="53.文件共享服务、ftp、vsftp.html">
+            
+                    
+                    53.文件共享服务、ftp、vsftp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.55" data-path="54.nfs服务配置应用与实战.html">
+            
+                <a href="54.nfs服务配置应用与实战.html">
+            
+                    
+                    54.nfs服务配置应用与实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.56" data-path="55.samba服务基础应用.html">
+            
+                <a href="55.samba服务基础应用.html">
+            
+                    
+                    55.samba服务基础应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.57" data-path="56.iptables.html">
+            
+                <a href="56.iptables.html">
+            
+                    
+                    56.iptables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.58" data-path="57.iptables网络防火墙.html">
+            
+                <a href="57.iptables网络防火墙.html">
+            
+                    
+                    57.iptables网络防火墙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.59" data-path="58.iptables_nat路由.html">
+            
+                <a href="58.iptables_nat路由.html">
+            
+                    
+                    58.iptables_nat路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.60" data-path="59.Linux时间服务-chrony.html">
+            
+                <a href="59.Linux时间服务-chrony.html">
+            
+                    
+                    59.Linux时间服务-chrony
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.61" data-path="GitLab安装_CentOS7.html">
+            
+                <a href="GitLab安装_CentOS7.html">
+            
+                    
+                    GitLab安装_CentOS7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.62" data-path="JDK安装.html">
+            
+                <a href="JDK安装.html">
+            
+                    
+                    JDK安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.63" data-path="Linux中kill -2和kill -9的区别.html">
+            
+                <a href="Linux中kill -2和kill -9的区别.html">
+            
+                    
+                    Linux中kill -2和kill -9的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.64" data-path="linux中修改环境变量及生效方法.html">
+            
+                <a href="linux中修改环境变量及生效方法.html">
+            
+                    
+                    linux中修改环境变量及生效方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.65" data-path="Linux查看设置系统时区.html">
+            
+                <a href="Linux查看设置系统时区.html">
+            
+                    
+                    Linux查看设置系统时区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.66" data-path="rc.local脚本开机自启动.html">
+            
+                <a href="rc.local脚本开机自启动.html">
+            
+                    
+                    rc.local脚本开机自启动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.67" data-path="SSH免密登录.html">
+            
+                <a href="SSH免密登录.html">
+            
+                    
+                    SSH免密登录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.68" data-path="Systemd日志管理journal和journalctl使用.html">
+            
+                <a href="Systemd日志管理journal和journalctl使用.html">
+            
+                    
+                    Systemd日志管理journal和journalctl使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.69" data-path="TCP_IP协议总结.html">
+            
+                <a href="TCP_IP协议总结.html">
+            
+                    
+                    TCP_IP协议总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.70" data-path="TCP_UDP结构.html">
+            
+                <a href="TCP_UDP结构.html">
+            
+                    
+                    TCP_UDP结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.71" data-path="VMware虚拟机克隆CentOS7并分别设置静态IP.html">
+            
+                <a href="VMware虚拟机克隆CentOS7并分别设置静态IP.html">
+            
+                    
+                    VMware虚拟机克隆CentOS7并分别设置静态IP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.72" data-path="Vmware虚拟机问题解决方案.html">
+            
+                <a href="Vmware虚拟机问题解决方案.html">
+            
+                    
+                    Vmware虚拟机问题解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.73" data-path="window下面git公钥的配置.html">
+            
+                <a href="window下面git公钥的配置.html">
+            
+                    
+                    window下面git公钥的配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.74" data-path="文件描述符.html">
+            
+                <a href="文件描述符.html">
+            
+                    
+                    文件描述符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.75" data-path="最小化安装centos7.9.html">
+            
+                <a href="最小化安装centos7.9.html">
+            
+                    
+                    最小化安装centos7.9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.76" data-path="查看服务器状态工具.html">
+            
+                <a href="查看服务器状态工具.html">
+            
+                    
+                    查看服务器状态工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >28.Linux网络属性配置</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+<li> 
+<ul>
+<li> 
+<ul>
+<li><div><a href="#ifconfig&#x547D;&#x4EE4;&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x53CA;&#x5730;&#x5740;&#x67E5;&#x770B;&#x548C;&#x7BA1;&#x7406;">ifconfig&#x547D;&#x4EE4;:&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x53CA;&#x5730;&#x5740;&#x67E5;&#x770B;&#x548C;&#x7BA1;&#x7406;</a><i></i></div></li>
+<li><div><a href="#route&#x547D;&#x4EE4;&#x8DEF;&#x7531;&#x67E5;&#x770B;&#x53CA;&#x7BA1;&#x7406;">route&#x547D;&#x4EE4;:&#x8DEF;&#x7531;&#x67E5;&#x770B;&#x53CA;&#x7BA1;&#x7406;</a><i></i></div></li>
+</ul></li>
+</ul></li>
+<li><div><a href="#&#x6307;&#x5B9A;&#x5220;&#x9664;">&#x6307;&#x5B9A;&#x5220;&#x9664;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li> 
+<ul>
+<li><div><a href="#netstat&#x547D;&#x4EE4;">netstat&#x547D;&#x4EE4;</a><i></i></div></li>
+<li><div><a href="#ifupifdown&#x547D;&#x4EE4;">ifup/ifdown&#x547D;&#x4EE4;:</a><i></i></div></li>
+<li><div><a href="#&#x914D;&#x7F6E;&#x4E3B;&#x673A;&#x540D;">&#x914D;&#x7F6E;&#x4E3B;&#x673A;&#x540D;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#hostname&#x547D;&#x4EE4;">hostname&#x547D;&#x4EE4;:</a><i></i></div></li>
+<li><div><a href="#hostnamectl&#x547D;&#x4EE4;centos7">hostnamectl&#x547D;&#x4EE4;(CentOS7):</a><i></i></div></li>
+<li><div><a href="#&#x914D;&#x7F6E;&#x6587;&#x4EF6;etcsysconfignetwork">&#x914D;&#x7F6E;&#x6587;&#x4EF6;:/etc/sysconfig/network</a><i></i></div></li>
+</ul></li>
+<li><div><a href="#&#x914D;&#x7F6E;dns&#x670D;&#x52A1;&#x5668;&#x6307;&#x5411;">&#x914D;&#x7F6E;DNS&#x670D;&#x52A1;&#x5668;&#x6307;&#x5411;</a><i></i></div></li>
+<li><div><a href="#iproute&#x547D;&#x4EE4;&#x5BB6;&#x65CF;">iproute&#x547D;&#x4EE4;&#x5BB6;&#x65CF;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#ip&#x547D;&#x4EE4;">ip&#x547D;&#x4EE4;:</a><i></i></div></li>
+<li><div><a href="#ip-link&#x7F51;&#x7EDC;&#x8BBE;&#x5907;&#x7684;&#x914D;&#x7F6E;">ip link:&#x7F51;&#x7EDC;&#x8BBE;&#x5907;&#x7684;&#x914D;&#x7F6E;</a><i></i></div></li>
+<li><div><a href="#ip-netns&#x7BA1;&#x7406;&#x7F51;&#x7EDC;&#x7684;&#x540D;&#x79F0;&#x7A7A;&#x95F4;">ip netns:&#x7BA1;&#x7406;&#x7F51;&#x7EDC;&#x7684;&#x540D;&#x79F0;&#x7A7A;&#x95F4;</a><i></i></div></li>
+<li><div><a href="#ip-address-&#x7BA1;&#x7406;&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x7684;ip&#x5730;&#x5740;">ip address &#x7BA1;&#x7406;&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x7684;ip&#x5730;&#x5740;</a><i></i></div></li>
+<li><div><a href="#ip-route-&#x8DEF;&#x7531;&#x8868;&#x7BA1;&#x7406;">ip route &#x8DEF;&#x7531;&#x8868;&#x7BA1;&#x7406;</a><i></i></div></li>
+</ul></li>
+<li><div><a href="#ss&#x547D;&#x4EE4;">ss&#x547D;&#x4EE4;:</a><i></i></div></li>
+<li><div><a href="#&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#ifcfg-iface&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x53C2;&#x6570;">ifcfg-IFACE&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x53C2;&#x6570;:</a><i></i></div></li>
+</ul></li>
+<li><div><a href="#&#x8DEF;&#x7531;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x8DEF;&#x7531;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</a><i></i></div></li>
+<li><div><a href="#&#x7ED9;&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x914D;&#x7F6E;&#x591A;&#x4E2A;&#x5730;&#x5740;">&#x7ED9;&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x914D;&#x7F6E;&#x591A;&#x4E2A;&#x5730;&#x5740;:</a><i></i></div></li>
+<li><div><a href="#nmcli&#x547D;&#x4EE4;">nmcli&#x547D;&#x4EE4;</a><i></i></div></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+
+<h3 id="ifcfg&#x547D;&#x4EE4;&#x5BB6;&#x65CF;ifconfigroutenetstat">ifcfg&#x547D;&#x4EE4;&#x5BB6;&#x65CF;:ifconfig,route,netstat</h3>
+<h3 id="ifconfig&#x547D;&#x4EE4;&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x53CA;&#x5730;&#x5740;&#x67E5;&#x770B;&#x548C;&#x7BA1;&#x7406;">ifconfig&#x547D;&#x4EE4;:&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x53CA;&#x5730;&#x5740;&#x67E5;&#x770B;&#x548C;&#x7BA1;&#x7406;</h3>
+<p>ifconfig [INTERFACE]<br>ifconfig -a:&#x663E;&#x793A;&#x6240;&#x6709;&#x7F51;&#x5361;&#x63A5;&#x53E3;,&#x5305;&#x62EC;inactive&#x72B6;&#x6001;&#x7684;&#x7F51;&#x5361;&#x63A5;&#x53E3;;  </p>
+<p>ifconfig INTERFACE [aftype] options | address ...<br>ifconfig INTERFACE IP/MASK [up|down]<br>ifconfig INTERFACE IP netmask NETMASK  </p>
+<p>options:<br>[-]promisc:&#x6DF7;&#x6742;&#x6A21;&#x5F0F;  </p>
+<p><a href="https://images.gitee.com/uploads/images/2019/0807/082010_c6179626_1479682.png" data-lightbox="606de456-71c3-45bb-8563-88bb1c57a88a" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0807/082010_c6179626_1479682.png" alt=""></a></p>
+<p>flags:&#x6807;&#x5FD7;&#x4F4D;;<br>UP:&#x7F51;&#x5361;&#x5904;&#x4E8E;&#x542F;&#x7528;&#x72B6;&#x6001;;<br>BROADCAST:&#x8868;&#x793A;&#x652F;&#x6301;&#x5E7F;&#x64AD;&#x529F;&#x80FD;;<br>MULTICAST:&#x7EC4;&#x64AD;(&#x591A;&#x64AD;)&#x529F;&#x80FD;;<br>RUNNING:&#x8868;&#x793A;&#x8FD0;&#x884C;&#x5F53;&#x4E2D;;<br>mtu(Maximum Transmission Unit):&#x6700;&#x5927;&#x4F20;&#x8F93;&#x5355;&#x5143;;<br>inet(Internet Address):IP&#x5730;&#x5740;;<br>netmask:&#x5B50;&#x7F51;&#x63A9;&#x7801;;<br>broadcast 192.168.147.255:&#x5E7F;&#x64AD;&#x5730;&#x5740;;<br>inet6:IPV6&#x5730;&#x5740;;<br>ether:&#x4EE5;&#x592A;&#x7F51;&#x5730;&#x5740;;<br>txqueuelen:&#x4F20;&#x8F93;&#x961F;&#x5217;&#x957F;&#x5EA6;;<br>RX packets 158476:&#x8FD9;&#x6B21;&#x7F51;&#x5361;&#x6FC0;&#x6D3B;&#x540E;&#x63A5;&#x6536;&#x5230;&#x7684;&#x62A5;&#x6587;&#x7684;&#x6570;&#x91CF;;<br>bytes 158456927 (151.1 MiB):&#x63A5;&#x6536;&#x62A5;&#x6587;&#x7684;&#x603B;&#x5927;&#x5C0F;&#x662F;&#x591A;&#x5C11;;<br>RX errors 0:&#x63A5;&#x6536;&#x65F6;&#x7684;&#x9519;&#x8BEF;&#x4E2A;&#x6570;; dropped 0:&#x4E22;&#x5305;&#x7684;&#x6570;&#x91CF;;overruns 0:&#x6EA2;&#x51FA;&#x7684;&#x6570;&#x91CF;;frame 0:&#x5E27;;<br>TX packets 73688:&#x4F20;&#x51FA;&#x7684;&#x4E2A;&#x6570;;<br>collisions 0:&#x51B2;&#x7A81;&#x7684;&#x4E2A;&#x6570;;  </p>
+<pre><code class="lang-shell">#&#x4FEE;&#x6539;ip&#x548C;&#x5B50;&#x7F51;&#x63A9;&#x7801;
+ifconfig ens33 192.168.147.147/24 up
+ifconfig ens33 192.168.147.101 netmask 255.255.255.0
+</code></pre>
+<p>&#x6DF7;&#x6742;&#x6A21;&#x5F0F;:<br><a href="https://images.gitee.com/uploads/images/2019/0730/135646_6e185f25_1479682.png" data-lightbox="09e7a83b-cf27-4da4-908b-d7b8a8339b0c" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0730/135646_6e185f25_1479682.png" alt=""></a></p>
+<p>&#x6CE8;&#x610F;:ifconfig&#x547D;&#x4EE4;&#x4FEE;&#x6539;&#x7ACB;&#x5373;&#x9001;&#x5F80;&#x5185;&#x6838;&#x4E2D;&#x7684;TCP/IP&#x534F;&#x8BAE;&#x6808;,&#x5E76;&#x751F;&#x6548;  </p>
+<p>&#x7BA1;&#x7406;IPv6&#x5730;&#x5740;:<br>add address/prefixlen<br>del address/prefixlen  </p>
+<h3 id="route&#x547D;&#x4EE4;&#x8DEF;&#x7531;&#x67E5;&#x770B;&#x53CA;&#x7BA1;&#x7406;">route&#x547D;&#x4EE4;:&#x8DEF;&#x7531;&#x67E5;&#x770B;&#x53CA;&#x7BA1;&#x7406;</h3>
+<p>&#x8DEF;&#x7531;&#x6761;&#x76EE;&#x7C7B;&#x578B;:<br>&#x4E3B;&#x673A;&#x8DEF;&#x7531;:&#x76EE;&#x6807;&#x5730;&#x5740;&#x4E3A;&#x5355;&#x4E2A;IP;<br>&#x7F51;&#x7EDC;&#x8DEF;&#x7531;:&#x76EE;&#x6807;&#x5730;&#x5740;&#x4E3A;IP&#x7F51;&#x7EDC;;<br>&#x9ED8;&#x8BA4;&#x8DEF;&#x7531;:&#x76EE;&#x6807;&#x4E3A;&#x4EFB;&#x610F;&#x4E3B;&#x673A;,0.0.0.0/0.0.0.0  </p>
+<p>&#x67E5;&#x770B;:<br>route -n  </p>
+<pre><code class="lang-shell">route -n
+</code></pre>
+<p>&#x6DFB;&#x52A0;:<br>route add [-net|-host] target <a href="&#x4E0B;&#x4E00;&#x8DF3;&#x5730;&#x5740;">netmask Nm</a> [[dev] If]<br>-net:&#x7F51;&#x7EDC;&#x8DEF;&#x7531;<br>-host:&#x4E3B;&#x673A;&#x8DEF;&#x7531;<br>target:ip&#x5730;&#x5740;<br>netmask Nm:&#x5B50;&#x7F51;&#x63A9;&#x7801;  </p>
+<p>[[dev] If]:&#x6307;&#x5B9A;&#x81EA;&#x5DF1;&#x7684;&#x54EA;&#x4E2A;&#x7F51;&#x5361;&#x63A5;&#x53E3;  </p>
+<pre><code class="lang-shell">route add -net 10.0.0.0/8 gw 192.168.147.101 dev ens33  
+#&#x6DFB;&#x52A0;&#x9ED8;&#x8BA4;&#x8DEF;&#x7531;
+route add -net 0.0.0.0/0 gw 192.168.147.102 dev ens33
+route add default gw 192.168.147.104
+</code></pre>
+<p>&#x5220;&#x9664;:  </p>
+<h1 id="&#x6307;&#x5B9A;&#x5220;&#x9664;">&#x6307;&#x5B9A;&#x5220;&#x9664;</h1>
+<p>route del [-net|-host] target [gw Gw] [netmask Nm] [[dev] If] </p>
+<pre><code class="lang-shell">route del -net  10.0.0.0/8 gw 192.168.147.101
+#&#x5220;&#x9664;&#x9ED8;&#x8BA4;&#x8DEF;&#x7531;
+route del default
+</code></pre>
+<h3 id="netstat&#x547D;&#x4EE4;">netstat&#x547D;&#x4EE4;</h3>
+<p>&#x663E;&#x793A;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x3001;&#x8DEF;&#x7531;&#x8868;&#x3001;&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x3001;&#x4F2A;&#x88C5;&#x8FDE;&#x63A5;&#x3001;&#x591A;&#x64AD;(&#x7EC4;&#x64AD;)&#x6210;&#x5458;&#x5173;&#x7CFB;  </p>
+<p>&#x663E;&#x793A;&#x8DEF;&#x7531;&#x4FE1;&#x606F;: netstat -rn<br>-r:&#x663E;&#x793A;&#x5185;&#x6838;&#x8DEF;&#x7531;&#x8868;<br>-n:&#x6570;&#x5B57;&#x683C;&#x5F0F;(IP&#x683C;&#x5F0F;)  </p>
+<pre><code class="lang-shell">netstat -rn
+</code></pre>
+<p>&#x663E;&#x793A;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;:<br>netstat [--tcp|-t] [--udp|-u] [--raw|-w] [--udplite|-U] [--sctp|-S] [--listening|-l] [--all|-a] [--numeric|-n]  [--extend|-e[--extend|-e]] [--program|-p]     </p>
+<p>-t:TCP&#x534F;&#x8BAE;&#x7684;&#x76F8;&#x5173;&#x8FDE;&#x63A5;,&#x8FDE;&#x63A5;&#x5747;&#x6709;&#x5176;&#x72B6;&#x6001;;FSM(Finite State Machine)<br>-u:UDP&#x76F8;&#x5173;&#x7684;&#x8FDE;&#x63A5;<br>-w:raw socket&#x76F8;&#x5173;&#x8FDE;&#x63A5;<br>-l:&#x5904;&#x4E8E;&#x76D1;&#x542C;&#x72B6;&#x6001;&#x7684;&#x8FDE;&#x63A5;<br>-a:&#x6240;&#x6709;&#x72B6;&#x6001;<br>-n:&#x4EE5;&#x6570;&#x5B57;&#x683C;&#x5F0F;&#x663E;&#x793A;IP&#x548C;Port<br>-e:&#x6269;&#x5C55;&#x683C;&#x5F0F;<br>-p:&#x663E;&#x793A;&#x76F8;&#x5173;&#x7684;&#x8FDB;&#x7A0B;&#x53CA;PID  </p>
+<p>&#x4F20;&#x8F93;&#x5C42;&#x534F;&#x8BAE;:<br>tcp:&#x9762;&#x5411;&#x8FDE;&#x63A5;&#x7684;&#x534F;&#x8BAE;;&#x901A;&#x4FE1;&#x5F00;&#x59CB;&#x4E4B;&#x524D;,&#x8981;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x865A;&#x94FE;&#x8DEF;;&#x901A;&#x4FE1;&#x5B8C;&#x6210;&#x540E;&#x8FD8;&#x8981;&#x62C6;&#x9664;&#x8FDE;&#x63A5;;<br>udp:&#x65E0;&#x8FDE;&#x63A5;&#x534F;&#x8BAE;;&#x76F4;&#x63A5;&#x53D1;&#x9001;&#x6570;&#x636E;&#x62A5;&#x6587;;  </p>
+<p>&#x5E38;&#x7528;&#x7EC4;&#x5408;:<br>-tan&#x3001;-uan&#x3001;-tnl&#x3001;-unl&#x3001;-tunlp  </p>
+<pre><code class="lang-shell">#tcp&#x8FDE;&#x63A5;&#x7684;LISTEN&#x72B6;&#x6001;&#x8FDE;&#x63A5;,&#x5E76;&#x663E;&#x793A;&#x6570;&#x5B57;&#x683C;&#x5F0F;IP&#x548C;Port&#x53CA;&#x8FDB;&#x7A0B;&#x53CA;PID
+netstat -tlnp
+#tcp&#x8FDE;&#x63A5;&#x7684;&#x6240;&#x6709;&#x72B6;&#x6001;&#x8FDE;&#x63A5;,&#x5305;&#x62EC;LISTEN&#x3001;ESTABLISHED&#x7B49;&#x6240;&#x6709;&#x72B6;&#x6001;&#x8FDE;&#x63A5;,&#x5E76;&#x663E;&#x793A;&#x6570;&#x5B57;&#x683C;&#x5F0F;IP&#x548C;Port&#x53CA;&#x8FDB;&#x7A0B;&#x53CA;PID
+netstat -tanp
+</code></pre>
+<p>&#x663E;&#x793A;&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x7684;&#x7EDF;&#x8BA1;&#x6570;&#x636E;:<br> netstat  {--interfaces|-i} [iface] </p>
+<pre><code class="lang-shell">#&#x663E;&#x793A;&#x6240;&#x6709;&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x7EDF;&#x8BA1;&#x6570;&#x636E;
+netstat -i
+#&#x663E;&#x793A;&#x6307;&#x5B9A;&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x7EDF;&#x8BA1;&#x6570;&#x636E;,&#x6CE8;-I&#x548C;&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x540D;&#x4E4B;&#x95F4;&#x6CA1;&#x6709;&#x7A7A;&#x683C;
+netstat -Iens33
+</code></pre>
+<h3 id="ifupifdown&#x547D;&#x4EE4;">ifup/ifdown&#x547D;&#x4EE4;:</h3>
+<p>&#x6CE8;&#x610F;:&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x6587;&#x4EF6;/etc/sysconfig/network-scripts/ifcfg-IFACE&#x6765;&#x8BC6;&#x522B;&#x63A5;&#x53E3;&#x5E76;&#x5B8C;&#x6210;&#x914D;&#x7F6E;;  </p>
+<pre><code class="lang-shell">ifdown ens33  
+ifup ens33
+</code></pre>
+<h3 id="&#x914D;&#x7F6E;&#x4E3B;&#x673A;&#x540D;">&#x914D;&#x7F6E;&#x4E3B;&#x673A;&#x540D;</h3>
+<h4 id="hostname&#x547D;&#x4EE4;">hostname&#x547D;&#x4EE4;:</h4>
+<p>&#x67E5;&#x770B;:hostname<br>&#x914D;&#x7F6E;:hostname HOSTNAME  </p>
+<pre><code class="lang-shell">#&#x8BBE;&#x7F6E;&#x4E3B;&#x673A;&#x540D;&#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x6709;&#x6548;,&#x91CD;&#x542F;&#x5219;&#x65E0;&#x6548;
+hostname abc.com
+hostname
+</code></pre>
+<h4 id="hostnamectl&#x547D;&#x4EE4;centos7">hostnamectl&#x547D;&#x4EE4;(CentOS7):</h4>
+<pre><code class="lang-shell">#&#x663E;&#x793A;&#x5F53;&#x524D;&#x4E3B;&#x673A;&#x540D;&#x4FE1;&#x606F;
+hostnamectl status
+
+#&#x8BBE;&#x5B9A;&#x4E3B;&#x673A;&#x540D;,&#x6C38;&#x4E45;&#x6709;&#x6548;
+hostnamectl set-hostname localhost.localdomain1
+</code></pre>
+<h4 id="&#x914D;&#x7F6E;&#x6587;&#x4EF6;etcsysconfignetwork">&#x914D;&#x7F6E;&#x6587;&#x4EF6;:/etc/sysconfig/network</h4>
+<p><code>HOSTNAME=&lt;HOSTNAME&gt;</code>  </p>
+<p>&#x6CE8;&#x610F;:&#x6B64;&#x65B9;&#x6CD5;&#x7684;&#x8BBE;&#x7F6E;&#x4E0D;&#x4F1A;&#x7ACB;&#x5373;&#x751F;&#x6548;;&#x4F46;&#x91CD;&#x542F;&#x4EE5;&#x540E;&#x4F1A;&#x4E00;&#x76F4;&#x6709;&#x6548;;  </p>
+<p>vim /etc/sysconfig/network:  </p>
+<pre><code class="lang-shell">HOSTNAME=localhost.abc
+</code></pre>
+<h3 id="&#x914D;&#x7F6E;dns&#x670D;&#x52A1;&#x5668;&#x6307;&#x5411;">&#x914D;&#x7F6E;DNS&#x670D;&#x52A1;&#x5668;&#x6307;&#x5411;</h3>
+<p>&#x914D;&#x7F6E;&#x6587;&#x4EF6;:/etc/resolv.conf,&#x4F8B;&#x5982;&#x4EE5;&#x4E0B;&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x6307;&#x5B9A;&#x4E86;dns&#x7684;ip&#x5730;&#x5740;    </p>
+<pre><code class="lang-shell">nameserver 192.168.147.2
+</code></pre>
+<p>&#x5982;&#x4F55;&#x6D4B;&#x8BD5;(host/nslookup/dig):    </p>
+<p>&#x5C06;&#x57DF;&#x540D;&#x8F6C;&#x6362;&#x4E3A;ip<br>dig -t A FQDN<br>FQDN--&gt;IP  </p>
+<p>&#x5C06;ip&#x53CD;&#x89E3;&#x6790;&#x4E3A;&#x57DF;&#x540D;,&#x4E92;&#x8054;&#x7F51;&#x4E0A;&#x5927;&#x90E8;&#x5206;&#x670D;&#x52A1;&#x5668;&#x90FD;&#x4E0D;&#x652F;&#x6301;&#x53CD;&#x89E3;<br>dig -x IP<br>IP--&gt;FQDN  </p>
+<pre><code class="lang-shell">#&#x8FD9;&#x91CC;&#x7684;A&#x4EE3;&#x8868;&#x8981;&#x6307;&#x5B9A;&#x7684;&#x57DF;&#x540D;
+dig -t A www.baidu.com
+#&#x5C06;ip&#x53CD;&#x89E3;&#x6790;&#x4E3A;&#x57DF;&#x540D;,&#x4E92;&#x8054;&#x7F51;&#x4E0A;&#x5927;&#x90E8;&#x5206;&#x670D;&#x52A1;&#x5668;&#x90FD;&#x4E0D;&#x652F;&#x6301;&#x53CD;&#x89E3;
+dig -x 180.101.49.11
+</code></pre>
+<h3 id="iproute&#x547D;&#x4EE4;&#x5BB6;&#x65CF;">iproute&#x547D;&#x4EE4;&#x5BB6;&#x65CF;</h3>
+<h4 id="ip&#x547D;&#x4EE4;">ip&#x547D;&#x4EE4;:</h4>
+<p>&#x67E5;&#x770B;&#x53CA;&#x7BA1;&#x7406;&#x8DEF;&#x7531;&#x3001;&#x8BBE;&#x5907;&#x3001;&#x7B56;&#x7565;&#x8DEF;&#x7531;&#x53CA;&#x96A7;&#x9053;<br>ip [OPTIONS] OBJECT {COMMAND | help}<br>OBJECT:={link | addr | route | netns}  </p>
+<p>ip OBJECT:  </p>
+<h4 id="ip-link&#x7F51;&#x7EDC;&#x8BBE;&#x5907;&#x7684;&#x914D;&#x7F6E;">ip link:&#x7F51;&#x7EDC;&#x8BBE;&#x5907;&#x7684;&#x914D;&#x7F6E;</h4>
+<p>ip link set:&#x4FEE;&#x6539;&#x8BBE;&#x5907;&#x5C5E;&#x6027;<br>dev NAME(default):&#x6307;&#x660E;&#x8981;&#x7BA1;&#x7406;&#x7684;&#x8BBE;&#x5907;,dev&#x5173;&#x952E;&#x5B57;&#x53EF;&#x7701;&#x7565;;<br>up&#x548C;down;<br>multicast on&#x6216;multicast off:&#x542F;&#x7528;&#x6216;&#x7981;&#x7528;&#x591A;&#x64AD;&#x529F;&#x80FD;;<br>name NAME:&#x91CD;&#x547D;&#x540D;&#x63A5;&#x53E3;;<br>mtu NUMBER:&#x8BBE;&#x7F6E;MTU&#x7684;&#x5927;&#x5C0F;,&#x9ED8;&#x8BA4;&#x4E3A;1500;<br>netns PID:ns&#x4E3A;namespace,&#x7528;&#x4E8E;&#x5C06;&#x7F51;&#x7EDC;&#x63A5;&#x53E3;&#x79FB;&#x52A8;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x7F51;&#x7EDC;&#x540D;&#x79F0;&#x7A7A;&#x95F4;;  </p>
+<p>ip link show:&#x663E;&#x793A;&#x8BBE;&#x5907;&#x5C5E;&#x6027;   </p>
+<pre><code class="lang-shell">#&#x663E;&#x793A;&#x8BBE;&#x5907;&#x5C5E;&#x6027;
+ip link show
+#&#x7981;&#x7528;ens33&#x7F51;&#x5361;
+ip link set ens33 down
+#&#x542F;&#x7528;ens33&#x7F51;&#x5361;
+p link set ens33 up
+
+#&#x542F;&#x7528;&#x548C;&#x7981;&#x7528;&#x591A;&#x64AD;(&#x7EC4;&#x64AD;)
+link set ens33 multicast off
+ip link show ens33
+ip link set ens33 multicast on
+ip link show ens33
+
+#&#x4FEE;&#x6539;&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x540D;&#x79F0;
+ip link set ens33 down
+ip link set ens33 name ens333
+ip link show
+
+#&#x663E;&#x793A;&#x7B80;&#x8981;&#x4F7F;&#x7528;&#x5E2E;&#x52A9;
+ip link help
+</code></pre>
+<h4 id="ip-netns&#x7BA1;&#x7406;&#x7F51;&#x7EDC;&#x7684;&#x540D;&#x79F0;&#x7A7A;&#x95F4;">ip netns:&#x7BA1;&#x7406;&#x7F51;&#x7EDC;&#x7684;&#x540D;&#x79F0;&#x7A7A;&#x95F4;</h4>
+<p>ip netns list:&#x5217;&#x51FA;&#x6240;&#x6709;&#x7684;netns 
+ip netns add NAME:&#x521B;&#x5EFA;&#x6307;&#x5B9A;&#x7684;netns<br>ip netns del NAME:&#x5220;&#x9664;&#x6307;&#x5B9A;&#x7684;netns<br>ip netns exec NAME COMMAND:&#x5728;&#x6307;&#x5B9A;&#x7684;netns&#x4E2D;&#x8FD0;&#x884C;&#x547D;&#x4EE4;    </p>
+<pre><code class="lang-shell">#&#x6DFB;&#x52A0;&#x540D;&#x4E3A;mynet&#x7684;&#x540D;&#x79F0;&#x7A7A;&#x95F4;
+ip netns add mynet
+#&#x5C06;ens33&#x6DFB;&#x52A0;&#x5230;netns&#x4E0B;
+ip link set ens33 netns mynet 
+#&#x67E5;&#x770B;ens33&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x6CA1;&#x6709;&#x4E86;
+ip link show
+#&#x5728;mynet&#x540D;&#x79F0;&#x7A7A;&#x95F4;&#x4E2D;&#x67E5;&#x770B;&#x7F51;&#x5361;&#x63A5;&#x53E3;
+ip netns exec mynet ip link show
+#&#x5220;&#x9664;mynet&#x540D;&#x79F0;&#x7A7A;&#x95F4;
+ip netns del mynet
+#&#x67E5;&#x770B;ens33&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x53C8;&#x56DE;&#x6765;&#x4E86;
+ip link show
+</code></pre>
+<h4 id="ip-address-&#x7BA1;&#x7406;&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x7684;ip&#x5730;&#x5740;">ip address &#x7BA1;&#x7406;&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x7684;ip&#x5730;&#x5740;</h4>
+<p>ip address add &#x6DFB;&#x52A0;ip&#x5730;&#x5740;:<br>ip addr add IFADDR dev IFACE  </p>
+<p>[scope SCOPE_VALUE]:<br>global:&#x5168;&#x5C40;&#x53EF;&#x7528;;(&#x672C;&#x673A;&#x81EA;&#x5DF1;ping&#x81EA;&#x5DF1;&#x53EF;&#x4EE5;&#x7684;,&#x8FD9;&#x4E2A;&#x5730;&#x5740;&#x548C;&#x5176;&#x4ED6;&#x4E3B;&#x673A;&#x901A;&#x4FE1;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x7684;)<br>link:&#x63A5;&#x53E3;&#x53EF;&#x7528;;(&#x672C;&#x673A;&#x81EA;&#x5DF1;ping&#x81EA;&#x5DF1;&#x53EF;&#x4EE5;&#x7684;,&#x522B;&#x4EBA;ping&#x8FD9;&#x4E2A;&#x5730;&#x5740;ping&#x4E0D;&#x901A;;&#x8FD9;&#x4E2A;&#x5730;&#x5740;&#x4E0D;&#x7528;&#x4E8E;&#x548C;&#x522B;&#x4EBA;&#x901A;&#x4FE1;)<br>host:&#x4EC5;&#x672C;&#x673A;&#x5185;&#x90E8;&#x53EF;&#x7528;;(&#x51FA;&#x4E86;&#x672C;&#x673A;&#x522B;&#x4EBA;&#x770B;&#x4E0D;&#x89C1;)  </p>
+<p>ip address delete &#x5220;&#x9664;ip&#x5730;&#x5740;<br>ip address flush &#x6E05;&#x7A7A;&#x6240;&#x6709;ip&#x5730;&#x5740;<br>ip address show &#x663E;&#x793A;&#x6240;&#x6709;&#x7F51;&#x5361;&#x63A5;&#x53E3;ip&#x5730;&#x5740;  </p>
+<pre><code class="lang-shell">#&#x8BBE;&#x7F6E;ens33&#x7F51;&#x5361;&#x63A5;&#x53E3;ip&#x4E3A;&#x65E0;
+ifconfig ens33 0
+#&#x6DFB;&#x52A0;ens33&#x7F51;&#x5361;&#x63A5;&#x53E3;ip&#x5730;&#x5740;
+ip addr add 192.168.147.153/24 dev ens33
+#&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x591A;&#x4E2A;ip&#x5730;&#x5740;&#x53D1;&#x5230;&#x540C;&#x4E00;&#x4E2A;&#x7F51;&#x5361;&#x63A5;&#x53E3;
+ip addr add 192.168.147.154/24 dev ens33
+#&#x53EF;&#x4EE5;&#x770B;&#x5230;ens33&#x4E0A;&#x7684;&#x591A;&#x4E2A;ip&#x5730;&#x5740;
+ip addr show ens33
+#ifconfig&#x770B;&#x4E0D;&#x5230;&#x591A;&#x4E2A;ip&#x5730;&#x5740;,&#x53EA;&#x770B;&#x5230;&#x6DFB;&#x52A0;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5730;&#x5740;
+ifconfig
+#&#x6DFB;&#x52A0;&#x5E26;&#x522B;&#x540D;&#x7684;,&#x4F7F;&#x7528;label&#x6307;&#x5B9A;&#x522B;&#x540D;,ifconfig&#x5C31;&#x80FD;&#x770B;&#x5230;&#x65B0;&#x6DFB;&#x52A0;&#x7684;ip&#x5730;&#x5740;&#x4E86;
+ip addr add 192.168.147.155/24 dev ens33 label ens33:0
+#&#x518D;&#x6B21;&#x67E5;&#x770B;
+ifconfig
+
+#&#x5220;&#x9664;&#x6307;&#x5B9A;&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x4E0B;&#x7684;&#x6307;&#x5B9A;ip
+ip addr del 192.168.147.155/24 dev ens33
+#&#x67E5;&#x770B;192.168.147.155&#x8FD9;&#x4E2A;&#x5730;&#x5740;&#x5DF2;&#x7ECF;&#x88AB;&#x5220;&#x9664;
+ip addr show
+
+#&#x6E05;&#x7A7A;&#x8BE5;&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x7684;&#x6240;&#x6709;ip&#x5730;&#x5740;
+ip addr flush dev ens33
+#&#x67E5;&#x770B;&#x5730;&#x5740;&#x5DF2;&#x88AB;&#x6E05;&#x7A7A;
+ip addr show ens33
+</code></pre>
+<h4 id="ip-route-&#x8DEF;&#x7531;&#x8868;&#x7BA1;&#x7406;">ip route &#x8DEF;&#x7531;&#x8868;&#x7BA1;&#x7406;</h4>
+<p>ip route add:add new route<br>ip route add TYPE PREFIX via GW [dev IFACE] [src SOURCE_IP]  </p>
+<p>ip route change:change route<br>ip route replace:change or add new one<br>ip route delete:delete route<br>ip route del TYPE PREFIX  </p>
+<p>ip route [show | list]:list routes<br>ip route flush:flush routing tables<br>ip route get:get a single route  </p>
+<pre><code class="lang-shell">#&#x67E5;&#x770B;&#x8DEF;&#x7531;&#x8868;
+ip route list
+
+#&#x4E3A;ens33&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x6DFB;&#x52A0;2&#x4E2A;ip
+ip addr add 10.0.10.100/8 dev ens33
+ip addr add 10.0.20.100/8 dev ens33
+ip addr list ens33
+#&#x8981;&#x5230;&#x8FBE;192.168.0.0&#x8FD9;&#x4E2A;&#x7F51;&#x7EDC;,&#x9700;&#x8981;&#x901A;&#x8FC7;&#x7F51;&#x5173;10.0.0.1
+ip route add 192.168.0.0/24 via 10.0.0.1 dev ens33
+#&#x8981;&#x5230;&#x8FBE;192.168.1.0/24&#x8FD9;&#x4E2A;&#x7F51;&#x7EDC;,&#x9700;&#x8981;&#x901A;&#x8FC7;&#x7F51;&#x5173;10.0.0.1
+ip route list
+#&#x8981;&#x5230;&#x8FBE;172.16.0.0/16&#x8FD9;&#x4E2A;&#x7F51;&#x7EDC;,&#x9700;&#x8981;&#x901A;&#x8FC7;&#x7F51;&#x5173;10.0.0.1&#x5E76;&#x6307;&#x5B9A;&#x6E90;&#x5730;&#x5740;10.0.20.100
+ip route add 172.16.0.0/16 via 10.0.0.1 dev ens33 src 10.0.20.100
+ip route list
+#&#x6DFB;&#x52A0;&#x9ED8;&#x8BA4;&#x8DEF;&#x7531;
+ip route add default via 192.168.147.2 dev ens33
+ip route list
+
+
+#&#x5220;&#x9664;&#x8DEF;&#x7531;  
+ip route del 10.0.0.0/8
+ip route del default via 192.168.147.2 dev ens33
+ip route del 192.168.0.0
+
+#&#x663E;&#x793A;&#x8DEF;&#x7531;,&#x663E;&#x793A;src&#x4E3A;192.168.122.1&#x7684;&#x8DEF;&#x7531;,ip route show&#x548C;ip route list&#x610F;&#x4E49;&#x4E00;&#x6837;
+ip route show src 192.168.122.1
+ip route list src 192.168.122.1
+
+#&#x663E;&#x793A;&#x5230;&#x8FBE;192.168.147.0/24&#x8FD9;&#x4E2A;&#x7F51;&#x7EDC;&#x7684;&#x8DEF;&#x7531;&#x4FE1;&#x606F;
+ip route get 192.168.147.0/24
+
+#&#x6E05;&#x7A7A;&#x6240;&#x6709;&#x7F51;&#x7EDC;&#x53F7;&#x4E3A;10/8&#x7684;&#x8DEF;&#x7531;&#x4FE1;&#x606F;
+ip route flush 10/8
+ip route show
+</code></pre>
+<h3 id="ss&#x547D;&#x4EE4;">ss&#x547D;&#x4EE4;:</h3>
+<p>ss [options] [ FILTER ]<br>&#x9009;&#x9879;:<br>-t:TCP&#x534F;&#x8BAE;&#x7684;&#x76F8;&#x5173;&#x8FDE;&#x63A5;<br>-u:UDP&#x76F8;&#x5173;&#x7684;&#x8FDE;&#x63A5;<br>-w:raw socket&#x76F8;&#x5173;&#x7684;&#x8FDE;&#x63A5;<br>-l:&#x76D1;&#x542C;&#x72B6;&#x6001;&#x7684;&#x8FDE;&#x63A5;<br>-a:&#x6240;&#x6709;&#x72B6;&#x6001;&#x7684;&#x8FDE;&#x63A5;<br>-n:&#x6570;&#x5B57;&#x683C;&#x5F0F;<br>-p:&#x76F8;&#x5173;&#x7684;&#x7A0B;&#x5E8F;&#x53CA;&#x5176;PID<br>-e:&#x6269;&#x5C55;&#x683C;&#x5F0F;&#x4FE1;&#x606F;<br>-m:&#x5185;&#x5B58;&#x7528;&#x91CF;<br>-o:&#x8BA1;&#x65F6;&#x5668;&#x4FE1;&#x606F;  </p>
+<p>&#x72B6;&#x6001;&#x8FC7;&#x6EE4;&#x548C;&#x8868;&#x8FBE;&#x5F0F;&#x8FC7;&#x6EE4;<br>FILTER := [ state STATE-FILTER ] [ EXPRESSION ]  </p>
+<p>TCP&#x7684;&#x5E38;&#x89C1;&#x72B6;&#x6001;:<br>TCP FSM(Finite State Machine):<br>LISTEN:&#x76D1;&#x542C;<br>ESTABLISHED:&#x5DF2;&#x5EFA;&#x7ACB;&#x7684;&#x8FDE;&#x63A5;<br>FIN_WAIT_1:<br>FIN_WAIT_2:<br>SYN_SENT:<br>SYS_RECV:<br>COLOSED:  </p>
+<p>EXPRESSION:<br>dport=<br>sport=<br>&#x793A;&#x4F8B;:&apos;( dport = :22 or sport = :22 )&apos;  </p>
+<pre><code class="lang-shell">#&#x67E5;&#x627E;tcp&#x72B6;&#x6001;&#x4E3A;ESTABLISHED&#x7684;
+ss -tan state ESTABLISHED
+
+#&#x67E5;&#x627E;&#x76EE;&#x6807;&#x7AEF;&#x53E3;&#x548C;&#x7AEF;&#x53E3;&#x4E3A;22&#x7684;
+ss -tan &apos;( dport = :22 or sport = :22 )&apos;
+</code></pre>
+<h3 id="&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h3>
+<p>&#x6CE8;:&#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x4F7F;&#x7528;&#x7684;ifconfig&#x6216;ip&#x547D;&#x4EE4;&#x6240;&#x4FEE;&#x6539;&#x7684;&#x7F51;&#x7EDC;&#x5C5E;&#x6027;,&#x91CD;&#x542F;&#x4EE5;&#x540E;&#x90FD;&#x5C06;&#x4F1A;&#x5931;&#x6548;;&#x60F3;&#x6C38;&#x4E45;&#x6709;&#x6548;&#x9700;&#x8981;&#x5199;&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;;    </p>
+<p>IP/NETMASK/GW/DNS&#x7B49;&#x5C5E;&#x6027;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;:/etc/sysconfig/network-scripts/ifcfg-IFACE<br>IFACE:&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x540D;&#x79F0;;  </p>
+<p>&#x914D;&#x7F6E;&#x6587;&#x4EF6;<code>/etc/sysconfig/network-scripts/ifcfg-IFACE</code>&#x901A;&#x8FC7;&#x5927;&#x91CF;&#x53C2;&#x6570;&#x6765;&#x5B9A;&#x4E49;&#x63A5;&#x53E3;&#x7684;&#x5C5E;&#x6027;;&#x5176;&#x53EF;&#x901A;&#x8FC7;vim&#x7B49;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#x76F4;&#x63A5;&#x4FEE;&#x6539;,&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E13;&#x7528;&#x7684;&#x547D;&#x4EE4;&#x7684;&#x8FDB;&#x884C;&#x4FEE;&#x6539;(CentOS6:system-config-network(setup),CentOS7:nmtui)  </p>
+<h4 id="ifcfg-iface&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x53C2;&#x6570;">ifcfg-IFACE&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x53C2;&#x6570;:</h4>
+<p>DEVICE:&#x6B64;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5BF9;&#x5E94;&#x7684;&#x8BBE;&#x5907;&#x7684;&#x540D;&#x79F0;;&#x9700;&#x8981;&#x4E0E;IFACE&#x4FDD;&#x6301;&#x4E00;&#x81F4;;<br>ONBOOT:&#x5728;&#x7CFB;&#x7EDF;&#x5F15;&#x5BFC;&#x8FC7;&#x7A0B;&#x4E2D;,&#x662F;&#x5426;&#x6FC0;&#x6D3B;&#x6B64;&#x63A5;&#x53E3;;<br>UUID:&#x6B64;&#x8BBE;&#x5907;&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;;<br>IPV6INIT:&#x662F;&#x5426;&#x521D;&#x59CB;&#x5316;IPV6;<br>BOOTPROTO:&#x6FC0;&#x6D3B;&#x6B64;&#x63A5;&#x53E3;&#x65F6;&#x4F7F;&#x7528;&#x4EC0;&#x4E48;&#x534F;&#x8BAE;&#x6765;&#x914D;&#x7F6E;&#x63A5;&#x53E3;&#x5C5E;&#x6027;,&#x5E38;&#x7528;&#x7684;&#x6709;dhcp&#x3001;bootp&#x3001;static&#x3001;none(&#x6CE8;none&#x4E5F;&#x8868;&#x793A;&#x9759;&#x6001;&#x5730;&#x5740;&#x548C;static&#x4E00;&#x6837;);<br>TYPE:&#x63A5;&#x53E3;&#x7C7B;&#x578B;,&#x5E38;&#x89C1;&#x7684;&#x6709;Ethernet&#x3001;Bridge;<br>DNS1:&#x7B2C;&#x4E00;&#x4E2A;DNS&#x670D;&#x52A1;&#x5668;&#x6307;&#x5411;;<br>DNS2:&#x5907;&#x7528;DNS&#x670D;&#x52A1;&#x5668;&#x6307;&#x5411;;<br>DNS3:&#x5907;&#x7528;DNS&#x670D;&#x52A1;&#x5668;&#x6307;&#x5411;;<br>DOMAIN:DNS&#x641C;&#x7D22;&#x57DF;;<br>GATEWAY:&#x9ED8;&#x8BA4;&#x7F51;&#x5173;;<br>IPADDR:IP&#x5730;&#x5740;;<br>NETMASK:&#x5B50;&#x7F51;&#x63A9;&#x7801;;CentOS7&#x652F;&#x6301;&#x4F7F;&#x7528;PREFIX&#x4EE5;&#x957F;&#x5EA6;&#x65B9;&#x5F0F;&#x6307;&#x660E;&#x5B50;&#x7F51;&#x63A9;&#x7801;;&#x6CE8;:CentOS7&#x4E2D;NETMASK&#x548C;PREFIX&#x53EA;&#x9700;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;;<br>PREFIX:&#x5B50;&#x7F51;&#x63A9;&#x7801;&#x77ED;&#x683C;&#x5F0F;,&#x503C;&#x6709;:8&#x3001;16&#x3001;24&#x3001;32;CentOS6&#x3001;7&#x90FD;&#x652F;&#x6301;;<br>USERCTL:&#x662F;&#x5426;&#x5141;&#x8BB8;&#x666E;&#x901A;&#x7528;&#x6237;&#x63A7;&#x5236;&#x6B64;&#x7F51;&#x5361;&#x8BBE;&#x5907;;<br>PEERDNS:&#x5982;&#x679C;BOOTPROTO&#x7684;&#x503C;&#x4E3A;&quot;dhcp&quot;,&#x662F;&#x5426;&#x5141;&#x8BB8;dhcp server&#x5206;&#x914D;&#x7684;dns&#x670D;&#x52A1;&#x5668;&#x6307;&#x5411;&#x8986;&#x76D6;&#x672C;&#x5730;&#x624B;&#x52A8;&#x6307;&#x5B9A;&#x7684;DNS&#x670D;&#x52A1;&#x5668;&#x6307;&#x5411;;&#x9ED8;&#x8BA4;&#x4E3A;yes;&#x503C;[yes|no];<br>HWADDR:&#x8BBE;&#x5907;&#x7684;MAC&#x5730;&#x5740;;<br>NM_CONTROLLED:&#x662F;&#x5426;&#x4F7F;&#x7528;NetworkManager&#x670D;&#x52A1;&#x6765;&#x63A7;&#x5236;&#x7F51;&#x5361;&#x63A5;&#x53E3;;<br>&#x7F51;&#x7EDC;&#x670D;&#x52A1;:<br>network<br>NetworkManager  </p>
+<p>&#x7BA1;&#x7406;&#x7F51;&#x7EDC;&#x670D;&#x52A1;:<br>CentOS6:service SERVICE {start|stop|restart|status}  </p>
+<p>&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4FEE;&#x6539;&#x540E;,&#x5982;&#x679C;&#x8981;&#x751F;&#x6548;,&#x9700;&#x8981;&#x91CD;&#x542F;&#x7F51;&#x7EDC;&#x670D;&#x52A1;  </p>
+<pre><code class="lang-shell">#&#x67E5;&#x770B;network&#x670D;&#x52A1;&#x72B6;&#x6001;
+service network status
+#&#x91CD;&#x542F;&#x670D;&#x52A1;
+service network restart
+</code></pre>
+<p>CentOS7:systemctl {start|stop|restart|status} SERVICE[.service]    </p>
+<pre><code class="lang-shell">systemctl restart network.service
+systemctl restart network
+</code></pre>
+<p>&#x589E;&#x52A0;&#x65B0;&#x7F51;&#x5361;&#x8BBE;&#x5907;:<br><a href="https://images.gitee.com/uploads/images/2019/0731/152547_71864995_1479682.png" data-lightbox="af1f0d84-e44b-4cd9-bf79-7c7c9b24857f" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0731/152547_71864995_1479682.png" alt=""></a></p>
+<pre><code class="lang-shell">cd /etc/sysconfig/network-scripts
+cp ifcfg-ens33 ifcfg-ens37
+</code></pre>
+<p>&#x4F7F;&#x7528;<code>vim ifcfg-ens37</code>&#x7F16;&#x8F91;&#x914D;&#x7F6E;&#x6587;&#x4EF6;:  </p>
+<pre><code class="lang-shell">TYPE=Ethernet
+BOOTPROTO=none
+NAME=ens37
+DEVICE=ens37
+ONBOOT=yes
+IPADDR=192.168.147.158
+PREFIX=24
+GATEWAY=192.168.147.2
+DNS1=192.168.147.2
+</code></pre>
+<p>&#x6700;&#x540E;<code>systemctl restart network.service</code>&#x4F7F;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x751F;&#x6548;,&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x65B0;&#x914D;&#x7F6E;&#x7684;&#x7F51;&#x5361;&#x505A;ssh&#x8FDE;&#x63A5;,&#x5E76;<code>ping</code>&#x6216;&#x8005;&#x4F7F;&#x7528;<code>curl http://www.baidu.com</code>&#x6D4B;&#x8BD5;&#x7F51;&#x7EDC;&#x662F;&#x5426;&#x901A;&#x7545;;    </p>
+<h3 id="&#x8DEF;&#x7531;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x8DEF;&#x7531;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h3>
+<p>&#x8DEF;&#x7531;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7F51;&#x5361;&#x91CD;&#x542F;&#x540E;&#x4F1A;&#x6C38;&#x4E45;&#x751F;&#x6548;<br>&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x6307;&#x5B9A;&#x4E86;&#x9ED8;&#x8BA4;&#x7F51;&#x5173;,&#x5F53;&#x7528;&#x5230;&#x975E;&#x9ED8;&#x8BA4;&#x7F51;&#x5173;&#x8DEF;&#x7531;&#x65F6;,&#x9700;&#x8981;&#x914D;&#x7F6E;&#x8DEF;&#x7531;&#x7684;&#x76F8;&#x5173;&#x914D;&#x7F6E;&#x6587;&#x4EF6;:/etc/sysconfig/network-scripts/route-IFACE    </p>
+<p>&#x652F;&#x6301;&#x4E24;&#x79CD;&#x914D;&#x7F6E;&#x65B9;&#x5F0F;,&#x4F46;&#x4E0D;&#x53EF;&#x6DF7;&#x7528;:<br>(1) &#x6BCF;&#x884C;&#x4E00;&#x4E2A;&#x8DEF;&#x7531;&#x6761;&#x76EE;:<br>TARGET via GW  </p>
+<pre><code class="lang-shell">cd /etc/sysconfig/network-scripts/
+#&#x521B;&#x5EFA;&#x5BF9;&#x5E94;&#x7684;&#x8DEF;&#x7531;&#x6587;&#x4EF6;&#x8FD9;&#x91CC;&#x7684;&#x7F51;&#x5361;&#x8BBE;&#x5907;&#x540D;&#x53EB;ens33&#x6240;&#x4EE5;&#x6587;&#x4EF6;&#x540D;&#x4E3A;route-ens33  
+vim route-ens33
+</code></pre>
+<p>route-ens33&#x6587;&#x4EF6;&#x5982;&#x4E0B;:   </p>
+<pre><code class="lang-shell">&#x8981;&#x5230;&#x8FBE;10.0.0.0/8&#x8FD9;&#x4E2A;&#x7F51;&#x7EDC;,&#x901A;&#x8FC7;&#x4E0B;&#x4E00;&#x8DF3;&#x5730;&#x5740;192.168.147.2
+10.0.0.0/8 via 192.168.147.2 dev ens33
+</code></pre>
+<pre><code class="lang-shell">#&#x91CD;&#x542F;&#x4F7F;&#x914D;&#x7F6E;&#x6C38;&#x4E45;&#x751F;&#x6548;
+systemctl restart network
+#&#x67E5;&#x770B;&#x8DEF;&#x7531;&#x8868;
+ip route list
+</code></pre>
+<p>(2) &#x6BCF;&#x4E09;&#x884C;&#x4E00;&#x4E2A;&#x8DEF;&#x7531;&#x6761;&#x76EE;:<br>ADDRESS#=TARGET<br>NETMASK#=MASK<br>GATEWAY#=NEXTHOP  </p>
+<p>&#x7F16;&#x8F91;route-ens33&#x6587;&#x4EF6;,&#x6E05;&#x7A7A;&#x6240;&#x6709;&#x5185;&#x5BB9;,&#x7136;&#x540E;&#x7F16;&#x5199;&#x4E00;&#x4E0B;&#x7B2C;&#x4E8C;&#x79CD;&#x914D;&#x7F6E;&#x65B9;&#x5F0F;:  </p>
+<pre><code class="lang-shell">ADDRESS0=20.0.0.0
+NETMASK0=255.0.0.0
+GATEWAY0=192.168.147.178
+</code></pre>
+<pre><code class="lang-shell">#&#x91CD;&#x542F;&#x4F7F;&#x914D;&#x7F6E;&#x6C38;&#x4E45;&#x751F;&#x6548;
+systemctl restart network
+#&#x67E5;&#x770B;&#x8DEF;&#x7531;&#x8868;
+ip route list
+</code></pre>
+<h3 id="&#x7ED9;&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x914D;&#x7F6E;&#x591A;&#x4E2A;&#x5730;&#x5740;">&#x7ED9;&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x914D;&#x7F6E;&#x591A;&#x4E2A;&#x5730;&#x5740;:</h3>
+<p>ip addr&#x4E4B;&#x5916;,ifconfig&#x6216;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x90FD;&#x53EF;&#x4EE5;;  </p>
+<p>(1) ifconfig IFACE_LABEL IPADDR/NETMASK<br>IFACE_LABEL: ens0:0,ens0:1,...  </p>
+<pre><code class="lang-shell">#&#x4E3A;ens33&#x65B0;&#x589E;ip,&#x6307;&#x5B9A;&#x522B;&#x540D;&#x4E3A;ens33:0
+ifconfig ens33:0 192.168.147.212/24
+#&#x67E5;&#x770B;
+ifconfig
+#&#x91CD;&#x542F;&#x5373;&#x5931;&#x6548;
+systemctl restart network
+#&#x67E5;&#x770B;
+ifconfig
+</code></pre>
+<p>(2) &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x914D;&#x7F6E;(&#x6C38;&#x4E45;&#x751F;&#x6548;)<br>DEVICE=IFACE_LABEL<br>BOOTPROTO:&#x522B;&#x540D;&#x7F51;&#x5361;&#x4E0D;&#x652F;&#x6301;&#x52A8;&#x6001;&#x83B7;&#x53D6;&#x5730;&#x5740;;&#x503C;&#x53EA;&#x80FD;&#x662F;:static&#x3001;none   </p>
+<pre><code class="lang-shell">cd /etc/sysconfig/network-scripts
+#&#x590D;&#x5236;&#x7F51;&#x5361;&#x63A5;&#x53E3;&#x914D;&#x7F6E;&#x6587;&#x4EF6;
+cp ifcfg-ens33 ifcfg-ens33:0
+</code></pre>
+<p>&#x7F16;&#x8F91;ifcfg-ens33:0&#x6587;&#x4EF6;&#x5982;&#x4E0B;:  </p>
+<pre><code class="lang-shell">BOOTPROTO=none
+NAME=ens33:0
+DEVICE=ens33:0
+ONBOOT=yes
+IPADDR=192.168.147.212
+PREFIX=24
+GATEWAY=192.168.147.2
+DNS1=192.168.147.2
+</code></pre>
+<p>&#x91CD;&#x542F;  </p>
+<pre><code class="lang-shell">#&#x91CD;&#x542F;&#x5373;&#x5931;&#x6548;
+systemctl restart network
+#&#x67E5;&#x770B;
+ifconfig
+</code></pre>
+<h3 id="nmcli&#x547D;&#x4EE4;">nmcli&#x547D;&#x4EE4;</h3>
+<pre><code class="lang-shell">#&#x7F51;&#x5361;&#x8BBE;&#x5907;&#x663E;&#x793A;
+nmcli device show
+
+#&#x67E5;&#x770B;&#x7F51;&#x5361;&#x8BBE;&#x5907;&#x72B6;&#x6001;
+nmcli device status
+
+#&#x7981;&#x7528;ens37&#x7F51;&#x5361;&#x8BBE;&#x5907;
+nmcli device disconnect ens37
+#&#x67E5;&#x770B;&#x72B6;&#x6001;
+nmcli device status
+#&#x542F;&#x7528;ens37&#x7F51;&#x5361;&#x8BBE;&#x5907;
+nmcli device connect ens37
+#&#x67E5;&#x770B;&#x72B6;&#x6001;
+nmcli device status
+
+#&#x67E5;&#x770B;&#x7F51;&#x5361;&#x8BBE;&#x5907;&#x8FDE;&#x63A5;&#x72B6;&#x6001;
+nmcli connect show
+#&#x7981;&#x7528;ens37&#x8BBE;&#x5907;
+nmcli connect down ens37
+#&#x67E5;&#x770B;&#x7F51;&#x5361;&#x8BBE;&#x5907;&#x8FDE;&#x63A5;&#x72B6;&#x6001;
+nmcli connect show
+
+#&#x4E3A;ens37&#x6DFB;&#x52A0;&#x65B0;ip&#x5730;&#x5740;
+nmcli conn modify ens37 +ipv4.address 192.168.147.188
+#&#x91CD;&#x542F;&#x7F51;&#x5361;
+nmcli conn down ens37
+nmcli conn up ens37
+#&#x67E5;&#x770B;
+nmcli device show ens37
+ip addr show ens37
+
+#&#x4E3A;ens37&#x51CF;&#x53BB;ip&#x5730;&#x5740;
+nmcli conn modify ens37 -ipv4.address 192.168.147.188
+#&#x91CD;&#x542F;&#x7F51;&#x5361;
+nmcli conn down ens37
+nmcli conn up ens37
+#&#x67E5;&#x770B;
+nmcli device show ens37
+ip addr show ens37
+</code></pre>
+
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="27.计算机网络基础.html" class="navigation navigation-prev " aria-label="Previous page: 27.计算机网络基础">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="29.Linux进程及作业管理.html" class="navigation navigation-next " aria-label="Next page: 29.Linux进程及作业管理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"28.Linux网络属性配置","level":"1.29","depth":1,"next":{"title":"29.Linux进程及作业管理","level":"1.30","depth":1,"path":"pages/29.Linux进程及作业管理.md","ref":"pages/29.Linux进程及作业管理.md","articles":[]},"previous":{"title":"27.计算机网络基础","level":"1.28","depth":1,"path":"pages/27.计算机网络基础.md","ref":"pages/27.计算机网络基础.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","lightbox","page-treeview","-lunr","-search","search-pro","-sharing","sharing-plus","back-to-top-button","code","splitter","chapter-fold","popup","custom-favicon","livereload"],"pluginsConfig":{"page-treeview":{"collapsed":false,"copyright":"Copyright &#169; aleen42","minHeaderCount":"2","minHeaderDeep":"2"},"chapter-fold":{},"styles":{"website":"styles/website.css"},"livereload":{},"splitter":{},"search-pro":{},"author":"sonin","sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"images/Title/favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"back-to-top-button":{},"title":"面试","custom-favicon":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":true,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":false,"qzone":true},"description":"面试宝典","theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/28.Linux网络属性配置.md","mtime":"2023-07-13T05:42:09.558Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-07-13T06:53:25.815Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

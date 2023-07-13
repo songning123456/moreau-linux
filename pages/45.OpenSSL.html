@@ -1,0 +1,1428 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>45.OpenSSL · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="46.DNS.html" />
+    
+    
+    <link rel="prev" href="44.通信加密和解密、公钥、私钥、CA.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Linux宝典
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01.linux基本操作使用.html">
+            
+                <a href="01.linux基本操作使用.html">
+            
+                    
+                    01.linux基本操作使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="02.linux获取命令使用帮助.html">
+            
+                <a href="02.linux获取命令使用帮助.html">
+            
+                    
+                    02.linux获取命令使用帮助
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="03.linux常用基础命令.html">
+            
+                <a href="03.linux常用基础命令.html">
+            
+                    
+                    03.linux常用基础命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04.根文件系统.html">
+            
+                <a href="04.根文件系统.html">
+            
+                    
+                    04.根文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05.Linux系统上的文件类型和历史命令.html">
+            
+                <a href="05.Linux系统上的文件类型和历史命令.html">
+            
+                    
+                    05.Linux系统上的文件类型和历史命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="06.目录文本查看命令.html">
+            
+                <a href="06.目录文本查看命令.html">
+            
+                    
+                    06.目录文本查看命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="07.文件管理命令.html">
+            
+                <a href="07.文件管理命令.html">
+            
+                    
+                    07.文件管理命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="08.glob通配及IO重定向.html">
+            
+                <a href="08.glob通配及IO重定向.html">
+            
+                    
+                    08.glob通配及IO重定向
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="09.用户和组管理概念.html">
+            
+                <a href="09.用户和组管理概念.html">
+            
+                    
+                    09.用户和组管理概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="10.用户和组管理命令.html">
+            
+                <a href="10.用户和组管理命令.html">
+            
+                    
+                    10.用户和组管理命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="11.用户权限管理.html">
+            
+                <a href="11.用户权限管理.html">
+            
+                    
+                    11.用户权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="12.shell变量,算数和逻辑运算及配置文件.html">
+            
+                <a href="12.shell变量,算数和逻辑运算及配置文件.html">
+            
+                    
+                    12.shell变量,算数和逻辑运算及配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="13.grep和基本正则表达式.html">
+            
+                <a href="13.grep和基本正则表达式.html">
+            
+                    
+                    13.grep和基本正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="14.vim编辑器.html">
+            
+                <a href="14.vim编辑器.html">
+            
+                    
+                    14.vim编辑器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="15.文件查找find和特殊权限及facl.html">
+            
+                <a href="15.文件查找find和特殊权限及facl.html">
+            
+                    
+                    15.文件查找find和特殊权限及facl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="16.磁盘及文件系统管理.html">
+            
+                <a href="16.磁盘及文件系统管理.html">
+            
+                    
+                    16.磁盘及文件系统管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="17.shell条件测试,逻辑判断,参数传递.html">
+            
+                <a href="17.shell条件测试,逻辑判断,参数传递.html">
+            
+                    
+                    17.shell条件测试,逻辑判断,参数传递
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="18.RAID技术.html">
+            
+                <a href="18.RAID技术.html">
+            
+                    
+                    18.RAID技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="19.LVM2.html">
+            
+                <a href="19.LVM2.html">
+            
+                    
+                    19.LVM2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="20.btrfs文件系统.html">
+            
+                <a href="20.btrfs文件系统.html">
+            
+                    
+                    20.btrfs文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="21.压缩工具.html">
+            
+                <a href="21.压缩工具.html">
+            
+                    
+                    21.压缩工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="22.Liunx任务计划crontab.html">
+            
+                <a href="22.Liunx任务计划crontab.html">
+            
+                    
+                    22.Liunx任务计划crontab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="23.软件包管理rpm.html">
+            
+                <a href="23.软件包管理rpm.html">
+            
+                    
+                    23.软件包管理rpm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="24.软件包管理yum.html">
+            
+                <a href="24.软件包管理yum.html">
+            
+                    
+                    24.软件包管理yum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="25.shell多分支if和for循环.html">
+            
+                <a href="25.shell多分支if和for循环.html">
+            
+                    
+                    25.shell多分支if和for循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="26.文本处理神器sed.html">
+            
+                <a href="26.文本处理神器sed.html">
+            
+                    
+                    26.文本处理神器sed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="27.计算机网络基础.html">
+            
+                <a href="27.计算机网络基础.html">
+            
+                    
+                    27.计算机网络基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="28.Linux网络属性配置.html">
+            
+                <a href="28.Linux网络属性配置.html">
+            
+                    
+                    28.Linux网络属性配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="29.Linux进程及作业管理.html">
+            
+                <a href="29.Linux进程及作业管理.html">
+            
+                    
+                    29.Linux进程及作业管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="30.Linux进程及作业管理二.html">
+            
+                <a href="30.Linux进程及作业管理二.html">
+            
+                    
+                    30.Linux进程及作业管理二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.32" data-path="31.网络客户端工具和while、untill循环.html">
+            
+                <a href="31.网络客户端工具和while、untill循环.html">
+            
+                    
+                    31.网络客户端工具和while、untill循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33" data-path="32.CentOS系统启动流程.html">
+            
+                <a href="32.CentOS系统启动流程.html">
+            
+                    
+                    32.CentOS系统启动流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.34" data-path="33.grub系统配置与使用.html">
+            
+                <a href="33.grub系统配置与使用.html">
+            
+                    
+                    33.grub系统配置与使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.35" data-path="34.Linux内核功能及模块应用.html">
+            
+                <a href="34.Linux内核功能及模块应用.html">
+            
+                    
+                    34.Linux内核功能及模块应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.36" data-path="35.Linux内核模块功能定制.html">
+            
+                <a href="35.Linux内核模块功能定制.html">
+            
+                    
+                    35.Linux内核模块功能定制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.37" data-path="36.Linux自动化安装anaconda配置定制.html">
+            
+                <a href="36.Linux自动化安装anaconda配置定制.html">
+            
+                    
+                    36.Linux自动化安装anaconda配置定制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.38" data-path="37.Linux系统自动化安装无人值守环境配置部署.html">
+            
+                <a href="37.Linux系统自动化安装无人值守环境配置部署.html">
+            
+                    
+                    37.Linux系统自动化安装无人值守环境配置部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.39" data-path="38.函数编程和case语句.html">
+            
+                <a href="38.函数编程和case语句.html">
+            
+                    
+                    38.函数编程和case语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.40" data-path="39.systemd及systemctl实战.html">
+            
+                <a href="39.systemd及systemctl实战.html">
+            
+                    
+                    39.systemd及systemctl实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.41" data-path="40.SELinux简介.html">
+            
+                <a href="40.SELinux简介.html">
+            
+                    
+                    40.SELinux简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.42" data-path="41.shell数组和字符串处理工具.html">
+            
+                <a href="41.shell数组和字符串处理工具.html">
+            
+                    
+                    41.shell数组和字符串处理工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.43" data-path="42.shell信号捕捉实战.html">
+            
+                <a href="42.shell信号捕捉实战.html">
+            
+                    
+                    42.shell信号捕捉实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.44" data-path="43.awk使用与实践.html">
+            
+                <a href="43.awk使用与实践.html">
+            
+                    
+                    43.awk使用与实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.45" data-path="44.通信加密和解密、公钥、私钥、CA.html">
+            
+                <a href="44.通信加密和解密、公钥、私钥、CA.html">
+            
+                    
+                    44.通信加密和解密、公钥、私钥、CA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.46" data-path="45.OpenSSL.html">
+            
+                <a href="45.OpenSSL.html">
+            
+                    
+                    45.OpenSSL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.47" data-path="46.DNS.html">
+            
+                <a href="46.DNS.html">
+            
+                    
+                    46.DNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.48" data-path="47.DNS and Bind.html">
+            
+                <a href="47.DNS and Bind.html">
+            
+                    
+                    47.DNS and Bind
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.49" data-path="48.http协议及Web服务.html">
+            
+                <a href="48.http协议及Web服务.html">
+            
+                    
+                    48.http协议及Web服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.50" data-path="49.Apache.html">
+            
+                <a href="49.Apache.html">
+            
+                    
+                    49.Apache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.51" data-path="50.LAMP.html">
+            
+                <a href="50.LAMP.html">
+            
+                    
+                    50.LAMP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.52" data-path="51.MariaDB.html">
+            
+                <a href="51.MariaDB.html">
+            
+                    
+                    51.MariaDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.53" data-path="52.php-fpm基础应用与实战.html">
+            
+                <a href="52.php-fpm基础应用与实战.html">
+            
+                    
+                    52.php-fpm基础应用与实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.54" data-path="53.文件共享服务、ftp、vsftp.html">
+            
+                <a href="53.文件共享服务、ftp、vsftp.html">
+            
+                    
+                    53.文件共享服务、ftp、vsftp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.55" data-path="54.nfs服务配置应用与实战.html">
+            
+                <a href="54.nfs服务配置应用与实战.html">
+            
+                    
+                    54.nfs服务配置应用与实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.56" data-path="55.samba服务基础应用.html">
+            
+                <a href="55.samba服务基础应用.html">
+            
+                    
+                    55.samba服务基础应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.57" data-path="56.iptables.html">
+            
+                <a href="56.iptables.html">
+            
+                    
+                    56.iptables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.58" data-path="57.iptables网络防火墙.html">
+            
+                <a href="57.iptables网络防火墙.html">
+            
+                    
+                    57.iptables网络防火墙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.59" data-path="58.iptables_nat路由.html">
+            
+                <a href="58.iptables_nat路由.html">
+            
+                    
+                    58.iptables_nat路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.60" data-path="59.Linux时间服务-chrony.html">
+            
+                <a href="59.Linux时间服务-chrony.html">
+            
+                    
+                    59.Linux时间服务-chrony
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.61" data-path="GitLab安装_CentOS7.html">
+            
+                <a href="GitLab安装_CentOS7.html">
+            
+                    
+                    GitLab安装_CentOS7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.62" data-path="JDK安装.html">
+            
+                <a href="JDK安装.html">
+            
+                    
+                    JDK安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.63" data-path="Linux中kill -2和kill -9的区别.html">
+            
+                <a href="Linux中kill -2和kill -9的区别.html">
+            
+                    
+                    Linux中kill -2和kill -9的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.64" data-path="linux中修改环境变量及生效方法.html">
+            
+                <a href="linux中修改环境变量及生效方法.html">
+            
+                    
+                    linux中修改环境变量及生效方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.65" data-path="Linux查看设置系统时区.html">
+            
+                <a href="Linux查看设置系统时区.html">
+            
+                    
+                    Linux查看设置系统时区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.66" data-path="rc.local脚本开机自启动.html">
+            
+                <a href="rc.local脚本开机自启动.html">
+            
+                    
+                    rc.local脚本开机自启动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.67" data-path="SSH免密登录.html">
+            
+                <a href="SSH免密登录.html">
+            
+                    
+                    SSH免密登录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.68" data-path="Systemd日志管理journal和journalctl使用.html">
+            
+                <a href="Systemd日志管理journal和journalctl使用.html">
+            
+                    
+                    Systemd日志管理journal和journalctl使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.69" data-path="TCP_IP协议总结.html">
+            
+                <a href="TCP_IP协议总结.html">
+            
+                    
+                    TCP_IP协议总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.70" data-path="TCP_UDP结构.html">
+            
+                <a href="TCP_UDP结构.html">
+            
+                    
+                    TCP_UDP结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.71" data-path="VMware虚拟机克隆CentOS7并分别设置静态IP.html">
+            
+                <a href="VMware虚拟机克隆CentOS7并分别设置静态IP.html">
+            
+                    
+                    VMware虚拟机克隆CentOS7并分别设置静态IP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.72" data-path="Vmware虚拟机问题解决方案.html">
+            
+                <a href="Vmware虚拟机问题解决方案.html">
+            
+                    
+                    Vmware虚拟机问题解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.73" data-path="window下面git公钥的配置.html">
+            
+                <a href="window下面git公钥的配置.html">
+            
+                    
+                    window下面git公钥的配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.74" data-path="文件描述符.html">
+            
+                <a href="文件描述符.html">
+            
+                    
+                    文件描述符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.75" data-path="最小化安装centos7.9.html">
+            
+                <a href="最小化安装centos7.9.html">
+            
+                    
+                    最小化安装centos7.9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.76" data-path="查看服务器状态工具.html">
+            
+                <a href="查看服务器状态工具.html">
+            
+                    
+                    查看服务器状态工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >45.OpenSSL</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+<li><div><a href="#ssl&#x4F1A;&#x8BDD;&#x4E3B;&#x8981;&#x4E09;&#x6B65;">SSL&#x4F1A;&#x8BDD;&#x4E3B;&#x8981;&#x4E09;&#x6B65;</a><i></i></div></li>
+<li><div><a href="#ssl-handshake-protocol">SSL Handshake Protocol:</a><i></i></div></li>
+<li><div><a href="#openssl">OpenSSL</a><i></i></div></li>
+<li><div><a href="#linux&#x7CFB;&#x7EDF;&#x4E0B;&#x7684;&#x968F;&#x673A;&#x6570;&#x751F;&#x6210;&#x5668;">Linux&#x7CFB;&#x7EDF;&#x4E0B;&#x7684;&#x968F;&#x673A;&#x6570;&#x751F;&#x6210;&#x5668;</a><i></i></div></li>
+<li><div><a href="#ca">CA</a><i></i></div></li>
+<li><div><a href="#&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF1A;etcpkitlsopensslcnf">&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF1A;/etc/pki/tls/openssl.cnf</a><i></i></div></li>
+<li><div><a href="#&#x6784;&#x5EFA;&#x79C1;&#x6709;ca">&#x6784;&#x5EFA;&#x79C1;&#x6709;CA:</a><i></i></div></li>
+<li><div><a href="#&#x8981;&#x7528;&#x5230;&#x8BC1;&#x4E66;&#x8FDB;&#x884C;&#x5B89;&#x5168;&#x901A;&#x4FE1;&#x7684;&#x670D;&#x52A1;&#x5668;&#x9700;&#x8981;&#x5411;ca&#x8BF7;&#x6C42;&#x7B7E;&#x7F72;&#x8BC1;&#x4E66;">&#x8981;&#x7528;&#x5230;&#x8BC1;&#x4E66;&#x8FDB;&#x884C;&#x5B89;&#x5168;&#x901A;&#x4FE1;&#x7684;&#x670D;&#x52A1;&#x5668;,&#x9700;&#x8981;&#x5411;CA&#x8BF7;&#x6C42;&#x7B7E;&#x7F72;&#x8BC1;&#x4E66;:</a><i></i></div></li>
+<li><div><a href="#&#x540A;&#x9500;&#x8BC1;&#x4E66;&#x4E86;&#x89E3;">&#x540A;&#x9500;&#x8BC1;&#x4E66;(&#x4E86;&#x89E3;):</a><i></i></div></li>
+</ul>
+</div>
+
+<h3 id="ssltls">SSL/TLS</h3>
+<p>SSL:&#x5B89;&#x5168;&#x5957;&#x63A5;&#x5B57;&#x5C42; (ssl 1.0,ssl 2.0,ssl 3.0)<br>TLS:&#x4F20;&#x8F93;&#x5C42;&#x5B89;&#x5168;(tls 1.0,tls 1.1,tls 1.2,tls 1.3)</p>
+<h3 id="ssl&#x4F1A;&#x8BDD;&#x4E3B;&#x8981;&#x4E09;&#x6B65;">SSL&#x4F1A;&#x8BDD;&#x4E3B;&#x8981;&#x4E09;&#x6B65;</h3>
+<p>&#x5BA2;&#x6237;&#x7AEF;&#x5411;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x7D22;&#x8981;&#x5E76;&#x9A8C;&#x8BC1;&#x8BC1;&#x4E66;;<br>&#x53CC;&#x65B9;&#x534F;&#x5546;&#x751F;&#x6210;&quot;&#x4F1A;&#x8BDD;&#x5BC6;&#x94A5;&quot;;<br>&#x53CC;&#x65B9;&#x91C7;&#x7528;&quot;&#x4F1A;&#x8BDD;&#x5BC6;&#x94A5;&quot;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#x901A;&#x4FE1;;  </p>
+<h3 id="ssl-handshake-protocol">SSL Handshake Protocol:</h3>
+<p>&#x7B2C;&#x4E00;&#x9636;&#x6BB5;:ClientHello:<br>&#x652F;&#x6301;&#x7684;&#x534F;&#x8BAE;&#x7248;&#x672C;,&#x6BD4;&#x5982;tls 1.2;<br>&#x5BA2;&#x6237;&#x7AEF;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x6570;,&#x7A0D;&#x540E;&#x7528;&#x6237;&#x751F;&#x6210;&quot;&#x4F1A;&#x8BDD;&#x5BC6;&#x94A5;&quot;;<br>&#x652F;&#x6301;&#x7684;&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;,&#x6BD4;&#x5982;AES&#x3001;RSA;<br>&#x652F;&#x6301;&#x7684;&#x538B;&#x7F29;&#x7B97;&#x6CD5;;  </p>
+<p>&#x7B2C;&#x4E8C;&#x9636;&#x6BB5;:ServerHello:<br>&#x786E;&#x8BA4;&#x4F7F;&#x7528;&#x7684;&#x52A0;&#x5BC6;&#x901A;&#x4FE1;&#x7248;&#x672C;,&#x6BD4;&#x5982;tls 1.2;<br>&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x6570;,&#x7A0D;&#x540E;&#x7528;&#x4E8E;&#x751F;&#x6210;&quot;&#x4F1A;&#x8BDD;&#x5BC6;&#x94A5;&quot;;<br>&#x786E;&#x8BA4;&#x4F7F;&#x7528;&#x7684;&#x52A0;&#x5BC6;&#x65B9;&#x6CD5;;<br>&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;;  </p>
+<p>&#x7B2C;&#x4E09;&#x9636;&#x6BB5;:<br>&#x9A8C;&#x8BC1;&#x670D;&#x52A1;&#x5668;&#x8BC1;&#x4E66;,&#x5728;&#x786E;&#x8BA4;&#x65E0;&#x8BEF;&#x540E;&#x53D6;&#x51FA;&#x5176;&#x516C;&#x94A5;;(&#x53D1;&#x8BC1;&#x673A;&#x6784;&#x3001;&#x8BC1;&#x4E66;&#x5B8C;&#x6574;&#x6027;&#x3001;&#x8BC1;&#x4E66;&#x6301;&#x6709;&#x8005;&#x3001;&#x8BC1;&#x4E66;&#x6709;&#x6548;&#x671F;&#x3001;&#x540A;&#x9500;&#x5217;&#x8868;)<br>&#x53D1;&#x9001;&#x4EE5;&#x4E0B;&#x4FE1;&#x606F;&#x7ED9;&#x670D;&#x52A1;&#x5668;&#x7AEF;:<br>&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x6570;;<br>&#x7F16;&#x7801;&#x53D8;&#x66F4;&#x901A;&#x77E5;(&#x8868;&#x793A;&#x968F;&#x540E;&#x7684;&#x4FE1;&#x606F;&#x90FD;&#x5C06;&#x7528;&#x53CC;&#x65B9;&#x5546;&#x5B9A;&#x7684;&#x52A0;&#x5BC6;&#x65B9;&#x6CD5;&#x548C;&#x5BC6;&#x94A5;&#x53D1;&#x9001;);<br>&#x5BA2;&#x6237;&#x7AEF;&#x63E1;&#x624B;&#x7ED3;&#x675F;&#x901A;&#x77E5;;  </p>
+<p>&#x7B2C;&#x56DB;&#x9636;&#x6BB5;:<br>&#x6536;&#x5230;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x6765;&#x7684;&#x7B2C;&#x4E09;&#x4E2A;&#x968F;&#x673A;&#x6570;pre-master-key&#x540E;,&#x8BA1;&#x7B97;&#x751F;&#x6210;&#x672C;&#x6B21;&#x4F1A;&#x8BDD;&#x6240;&#x7528;&#x5230;&#x7684;&quot;&#x4F1A;&#x8BDD;&#x5BC6;&#x94A5;&quot;;<br>&#x5411;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x5982;&#x4E0B;&#x4FE1;&#x606F;:<br>&#x7F16;&#x7801;&#x53D8;&#x66F4;&#x901A;&#x77E5;(&#x8868;&#x793A;&#x968F;&#x540E;&#x7684;&#x4FE1;&#x606F;&#x90FD;&#x5C06;&#x7528;&#x53CC;&#x65B9;&#x5546;&#x5B9A;&#x7684;&#x52A0;&#x5BC6;&#x65B9;&#x6CD5;&#x548C;&#x5BC6;&#x94A5;&#x53D1;&#x9001;);<br>&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x63E1;&#x624B;&#x7ED3;&#x675F;&#x901A;&#x77E5;;  </p>
+<p>PKI:&#x516C;&#x94A5;&#x57FA;&#x7840;&#x8BBE;&#x65BD;<br>&#x7B7E;&#x8BC1;&#x673A;&#x6784;:CA<br>&#x6CE8;&#x518C;&#x673A;&#x6784;:RA<br>&#x8BC1;&#x4E66;&#x540A;&#x9500;&#x5217;&#x8868;:CRL<br>&#x8BC1;&#x4E66;&#x5B58;&#x53D6;&#x5E93;:CB  </p>
+<h3 id="openssl">OpenSSL</h3>
+<p>libcrypto,libssl&#x4E3B;&#x8981;&#x7531;&#x5F00;&#x53D1;&#x8005;&#x4F7F;&#x7528;;<br>openssl:&#x591A;&#x7528;&#x9014;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;;  </p>
+<p>openssl&#x4F17;&#x591A;&#x5B50;&#x547D;&#x4EE4;&#x5206;&#x4E3A;&#x4E09;&#x7C7B;:<br>&#x6807;&#x51C6;&#x547D;&#x4EE4;<br>&#x6D88;&#x606F;&#x6458;&#x8981;&#x547D;&#x4EE4;(dgst&#x5B50;&#x547D;&#x4EE4;)<br>&#x52A0;&#x5BC6;&#x547D;&#x4EE4;(enc&#x5B50;&#x547D;&#x4EE4;)  </p>
+<pre><code class="lang-shell">#&#x663E;&#x793A;openssl&#x7684;&#x7248;&#x672C;
+openssl version
+</code></pre>
+<p>&#x6807;&#x51C6;&#x547D;&#x4EE4;:enc,ca,req,genrsa,...  </p>
+<p>&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;:<br>&#x5DE5;&#x5177;:openssl enc,gpg<br>&#x652F;&#x6301;&#x7684;&#x7B97;&#x6CD5;:3des,aes,blowfish,towfish  </p>
+<p>enc&#x547D;&#x4EE4;:  </p>
+<pre><code class="lang-shell">cp /etc/fstab ~/
+#-e:&#x4EE3;&#x8868;&#x52A0;&#x5BC6;,-des3&#x4EE3;&#x8868;&#x4F7F;&#x7528;des3&#x52A0;&#x5BC6;&#x7B97;&#x6CD5;,-a&#x4EE3;&#x8868;&#x4F7F;&#x7528;base64&#x7F16;&#x7801;,-sale&#x4EE3;&#x8868;&#x52A0;&#x76D0;,-in&#x4EE3;&#x8868;&#x8981;&#x52A0;&#x5BC6;&#x7684;&#x6587;&#x4EF6;,-out&#x4EE3;&#x8868;&#x52A0;&#x5BC6;&#x540E;&#x7684;&#x6587;&#x4EF6;,&#x4F1A;&#x63D0;&#x793A;&#x8F93;&#x5165;&#x4E24;&#x6B21;&#x786E;&#x8BA4;&#x5BC6;&#x7801;
+openssl enc -e -des3 -a -salt -in fstab -out fstab.ciphertext
+#&#x67E5;&#x770B;&#x52A0;&#x5BC6;&#x7684;&#x5185;&#x5BB9;
+cat fstab.ciphertext
+#&#x89E3;&#x5BC6;&#x521A;&#x624D;&#x52A0;&#x5BC6;&#x7684;&#x6587;&#x4EF6;,&#x4F1A;&#x63D0;&#x793A;&#x8F93;&#x5165;&#x5BC6;&#x7801;
+openssl enc -d -des3 -a -salt -in fstab.ciphertext -out fstab.plaintext
+#&#x67E5;&#x770B;&#x89E3;&#x5BC6;&#x540E;&#x7684;&#x6587;&#x4EF6;
+cat fstab.plaintext
+</code></pre>
+<p>&#x5355;&#x5411;&#x52A0;&#x5BC6;:<br>&#x5DE5;&#x5177;:openssl dgst,md5sum,sha1sum,sha224sum,...   </p>
+<p>dgst&#x547D;&#x4EE4;:  </p>
+<pre><code class="lang-shell">#md5&#x52A0;&#x5BC6;
+openssl dgst -md5 fstab.plaintext
+md5sum fstab.plaintext
+</code></pre>
+<p>&#x751F;&#x6210;&#x7528;&#x6237;&#x5BC6;&#x7801;:<br>&#x5DE5;&#x5177;:passwd,openssl passwd</p>
+<pre><code class="lang-shell">#&#x67E5;&#x770B;openssl passwd&#x7684;&#x5E2E;&#x52A9;&#x6587;&#x6863;
+whatis passwd
+man sslpasswd
+#-1&#x4EE3;&#x8868;md5&#x7B97;&#x6CD5;&#x52A0;&#x5BC6;,-salt:&#x6307;&#x5B9A;&#x52A0;&#x76D0;&#x7684;&#x503C;
+openssl passwd -1 -salt 12345678
+</code></pre>
+<p>&#x751F;&#x6210;&#x968F;&#x673A;&#x6570;:<br>&#x5DE5;&#x5177;:openssl rand  </p>
+<pre><code class="lang-shell">#&#x67E5;&#x770B;openssl rand&#x5E2E;&#x52A9;
+whatis rand
+man sslrand
+#&#x4F7F;&#x7528;base64&#x7F16;&#x7801;&#x751F;&#x6210;&#x968F;&#x673A;&#x6570;,&#x8FD9;&#x91CC;&#x7684;10&#x4EE3;&#x8868;10&#x4E2A;&#x5B57;&#x8282;
+openssl rand -base64 10
+#&#x4F7F;&#x7528;16&#x8FDB;&#x5236;&#x7F16;&#x7801;&#x751F;&#x6210;&#x968F;&#x673A;&#x6570;,&#x8FD9;&#x91CC;&#x7684;10&#x4EE3;&#x8868;10&#x4E2A;&#x5B57;&#x8282;
+openssl rand -hex 10
+
+#&#x4E24;&#x79CD;&#x5F15;&#x7528;&#x65B9;&#x5F0F;&#x6765;&#x751F;&#x6210;&#x968F;&#x673A;&#x76D0;&#x521B;&#x5EFA;&#x5BC6;&#x7801;
+openssl passwd -1 -salt `openssl rand -hex 4`
+openssl passwd -1 -salt $(openssl rand -hex 4)
+</code></pre>
+<p>&#x516C;&#x94A5;&#x52A0;&#x5BC6;:<br>&#x52A0;&#x5BC6;&#x89E3;&#x5BC6;:<br>&#x7B97;&#x6CD5;:RSA,ELGamal<br>&#x5DE5;&#x5177;:openssl rsautl,gpg  </p>
+<p>&#x6570;&#x5B57;&#x7B7E;&#x540D;:<br>&#x7B97;&#x6CD5;:RSA,DSA,ELGamal  </p>
+<p>&#x5BC6;&#x94A5;&#x4EA4;&#x6362;:<br>&#x7B97;&#x6CD5;:DH  </p>
+<p>&#x751F;&#x6210;&#x5BC6;&#x94A5;:<br>&#x751F;&#x6210;&#x79C1;&#x94A5;:  </p>
+<pre><code class="lang-shell">#&#x751F;&#x6210;1024&#x4F4D;rsa&#x79C1;&#x94A5;
+openssl genrsa 1024
+
+#&#x4F7F;&#x7528;&#x8F93;&#x51FA;&#x91CD;&#x5B9A;&#x5411;,&#x5C06;&#x79C1;&#x94A5;&#x4FDD;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;
+openssl genrsa 1024 &gt; /tmp/mykey.private
+cat /tmp/mykey.private
+
+#&#x4F7F;&#x7528;-out&#x9009;&#x9879;&#x4FDD;&#x5B58;&#x5230;&#x6307;&#x5B9A;&#x6587;&#x4EF6;
+openssl genrsa  -out /tmp/mykey2.private 1024
+cat /tmp/mykey2.private
+
+#umask 077;077&#x4EE3;&#x8868;&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#x8981;&#x4F7F;&#x7528;666&#x6743;&#x9650;&#x51CF;&#x53BB;077&#x7ED3;&#x679C;&#x4E3A;600&#x7684;&#x6743;&#x9650;,&#x8FD9;&#x6837;&#x4FDD;&#x8BC1;&#x53EA;&#x6709;&#x81EA;&#x5DF1;&#x80FD;&#x6253;&#x5F00;&#x8BE5;&#x52A0;&#x5BC6;&#x6587;&#x4EF6;,&#x4FDD;&#x8BC1;&#x5B89;&#x5168;&#x6027;
+#&#x4F7F;&#x7528;&quot;()&quot;&#x4EE3;&#x8868;&#x4F1A;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x5B50;shell&#x5B50;&#x8FDB;&#x7A0B;&#x53BB;&#x8FD0;&#x884C;&#x62EC;&#x53F7;&#x91CC;&#x7684;&#x547D;&#x4EE4;,&#x62EC;&#x53F7;&#x91CC;&#x7684;umask 077;&#x8BBE;&#x7F6E;&#x4E86;&#x5B50;shell&#x7684;umask&#x503C;&#x4E3A;077,&#x62EC;&#x53F7;&#x5185;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x540E;&#x4F1A;&#x9500;&#x6BC1;&#x5B50;shell&#x8FDB;&#x7A0B;
+(umask 077;openssl genrsa -out /tmp/mykey3.private 2048)
+#&#x6267;&#x884C;&#x5B8C;&#x4EE5;&#x4E0A;&#x547D;&#x4EE4;,&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x7236;shell&#x8FDB;&#x7A0B;&#x4E2D;umask&#x8FD8;&#x662F;&#x9ED8;&#x8BA4;&#x503C;0022,&#x6240;&#x4EE5;&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x9ED8;&#x8BA4;&#x4E3A;644(666-022),&#x521B;&#x5EFA;&#x76EE;&#x5F55;&#x9ED8;&#x8BA4;&#x4E3A;755(777-022);&#x7B2C;&#x4E00;&#x4F4D;0&#x662F;&#x7279;&#x6B8A;&#x6743;&#x9650;  
+umask
+#&#x67E5;&#x770B;&#x6743;&#x9650;
+ll /tmp/mykey3.private
+</code></pre>
+<p>&#x63D0;&#x51FA;&#x516C;&#x94A5;  </p>
+<pre><code class="lang-shell">#-in&#x4EE3;&#x8868;&#x4ECE;&#x54EA;&#x4E2A;&#x79C1;&#x94A5;&#x6587;&#x4EF6;&#x63D0;&#x53D6;&#x516C;&#x94A5;,-pubout,&#x8F93;&#x51FA;&#x516C;&#x94A5;
+openssl rsa -in /tmp/mykey3.private -pubout
+</code></pre>
+<h3 id="linux&#x7CFB;&#x7EDF;&#x4E0B;&#x7684;&#x968F;&#x673A;&#x6570;&#x751F;&#x6210;&#x5668;">Linux&#x7CFB;&#x7EDF;&#x4E0B;&#x7684;&#x968F;&#x673A;&#x6570;&#x751F;&#x6210;&#x5668;</h3>
+<p>/dev/random:&#x4EC5;&#x4ECE;&#x71B5;&#x6C60;&#x4E2D;&#x8FD4;&#x56DE;&#x968F;&#x673A;&#x6570;,&#x71B5;&#x6C60;&#x4E2D;&#x7684;&#x968F;&#x673A;&#x6570;&#x7528;&#x5C3D;,&#x5219;&#x963B;&#x585E;&#x540E;&#x6765;&#x7684;&#x8FDB;&#x7A0B;,&#x7B49;&#x5F85;&#x66F4;&#x591A;&#x7684;&#x968F;&#x673A;&#x6570;&#x4EA7;&#x751F;;<br>/dev/urandom:&#x4ECE;&#x71B5;&#x6C60;&#x4E2D;&#x8FD4;&#x56DE;&#x968F;&#x673A;&#x6570;,&#x71B5;&#x6C60;&#x4E2D;&#x7684;&#x968F;&#x673A;&#x6570;&#x7528;&#x5C3D;,&#x4F1A;&#x5229;&#x7528;&#x8F6F;&#x4EF6;&#x751F;&#x6210;&#x4F2A;&#x968F;&#x673A;&#x6570;,&#x975E;&#x963B;&#x585E;;<br>&#x4F2A;&#x968F;&#x673A;&#x6570;&#x4E0D;&#x5B89;&#x5168;;<br>&#x71B5;&#x6C60;:&#x8FD0;&#x884C;&#x4E2D;&#x7684;&#x5185;&#x6838;&#x7EF4;&#x62A4;&#x7684;&#x4E00;&#x6BB5;&#x5185;&#x5B58;&#x7A7A;&#x95F4;,&#x8FD9;&#x6BB5;&#x7A7A;&#x95F4;&#x5F53;&#x4E2D;&#x5B58;&#x50A8;&#x4E86;&#x5927;&#x91CF;&#x7684;&#x968F;&#x673A;&#x6570;;<br>&#x71B5;&#x6C60;&#x4E2D;&#x968F;&#x673A;&#x6570;&#x6765;&#x6E90;:<br>&#x786C;&#x76D8;IO&#x4E2D;&#x65AD;&#x65F6;&#x95F4;&#x95F4;&#x9694;;<br>&#x952E;&#x76D8;IO&#x4E2D;&#x65AD;&#x65F6;&#x95F4;&#x95F4;&#x9694;;  </p>
+<h3 id="ca">CA</h3>
+<p>&#x516C;&#x5171;&#x4FE1;&#x4EFB;&#x7684;CA,&#x79C1;&#x6709;CA;  </p>
+<p>&#x5EFA;&#x7ACB;&#x79C1;&#x6709;CA:<br>openssl<br>OpenCA  </p>
+<h3 id="&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF1A;etcpkitlsopensslcnf">&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF1A;/etc/pki/tls/openssl.cnf</h3>
+<pre><code class="lang-shell">less /etc/pki/tls/openssl.cnf
+</code></pre>
+<p><a href="https://images.gitee.com/uploads/images/2019/0822/113042_ea080a71_1479682.png" data-lightbox="81558412-fea8-40bd-b370-f88e6e8d4d88" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0822/113042_ea080a71_1479682.png" alt=""></a><br>dir:CA&#x7684;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;<br>certs:&#x5B58;&#x653E;&#x7B7E;&#x53D1;&#x8FC7;&#x7684;&#x8BC1;&#x4E66;&#x76EE;&#x5F55;<br>crl_dir:&#x5B58;&#x653E;&#x540A;&#x9500;&#x7684;&#x8BC1;&#x4E66;&#x76EE;&#x5F55;<br>database:&#x5B58;&#x653E;&#x5404;&#x4E2A;&#x5DF2;&#x7ECF;&#x529E;&#x6CD5;&#x8FC7;&#x7684;&#x8BC1;&#x4E66;&#x7684;&#x7D22;&#x5F15;&#x7B49;&#x4FE1;&#x606F;&#x7684;&#x6570;&#x636E;&#x5E93;&#x6587;&#x4EF6;<br>serial:&#x5B58;&#x653E;&#x7CFB;&#x5217;&#x53F7;&#x7684;&#x6587;&#x4EF6;,&#x6587;&#x4EF6;&#x4E2D;&#x7528;&#x4E8E;&#x6307;&#x660E;&#x5F53;&#x524D;&#x5E8F;&#x5217;&#x53F7;<br>certificate:&#x6307;&#x5B9A;CA&#x7684;&#x81EA;&#x7B7E;&#x8BC1;&#x4E66;&#x76EE;&#x5F55;&#x548C;&#x6587;&#x4EF6;&#x540D;<br>private_key:&#x6307;&#x5B9A;CA&#x81EA;&#x5DF1;&#x7684;&#x79C1;&#x94A5;&#x7684;&#x76EE;&#x5F55;&#x548C;&#x6587;&#x4EF6;&#x540D;<br>default_days:&#x8BC1;&#x4E66;&#x7684;&#x9ED8;&#x8BA4;&#x6709;&#x6548;&#x671F;<br>default_crl_days:&#x9ED8;&#x8BA4;&#x540A;&#x9500;&#x65E5;&#x671F;,&#x540A;&#x9500;&#x58F0;&#x660E;&#x591A;&#x5C11;&#x5929;  </p>
+<h3 id="&#x6784;&#x5EFA;&#x79C1;&#x6709;ca">&#x6784;&#x5EFA;&#x79C1;&#x6709;CA:</h3>
+<p>&#x5728;&#x786E;&#x5B9A;&#x914D;&#x7F6E;&#x4E3A;CA&#x7684;&#x670D;&#x52A1;&#x4E0A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x81EA;&#x7B7E;&#x8BC1;&#x4E66;,&#x5E76;&#x4E3A;CA&#x63D0;&#x4F9B;&#x6240;&#x9700;&#x8981;&#x7684;&#x76EE;&#x5F55;&#x53CA;&#x6587;&#x4EF6;&#x5373;&#x53EF;;  </p>
+<p>&#x6B65;&#x9AA4;:<br>(1) &#x751F;&#x6210;&#x79C1;&#x94A5;;  </p>
+<pre><code class="lang-shell">#&#x751F;&#x6210;&#x79C1;&#x94A5;
+(umask 077;openssl genrsa -out /etc/pki/CA/private/cakey.pem 4096)
+#&#x67E5;&#x770B;&#x6587;&#x4EF6;&#x548C;&#x6743;&#x9650;
+ls /etc/pki/CA/private/ -l
+#&#x67E5;&#x770B;&#x79C1;&#x94A5;
+cat /etc/pki/CA/private/cakey.pem
+</code></pre>
+<p>(2) &#x751F;&#x6210;&#x81EA;&#x7B7E;&#x8BC1;&#x4E66;;<br>openssl req -new -x509 -key /etc/pki/CA/private/cakey.pem -out /etc/pki/CA/cacert.pem -days 3655<br>-new:&#x751F;&#x6210;&#x65B0;&#x8BC1;&#x4E66;&#x7B7E;&#x7F72;&#x8BF7;&#x6C42;;<br>-x509:&#x751F;&#x6210;&#x81EA;&#x7B7E;&#x683C;&#x5F0F;&#x8BC1;&#x4E66;,&#x4E13;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x79C1;&#x6709;CA&#x65F6;;<br>-key:&#x751F;&#x6210;&#x8BF7;&#x6C42;&#x65F6;&#x7528;&#x5230;&#x7684;&#x79C1;&#x94A5;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;;<br>-out:&#x751F;&#x6210;&#x7684;&#x8BF7;&#x6C42;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;;&#x5982;&#x679C;&#x81EA;&#x7B7E;&#x64CD;&#x4F5C;&#x5C06;&#x76F4;&#x63A5;&#x751F;&#x6210;&#x7B7E;&#x7F72;&#x8FC7;&#x7684;&#x8BC1;&#x4E66;;<br>-days:&#x8BC1;&#x4E66;&#x7684;&#x6709;&#x6548;&#x65F6;&#x957F;,&#x5355;&#x4F4D;&#x662F;day;  </p>
+<pre><code class="lang-shell">#-new&#x8868;&#x793A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x8BF7;&#x6C42;,-key&#x8868;&#x793A;&#x6307;&#x660E;&#x4F60;&#x7684;&#x79C1;&#x94A5;&#x7684;&#x8DEF;&#x5F84;,&#x5B83;&#x4F1A;&#x4ECE;&#x8BE5;&#x79C1;&#x94A5;&#x63D0;&#x53D6;&#x51FA;&#x516C;&#x94A5;,&#x653E;&#x5728;&#x8BF7;&#x6C42;&#x5F53;&#x4E2D;,-out&#x8868;&#x793A;&#x4FDD;&#x5B58;&#x5728;&#x4EC0;&#x4E48;&#x5730;&#x65B9;
+#-days&#x6307;&#x660E;&#x8BC1;&#x4E66;&#x6709;&#x6548;&#x671F;&#x9650;(&#x5355;&#x4F4D;:&#x5929;),&#x9ED8;&#x8BA4;365&#x5929;,-x509&#x8868;&#x793A;&#x8FD9;&#x662F;&#x4E2A;&#x81EA;&#x7B7E;&#x8BC1;&#x4E66;,&#x5982;&#x679C;&#x4E0D;&#x662F;&#x81EA;&#x7B7E;&#x8BC1;&#x4E66;&#x4E0D;&#x8981;&#x52A0;-x509&#x9009;&#x9879;
+#&#x6267;&#x884C;&#x540E;&#x4F1A;&#x63D0;&#x793A;&#x56DE;&#x7B54;&#x5F88;&#x591A;&#x4FE1;&#x606F;,&#x770B;&#x4E0B;&#x56FE;
+openssl req -new -x509 -key /etc/pki/CA/private/cakey.pem -out /etc/pki/CA/cacert.pem -days 3655
+#&#x67E5;&#x770B;&#x751F;&#x6210;&#x7684;&#x8BC1;&#x4E66;
+ls /etc/pki/CA
+</code></pre>
+<p><a href="https://images.gitee.com/uploads/images/2019/0822/094307_1c030ab8_1479682.png" data-lightbox="de3d8af2-73d4-4b94-8fd0-61159569b8b4" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0822/094307_1c030ab8_1479682.png" alt=""></a>  </p>
+<p>(3) &#x4E3A;CA&#x63D0;&#x4F9B;&#x6240;&#x9700;&#x7684;&#x76EE;&#x5F55;&#x53CA;&#x6587;&#x4EF6;;<br><a href="https://images.gitee.com/uploads/images/2019/0822/094720_804e9351_1479682.png" data-lightbox="142d0943-311a-411b-b351-5255baa6f3cd" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0822/094720_804e9351_1479682.png" alt=""></a>  </p>
+<pre><code class="lang-shell">#&#x521B;&#x5EFA;&#x6240;&#x9700;&#x7684;&#x76EE;&#x5F55;
+mkdir -pv /etc/pki/CA/{certs,crl,newcerts}
+#&#x521B;&#x5EFA;&#x6240;&#x9700;&#x7684;&#x6587;&#x4EF6;
+touch /etc/pki/CA/{serial,index.txt}  
+#serial&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x8981;&#x7ED9;&#x660E;&#x7B2C;&#x4E00;&#x4E2A;&#x8BC1;&#x4E66;&#x7684;&#x5E8F;&#x5217;&#x53F7;
+echo 01 &gt; /etc/pki/CA/serial
+</code></pre>
+<h3 id="&#x8981;&#x7528;&#x5230;&#x8BC1;&#x4E66;&#x8FDB;&#x884C;&#x5B89;&#x5168;&#x901A;&#x4FE1;&#x7684;&#x670D;&#x52A1;&#x5668;&#x9700;&#x8981;&#x5411;ca&#x8BF7;&#x6C42;&#x7B7E;&#x7F72;&#x8BC1;&#x4E66;">&#x8981;&#x7528;&#x5230;&#x8BC1;&#x4E66;&#x8FDB;&#x884C;&#x5B89;&#x5168;&#x901A;&#x4FE1;&#x7684;&#x670D;&#x52A1;&#x5668;,&#x9700;&#x8981;&#x5411;CA&#x8BF7;&#x6C42;&#x7B7E;&#x7F72;&#x8BC1;&#x4E66;:</h3>
+<p>&#x6B65;&#x9AA4;:(&#x4EE5;httpd&#x4E3A;&#x4F8B;)<br>(1) &#x7528;&#x5230;&#x8BC1;&#x4E66;&#x7684;&#x4E3B;&#x673A;&#x751F;&#x6210;&#x79C1;&#x94A5;;<br>(2) &#x751F;&#x6210;&#x8BC1;&#x4E66;&#x7B7E;&#x7F72;&#x8BF7;&#x6C42;;<br>(3) &#x5C06;&#x8BF7;&#x6C42;&#x901A;&#x8FC7;&#x53EF;&#x9760;&#x65B9;&#x5F0F;&#x53D1;&#x9001;&#x7ED9;CA&#x4E3B;&#x673A;;<br>(4) &#x5728;CA&#x4E3B;&#x673A;&#x4E0A;&#x7B7E;&#x7F72;&#x8BC1;&#x4E66;<br>(5) &#x67E5;&#x770B;&#x8BC1;&#x4E66;&#x4E2D;&#x7684;&#x4FE1;&#x606F;  </p>
+<pre><code class="lang-shell">#&#x67E5;&#x770B;&#x662F;&#x5426;&#x5B89;&#x88C5;&#x4E86;httpd
+rpm -q httpd
+#&#x5B89;&#x88C5;httpd
+yum -y install httpd
+#&#x542F;&#x52A8;
+systemctl start httpd
+#&#x67E5;&#x770B;httpd&#x662F;&#x5426;&#x5360;&#x7528;80&#x7AEF;&#x53E3;
+netstat -tnlp
+#&#x8FDB;&#x5165;httpd&#x914D;&#x7F6E;&#x76EE;&#x5F55;
+cd /etc/httpd/
+#&#x521B;&#x5EFA;ssl&#x76EE;&#x5F55;,&#x5728;&#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x4E0B;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x8BC1;&#x4E66;&#x7B7E;&#x7F72;&#x8BF7;&#x6C42;,&#x8BF7;&#x6C42;&#x53D1;&#x7ED9;&#x8C01;,&#x8BA9;&#x8C01;&#x7ED9;&#x7B7E;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;
+mkdir ssl
+#&#x8FDB;&#x5165;ssl&#x76EE;&#x5F55;
+cd ssl
+#&#x751F;&#x6210;&#x79C1;&#x94A5;
+(umask 077;openssl genrsa -out httpd.key 2048)
+#&#x8BF7;&#x6C42;,&#x9700;&#x8981;&#x586B;&#x5199;&#x4FE1;&#x606F;,&#x91CC;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x8981;&#x548C;&#x4E4B;&#x524D;&#x8BC1;&#x4E66;&#x9881;&#x53D1;&#x8005;&#x5199;&#x7684;&#x5185;&#x5BB9;&#x4E00;&#x81F4;
+openssl req -new -key httpd.key -out httpd.csr -days 365
+#&#x4FE1;&#x606F;&#x586B;&#x5199;&#x770B;&#x4E0B;&#x56FE;:
+</code></pre>
+<p><a href="https://images.gitee.com/uploads/images/2019/0822/103745_21f0f580_1479682.png" data-lightbox="76bc66dd-651b-4162-a9b8-f0ae76c495b2" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0822/103745_21f0f580_1479682.png" alt=""></a><br>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5C31;&#x751F;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x8BC1;&#x4E66;&#x7B7E;&#x7F72;&#x8BF7;&#x6C42;,&#x53EB;httpd.csr.&#x628A;&#x8FD9;&#x4E2A;&#x8BF7;&#x6C42;&#x6254;&#x7ED9;&#x4E4B;&#x524D;&#x7684;&#x90A3;&#x53F0;CA&#x7684;&#x4E3B;&#x673A;,&#x7531;&#x5B83;&#x7B7E;&#x7F72;&#x4E00;&#x4E0B;&#x5373;&#x53EF;  </p>
+<pre><code class="lang-shell">#ssh&#x534F;&#x8BAE;&#x7684;&#x8FDC;&#x7A0B;&#x5B89;&#x5168;&#x590D;&#x5236;&#x547D;&#x4EE4;
+#&#x5C06;httpd.csr&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;192.168.147.153&#x8FD9;&#x53F0;CA&#x4E3B;&#x673A;&#x4E0A;,&#x5E76;&#x653E;&#x5728;tmp&#x76EE;&#x5F55;
+scp httpd.csr root@192.168.147.153:/tmp/
+#&#x7EC8;&#x7AEF;&#x5207;&#x6362;&#x5230;153&#x7684;CA&#x4E3B;&#x673A;&#x4E0A;&#x505A;&#x7B7E;&#x8BC1;,&#x7B7E;&#x5B8C;&#x7684;&#x8BC1;&#x4E66;&#x653E;&#x5728;/etc/pki/CA/certs/&#x76EE;&#x5F55;&#x4E0B;,&#x4E14;&#x7B7E;&#x5B8C;&#x7684;&#x6587;&#x4EF6;&#x540E;&#x7F00;&#x540D;&#x4E3A;.crt
+openssl ca -in /tmp/httpd.csr -out /etc/pki/CA/certs/httpd.crt -days 365
+#&#x67E5;&#x770B;&#x8BC1;&#x4E66;&#x7B7E;&#x7F72;&#x7684;&#x4FE1;&#x606F;
+cat /etc/pki/CA/index.txt
+#&#x5C06;&#x8BC1;&#x4E66;&#x53D1;&#x7ED9;web&#x670D;&#x52A1;&#x5668;
+scp /etc/pki/CA/certs/httpd.crt root@192.168.147.152:/etc/httpd/ssl/
+#&#x5728;152&#x4E3B;&#x673A;&#x4E0A;&#x67E5;&#x770B;&#x8BC1;&#x4E66;&#x6587;&#x4EF6;,&#x53EA;&#x770B;serial&#x548C;subject
+openssl x509 -in /etc/httpd/ssl/httpd.crt -noout -serial -subject
+</code></pre>
+<h3 id="&#x540A;&#x9500;&#x8BC1;&#x4E66;&#x4E86;&#x89E3;">&#x540A;&#x9500;&#x8BC1;&#x4E66;(&#x4E86;&#x89E3;):</h3>
+<p>&#x6B65;&#x9AA4;:<br>(1) &#x5BA2;&#x6237;&#x7AEF;&#x83B7;&#x53D6;&#x8981;&#x540A;&#x9500;&#x7684;&#x8BC1;&#x4E66;&#x7684;serial(&#x5728;&#x4F7F;&#x7528;&#x8BC1;&#x4E66;&#x7684;&#x4E3B;&#x673A;&#x4E0A;&#x6267;&#x884C;)    </p>
+<pre><code class="lang-shell">openssl x509 -in /etc/httpd/ssl/httpd.crt -noout -serial -subject
+</code></pre>
+<p>(2) CA&#x4E3B;&#x673A;&#x540A;&#x9500;&#x8BC1;&#x4E66;<br>&#x5148;&#x6839;&#x636E;&#x5BA2;&#x6237;&#x63D0;&#x4EA4;&#x7684;serial&#x548C;subject&#x4FE1;&#x606F;,&#x5BF9;&#x6BD4;&#x5176;&#x672C;&#x673A;&#x6570;&#x636E;&#x5E93;index.txt&#x4E2D;&#x5B58;&#x50A8;&#x7684;&#x662F;&#x5426;&#x4E00;&#x81F4;;<br>&#x540A;&#x9500;:openssl ca -revoke /etc/pki/CA/newcerts/serial.pem&#x5176;&#x4E2D;&#x7684;serial&#x8981;&#x6362;&#x6210;&#x8BC1;&#x4E66;&#x771F;&#x6B63;&#x7684;&#x5E8F;&#x5217;&#x53F7;;  </p>
+<pre><code class="lang-shell">ls /etc/pki/CA/newcerts/
+openssl ca -revoke /etc/pki/CA/newcerts/01.pem
+</code></pre>
+<p>(3) &#x751F;&#x6210;&#x540A;&#x9500;&#x8BC1;&#x4E66;&#x7684;&#x540A;&#x9500;&#x7F16;&#x53F7;(&#x7B2C;&#x4E00;&#x6B21;&#x540A;&#x9500;&#x8BC1;&#x4E66;&#x65F6;&#x6267;&#x884C;)<br>echo 01 &gt; /etc/pki/CA/crlnumber  </p>
+<p>(4) &#x66F4;&#x65B0;&#x8BC1;&#x4E66;&#x540A;&#x9500;&#x5217;&#x8868;<br>openssl ca -gencrl -out thisca.crl  </p>
+<p>&#x67E5;&#x770B;crl&#x6587;&#x4EF6;:<br>openssl crl -in /PATH/FROM/CRL_FILE.crl -noout -text  </p>
+
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="44.通信加密和解密、公钥、私钥、CA.html" class="navigation navigation-prev " aria-label="Previous page: 44.通信加密和解密、公钥、私钥、CA">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="46.DNS.html" class="navigation navigation-next " aria-label="Next page: 46.DNS">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"45.OpenSSL","level":"1.46","depth":1,"next":{"title":"46.DNS","level":"1.47","depth":1,"path":"pages/46.DNS.md","ref":"pages/46.DNS.md","articles":[]},"previous":{"title":"44.通信加密和解密、公钥、私钥、CA","level":"1.45","depth":1,"path":"pages/44.通信加密和解密、公钥、私钥、CA.md","ref":"pages/44.通信加密和解密、公钥、私钥、CA.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","lightbox","page-treeview","-lunr","-search","search-pro","-sharing","sharing-plus","back-to-top-button","code","splitter","chapter-fold","popup","custom-favicon","livereload"],"pluginsConfig":{"page-treeview":{"collapsed":false,"copyright":"Copyright &#169; aleen42","minHeaderCount":"2","minHeaderDeep":"2"},"chapter-fold":{},"styles":{"website":"styles/website.css"},"livereload":{},"splitter":{},"search-pro":{},"author":"sonin","sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"images/Title/favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"back-to-top-button":{},"title":"面试","custom-favicon":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":true,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":false,"qzone":true},"description":"面试宝典","theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/45.OpenSSL.md","mtime":"2023-07-13T05:42:09.564Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-07-13T06:53:25.815Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

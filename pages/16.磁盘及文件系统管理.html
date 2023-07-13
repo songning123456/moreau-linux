@@ -1,0 +1,1684 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>16.磁盘及文件系统管理 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="17.shell条件测试,逻辑判断,参数传递.html" />
+    
+    
+    <link rel="prev" href="15.文件查找find和特殊权限及facl.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Linux宝典
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01.linux基本操作使用.html">
+            
+                <a href="01.linux基本操作使用.html">
+            
+                    
+                    01.linux基本操作使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="02.linux获取命令使用帮助.html">
+            
+                <a href="02.linux获取命令使用帮助.html">
+            
+                    
+                    02.linux获取命令使用帮助
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="03.linux常用基础命令.html">
+            
+                <a href="03.linux常用基础命令.html">
+            
+                    
+                    03.linux常用基础命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04.根文件系统.html">
+            
+                <a href="04.根文件系统.html">
+            
+                    
+                    04.根文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05.Linux系统上的文件类型和历史命令.html">
+            
+                <a href="05.Linux系统上的文件类型和历史命令.html">
+            
+                    
+                    05.Linux系统上的文件类型和历史命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="06.目录文本查看命令.html">
+            
+                <a href="06.目录文本查看命令.html">
+            
+                    
+                    06.目录文本查看命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="07.文件管理命令.html">
+            
+                <a href="07.文件管理命令.html">
+            
+                    
+                    07.文件管理命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="08.glob通配及IO重定向.html">
+            
+                <a href="08.glob通配及IO重定向.html">
+            
+                    
+                    08.glob通配及IO重定向
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="09.用户和组管理概念.html">
+            
+                <a href="09.用户和组管理概念.html">
+            
+                    
+                    09.用户和组管理概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="10.用户和组管理命令.html">
+            
+                <a href="10.用户和组管理命令.html">
+            
+                    
+                    10.用户和组管理命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="11.用户权限管理.html">
+            
+                <a href="11.用户权限管理.html">
+            
+                    
+                    11.用户权限管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="12.shell变量,算数和逻辑运算及配置文件.html">
+            
+                <a href="12.shell变量,算数和逻辑运算及配置文件.html">
+            
+                    
+                    12.shell变量,算数和逻辑运算及配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="13.grep和基本正则表达式.html">
+            
+                <a href="13.grep和基本正则表达式.html">
+            
+                    
+                    13.grep和基本正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="14.vim编辑器.html">
+            
+                <a href="14.vim编辑器.html">
+            
+                    
+                    14.vim编辑器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="15.文件查找find和特殊权限及facl.html">
+            
+                <a href="15.文件查找find和特殊权限及facl.html">
+            
+                    
+                    15.文件查找find和特殊权限及facl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.17" data-path="16.磁盘及文件系统管理.html">
+            
+                <a href="16.磁盘及文件系统管理.html">
+            
+                    
+                    16.磁盘及文件系统管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="17.shell条件测试,逻辑判断,参数传递.html">
+            
+                <a href="17.shell条件测试,逻辑判断,参数传递.html">
+            
+                    
+                    17.shell条件测试,逻辑判断,参数传递
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="18.RAID技术.html">
+            
+                <a href="18.RAID技术.html">
+            
+                    
+                    18.RAID技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="19.LVM2.html">
+            
+                <a href="19.LVM2.html">
+            
+                    
+                    19.LVM2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="20.btrfs文件系统.html">
+            
+                <a href="20.btrfs文件系统.html">
+            
+                    
+                    20.btrfs文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="21.压缩工具.html">
+            
+                <a href="21.压缩工具.html">
+            
+                    
+                    21.压缩工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="22.Liunx任务计划crontab.html">
+            
+                <a href="22.Liunx任务计划crontab.html">
+            
+                    
+                    22.Liunx任务计划crontab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="23.软件包管理rpm.html">
+            
+                <a href="23.软件包管理rpm.html">
+            
+                    
+                    23.软件包管理rpm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="24.软件包管理yum.html">
+            
+                <a href="24.软件包管理yum.html">
+            
+                    
+                    24.软件包管理yum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="25.shell多分支if和for循环.html">
+            
+                <a href="25.shell多分支if和for循环.html">
+            
+                    
+                    25.shell多分支if和for循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="26.文本处理神器sed.html">
+            
+                <a href="26.文本处理神器sed.html">
+            
+                    
+                    26.文本处理神器sed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="27.计算机网络基础.html">
+            
+                <a href="27.计算机网络基础.html">
+            
+                    
+                    27.计算机网络基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="28.Linux网络属性配置.html">
+            
+                <a href="28.Linux网络属性配置.html">
+            
+                    
+                    28.Linux网络属性配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="29.Linux进程及作业管理.html">
+            
+                <a href="29.Linux进程及作业管理.html">
+            
+                    
+                    29.Linux进程及作业管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="30.Linux进程及作业管理二.html">
+            
+                <a href="30.Linux进程及作业管理二.html">
+            
+                    
+                    30.Linux进程及作业管理二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.32" data-path="31.网络客户端工具和while、untill循环.html">
+            
+                <a href="31.网络客户端工具和while、untill循环.html">
+            
+                    
+                    31.网络客户端工具和while、untill循环
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33" data-path="32.CentOS系统启动流程.html">
+            
+                <a href="32.CentOS系统启动流程.html">
+            
+                    
+                    32.CentOS系统启动流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.34" data-path="33.grub系统配置与使用.html">
+            
+                <a href="33.grub系统配置与使用.html">
+            
+                    
+                    33.grub系统配置与使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.35" data-path="34.Linux内核功能及模块应用.html">
+            
+                <a href="34.Linux内核功能及模块应用.html">
+            
+                    
+                    34.Linux内核功能及模块应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.36" data-path="35.Linux内核模块功能定制.html">
+            
+                <a href="35.Linux内核模块功能定制.html">
+            
+                    
+                    35.Linux内核模块功能定制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.37" data-path="36.Linux自动化安装anaconda配置定制.html">
+            
+                <a href="36.Linux自动化安装anaconda配置定制.html">
+            
+                    
+                    36.Linux自动化安装anaconda配置定制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.38" data-path="37.Linux系统自动化安装无人值守环境配置部署.html">
+            
+                <a href="37.Linux系统自动化安装无人值守环境配置部署.html">
+            
+                    
+                    37.Linux系统自动化安装无人值守环境配置部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.39" data-path="38.函数编程和case语句.html">
+            
+                <a href="38.函数编程和case语句.html">
+            
+                    
+                    38.函数编程和case语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.40" data-path="39.systemd及systemctl实战.html">
+            
+                <a href="39.systemd及systemctl实战.html">
+            
+                    
+                    39.systemd及systemctl实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.41" data-path="40.SELinux简介.html">
+            
+                <a href="40.SELinux简介.html">
+            
+                    
+                    40.SELinux简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.42" data-path="41.shell数组和字符串处理工具.html">
+            
+                <a href="41.shell数组和字符串处理工具.html">
+            
+                    
+                    41.shell数组和字符串处理工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.43" data-path="42.shell信号捕捉实战.html">
+            
+                <a href="42.shell信号捕捉实战.html">
+            
+                    
+                    42.shell信号捕捉实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.44" data-path="43.awk使用与实践.html">
+            
+                <a href="43.awk使用与实践.html">
+            
+                    
+                    43.awk使用与实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.45" data-path="44.通信加密和解密、公钥、私钥、CA.html">
+            
+                <a href="44.通信加密和解密、公钥、私钥、CA.html">
+            
+                    
+                    44.通信加密和解密、公钥、私钥、CA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.46" data-path="45.OpenSSL.html">
+            
+                <a href="45.OpenSSL.html">
+            
+                    
+                    45.OpenSSL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.47" data-path="46.DNS.html">
+            
+                <a href="46.DNS.html">
+            
+                    
+                    46.DNS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.48" data-path="47.DNS and Bind.html">
+            
+                <a href="47.DNS and Bind.html">
+            
+                    
+                    47.DNS and Bind
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.49" data-path="48.http协议及Web服务.html">
+            
+                <a href="48.http协议及Web服务.html">
+            
+                    
+                    48.http协议及Web服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.50" data-path="49.Apache.html">
+            
+                <a href="49.Apache.html">
+            
+                    
+                    49.Apache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.51" data-path="50.LAMP.html">
+            
+                <a href="50.LAMP.html">
+            
+                    
+                    50.LAMP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.52" data-path="51.MariaDB.html">
+            
+                <a href="51.MariaDB.html">
+            
+                    
+                    51.MariaDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.53" data-path="52.php-fpm基础应用与实战.html">
+            
+                <a href="52.php-fpm基础应用与实战.html">
+            
+                    
+                    52.php-fpm基础应用与实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.54" data-path="53.文件共享服务、ftp、vsftp.html">
+            
+                <a href="53.文件共享服务、ftp、vsftp.html">
+            
+                    
+                    53.文件共享服务、ftp、vsftp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.55" data-path="54.nfs服务配置应用与实战.html">
+            
+                <a href="54.nfs服务配置应用与实战.html">
+            
+                    
+                    54.nfs服务配置应用与实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.56" data-path="55.samba服务基础应用.html">
+            
+                <a href="55.samba服务基础应用.html">
+            
+                    
+                    55.samba服务基础应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.57" data-path="56.iptables.html">
+            
+                <a href="56.iptables.html">
+            
+                    
+                    56.iptables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.58" data-path="57.iptables网络防火墙.html">
+            
+                <a href="57.iptables网络防火墙.html">
+            
+                    
+                    57.iptables网络防火墙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.59" data-path="58.iptables_nat路由.html">
+            
+                <a href="58.iptables_nat路由.html">
+            
+                    
+                    58.iptables_nat路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.60" data-path="59.Linux时间服务-chrony.html">
+            
+                <a href="59.Linux时间服务-chrony.html">
+            
+                    
+                    59.Linux时间服务-chrony
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.61" data-path="GitLab安装_CentOS7.html">
+            
+                <a href="GitLab安装_CentOS7.html">
+            
+                    
+                    GitLab安装_CentOS7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.62" data-path="JDK安装.html">
+            
+                <a href="JDK安装.html">
+            
+                    
+                    JDK安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.63" data-path="Linux中kill -2和kill -9的区别.html">
+            
+                <a href="Linux中kill -2和kill -9的区别.html">
+            
+                    
+                    Linux中kill -2和kill -9的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.64" data-path="linux中修改环境变量及生效方法.html">
+            
+                <a href="linux中修改环境变量及生效方法.html">
+            
+                    
+                    linux中修改环境变量及生效方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.65" data-path="Linux查看设置系统时区.html">
+            
+                <a href="Linux查看设置系统时区.html">
+            
+                    
+                    Linux查看设置系统时区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.66" data-path="rc.local脚本开机自启动.html">
+            
+                <a href="rc.local脚本开机自启动.html">
+            
+                    
+                    rc.local脚本开机自启动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.67" data-path="SSH免密登录.html">
+            
+                <a href="SSH免密登录.html">
+            
+                    
+                    SSH免密登录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.68" data-path="Systemd日志管理journal和journalctl使用.html">
+            
+                <a href="Systemd日志管理journal和journalctl使用.html">
+            
+                    
+                    Systemd日志管理journal和journalctl使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.69" data-path="TCP_IP协议总结.html">
+            
+                <a href="TCP_IP协议总结.html">
+            
+                    
+                    TCP_IP协议总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.70" data-path="TCP_UDP结构.html">
+            
+                <a href="TCP_UDP结构.html">
+            
+                    
+                    TCP_UDP结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.71" data-path="VMware虚拟机克隆CentOS7并分别设置静态IP.html">
+            
+                <a href="VMware虚拟机克隆CentOS7并分别设置静态IP.html">
+            
+                    
+                    VMware虚拟机克隆CentOS7并分别设置静态IP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.72" data-path="Vmware虚拟机问题解决方案.html">
+            
+                <a href="Vmware虚拟机问题解决方案.html">
+            
+                    
+                    Vmware虚拟机问题解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.73" data-path="window下面git公钥的配置.html">
+            
+                <a href="window下面git公钥的配置.html">
+            
+                    
+                    window下面git公钥的配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.74" data-path="文件描述符.html">
+            
+                <a href="文件描述符.html">
+            
+                    
+                    文件描述符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.75" data-path="最小化安装centos7.9.html">
+            
+                <a href="最小化安装centos7.9.html">
+            
+                    
+                    最小化安装centos7.9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.76" data-path="查看服务器状态工具.html">
+            
+                <a href="查看服务器状态工具.html">
+            
+                    
+                    查看服务器状态工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >16.磁盘及文件系统管理</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="treeview__container"><div class="treeview__container-title"><span class="treeview__main-title">Treeview</span><span class="treeview__copyright">Copyright &#xA9; aleen42 all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></span></div><ul>
+<li><div><a href="#&#x8BBE;&#x5907;&#x7C7B;&#x578B;">&#x8BBE;&#x5907;&#x7C7B;&#x578B;:</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#mknod&#x547D;&#x4EE4;">mknod&#x547D;&#x4EE4;</a><i></i></div></li>
+</ul></li>
+<li><div><a href="#&#x78C1;&#x76D8;">&#x78C1;&#x76D8;:</a><i></i></div></li>
+<li><div><a href="#&#x5206;&#x533A;">&#x5206;&#x533A;:</a><i></i></div></li>
+<li><div><a href="#&#x78C1;&#x76D8;&#x5206;&#x533A;mbrgpt">&#x78C1;&#x76D8;&#x5206;&#x533A;:MBR,GPT</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#fdisk&#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x7BA1;&#x7406;&#x78C1;&#x76D8;&#x5206;&#x533A;&#x8868;">fdisk&#x547D;&#x4EE4;:&#x7528;&#x4E8E;&#x7BA1;&#x7406;&#x78C1;&#x76D8;&#x5206;&#x533A;&#x8868;</a><i></i></div></li>
+<li><div><a href="#1&#x3001;&#x67E5;&#x770B;&#x78C1;&#x76D8;&#x7684;&#x5206;&#x533A;&#x4FE1;&#x606F;">1&#x3001;&#x67E5;&#x770B;&#x78C1;&#x76D8;&#x7684;&#x5206;&#x533A;&#x4FE1;&#x606F;:</a><i></i></div></li>
+<li><div><a href="#2&#x3001;&#x7BA1;&#x7406;&#x5206;&#x533A;">2&#x3001;&#x7BA1;&#x7406;&#x5206;&#x533A;</a><i></i></div></li>
+</ul></li>
+<li><div><a href="#&#x5176;&#x4ED6;&#x5206;&#x533A;&#x521B;&#x5EFA;&#x5DE5;&#x5177;partedsfdisk">&#x5176;&#x4ED6;&#x5206;&#x533A;&#x521B;&#x5EFA;&#x5DE5;&#x5177;:parted,sfdisk;</a><i></i></div></li>
+<li><div><a href="#&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;">&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;:</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li> 
+<ul>
+<li><div><a href="#&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5206;&#x5143;&#x6570;&#x636E;&#x533A;&#x6570;&#x636E;&#x533A;">&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5206;:&#x5143;&#x6570;&#x636E;&#x533A;,&#x6570;&#x636E;&#x533A;</a><i></i></div></li>
+</ul></li>
+</ul></li>
+<li><div><a href="#vfsvirtual-file-system">VFS:Virtual File System</a><i></i></div></li>
+<li><div><a href="#&#x94FE;&#x63A5;&#x6587;&#x4EF6;&#x8BBF;&#x95EE;&#x540C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E0D;&#x540C;&#x8DEF;&#x5F84;">&#x94FE;&#x63A5;&#x6587;&#x4EF6;:&#x8BBF;&#x95EE;&#x540C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E0D;&#x540C;&#x8DEF;&#x5F84;;</a><i></i></div></li>
+<li><div><a href="#&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5DE5;&#x5177;">&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5DE5;&#x5177;:</a><i></i></div></li>
+<li><div><a href="#&#x5185;&#x6838;&#x7EA7;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x7EC4;&#x6210;&#x90E8;&#x5206;">&#x5185;&#x6838;&#x7EA7;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x7EC4;&#x6210;&#x90E8;&#x5206;:</a><i></i></div></li>
+<li><div><a href="#ext&#x7CFB;&#x7EDF;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x7BA1;&#x7406;&#x5DE5;&#x5177;">ext&#x7CFB;&#x7EDF;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x7BA1;&#x7406;&#x5DE5;&#x5177;:</a><i></i></div></li>
+<li><div><a href="#xfs">xfs</a><i></i></div></li>
+<li><div><a href="#ext&#x7CFB;&#x5217;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E13;&#x7528;&#x7BA1;&#x7406;&#x5DE5;&#x5177;mke2fs">ext&#x7CFB;&#x5217;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E13;&#x7528;&#x7BA1;&#x7406;&#x5DE5;&#x5177;:mke2fs</a><i></i></div></li>
+<li><div><a href="#e2label&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x67E5;&#x770B;&#x548C;&#x8BBE;&#x7F6E;&#x5377;&#x6807;&#x65E0;&#x9700;&#x91CD;&#x65B0;&#x683C;&#x5F0F;&#x5316;&#x4FEE;&#x6539;">e2label&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x67E5;&#x770B;&#x548C;&#x8BBE;&#x7F6E;&#x5377;&#x6807;(&#x65E0;&#x9700;&#x91CD;&#x65B0;&#x683C;&#x5F0F;&#x5316;&#x4FEE;&#x6539;)</a><i></i></div></li>
+<li><div><a href="#tune2fs&#x547D;&#x4EE4;&#x67E5;&#x770B;&#x6216;&#x8005;&#x4FEE;&#x6539;ext&#x7CFB;&#x5217;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x67D0;&#x4E9B;&#x5C5E;&#x6027;&#x65E0;&#x9700;&#x91CD;&#x65B0;&#x683C;&#x5F0F;&#x5316;&#x4FEE;&#x6539;">tune2fs&#x547D;&#x4EE4;:&#x67E5;&#x770B;&#x6216;&#x8005;&#x4FEE;&#x6539;ext&#x7CFB;&#x5217;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x67D0;&#x4E9B;&#x5C5E;&#x6027;(&#x65E0;&#x9700;&#x91CD;&#x65B0;&#x683C;&#x5F0F;&#x5316;&#x4FEE;&#x6539;)</a><i></i></div></li>
+<li><div><a href="#dumpe2fs&#x547D;&#x4EE4;&#x663E;&#x793A;ext&#x7CFB;&#x5217;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x5C5E;&#x6027;&#x4FE1;&#x606F;">dumpe2fs&#x547D;&#x4EE4;:&#x663E;&#x793A;ext&#x7CFB;&#x5217;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x5C5E;&#x6027;&#x4FE1;&#x606F;</a><i></i></div></li>
+<li><div><a href="#fsck&#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x5B9E;&#x73B0;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x68C0;&#x6D4B;&#x5DE5;&#x5177;">fsck&#x547D;&#x4EE4;:&#x7528;&#x4E8E;&#x5B9E;&#x73B0;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x68C0;&#x6D4B;&#x5DE5;&#x5177;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#ext&#x7CFB;&#x5217;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x4E13;&#x7528;&#x5DE5;&#x5177;">ext&#x7CFB;&#x5217;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x4E13;&#x7528;&#x5DE5;&#x5177;:</a><i></i></div></li>
+</ul></li>
+<li><div><a href="#blkid&#x547D;&#x4EE4;">blkid&#x547D;&#x4EE4;</a><i></i></div></li>
+<li><div><a href="#swap&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;">swap&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;</a><i></i></div></li>
+<li><div><a href="#window&#x65E0;&#x6CD5;&#x8BC6;&#x522B;linux&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;">window&#x65E0;&#x6CD5;&#x8BC6;&#x522B;Linux&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;</a><i></i></div></li>
+<li><div><a href="#&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x4F7F;&#x7528;">&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x4F7F;&#x7528;:</a><i></i></div></li>
+<li><div><a href="#mount&#x547D;&#x4EE4;">mount&#x547D;&#x4EE4;:</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li> 
+<ul>
+<li> 
+<ul>
+<li> 
+<ul>
+<li> 
+<ul>
+<li> 
+<ul>
+<li> 
+<ul>
+<li> 
+<ul>
+<li> 
+<ul>
+<li> 
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+-  
+- <div><a href="#&#x6216;&#x8005;&#x8BBE;&#x7F6E;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x62E5;&#x6709;acl&#x6743;&#x9650;">#&#x6216;&#x8005;&#x8BBE;&#x7F6E;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x62E5;&#x6709;acl&#x6743;&#x9650;</a><i></i></div>
+- <div><a href="#umount&#x547D;&#x4EE4;">umount&#x547D;&#x4EE4;:</a><i></i></div>
+- <div><a href="#&#x4E00;&#x4E2A;&#x4F7F;&#x7528;&#x6280;&#x5DE7;">&#x4E00;&#x4E2A;&#x4F7F;&#x7528;&#x6280;&#x5DE7;:</a><i></i></div>
+- <div><a href="#&#x67E5;&#x770B;&#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x6240;&#x6709;&#x5DF2;&#x6302;&#x5728;&#x7684;&#x8BBE;&#x5907;">&#x67E5;&#x770B;&#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x6240;&#x6709;&#x5DF2;&#x6302;&#x5728;&#x7684;&#x8BBE;&#x5907;:</a><i></i></div>
+- <div><a href="#&#x6302;&#x8F7D;&#x5149;&#x76D8;">&#x6302;&#x8F7D;&#x5149;&#x76D8;</a><i></i></div>
+- <div><a href="#&#x6302;&#x8F7D;u&#x76D8;">&#x6302;&#x8F7D;U&#x76D8;</a><i></i></div>
+- <div><a href="#&#x6B63;&#x5728;&#x8BBF;&#x95EE;&#x7684;&#x6302;&#x8F7D;&#x70B9;&#x65E0;&#x6CD5;&#x88AB;&#x5378;&#x8F7D;">&#x6B63;&#x5728;&#x8BBF;&#x95EE;&#x7684;&#x6302;&#x8F7D;&#x70B9;&#x65E0;&#x6CD5;&#x88AB;&#x5378;&#x8F7D;</a><i></i></div>
+- <div><a href="#&#x6302;&#x8F7D;&#x672C;&#x5730;&#x56DE;&#x73AF;&#x8BBE;&#x5907;">&#x6302;&#x8F7D;&#x672C;&#x5730;&#x56DE;&#x73AF;&#x8BBE;&#x5907;</a><i></i></div>
+- <div><a href="#&#x4EA4;&#x6362;&#x5206;&#x533A;&#x7684;&#x542F;&#x7528;&#x548C;&#x7981;&#x7528;">&#x4EA4;&#x6362;&#x5206;&#x533A;&#x7684;&#x542F;&#x7528;&#x548C;&#x7981;&#x7528;:</a><i></i></div>
+- <div><a href="#&#x8BBE;&#x5B9A;&#x9664;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4EE5;&#x5916;&#x7684;&#x5176;&#x5B83;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x80FD;&#x591F;&#x5F00;&#x673A;&#x65F6;&#x81EA;&#x52A8;&#x6302;&#x8F7D;etcstab&#x6587;&#x4EF6;">&#x8BBE;&#x5B9A;&#x9664;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4EE5;&#x5916;&#x7684;&#x5176;&#x5B83;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x80FD;&#x591F;&#x5F00;&#x673A;&#x65F6;&#x81EA;&#x52A8;&#x6302;&#x8F7D;:/etc/stab&#x6587;&#x4EF6;</a><i></i></div>
+- <div><a href="#df&#x547D;&#x4EE4;&#x67E5;&#x770B;&#x78C1;&#x76D8;&#x7684;&#x4F7F;&#x7528;&#x72B6;&#x6001;">df&#x547D;&#x4EE4;:&#x67E5;&#x770B;&#x78C1;&#x76D8;&#x7684;&#x4F7F;&#x7528;&#x72B6;&#x6001;</a><i></i></div>
+- <div><a href="#du&#x547D;&#x4EE4;&#x663E;&#x793A;&#x6587;&#x4EF6;&#x5927;&#x5C0F;">du&#x547D;&#x4EE4;:&#x663E;&#x793A;&#x6587;&#x4EF6;&#x5927;&#x5C0F;</a><i></i></div>
+- <div><a href="#&#x7EC3;&#x4E60;">&#x7EC3;&#x4E60;:</a><i></i></div></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+
+<h3 id="linux&#x78C1;&#x76D8;&#x53CA;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7BA1;&#x7406;">Linux&#x78C1;&#x76D8;&#x53CA;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7BA1;&#x7406;</h3>
+<p>CPU,Memory(RAM),I/O  </p>
+<p>I/O:Disks,Ehtercard<br>Disks:&#x6301;&#x4E45;&#x5B58;&#x50A8;&#x6570;&#x636E;  </p>
+<p>&#x63A5;&#x53E3;&#x7C7B;&#x578B;:<br>IDE(ata):&#x5E76;&#x53E3;,133MB/S<br>SCSI:&#x5E76;&#x53E3;,Ultrascsi320,320MB/S,Ultrascsi640,640MB/S<br>SATA:&#x4E32;&#x53E3;,6gbps<br>SAS:&#x4E32;&#x53E3;,6gbps<br>USB:&#x4E32;&#x53E3;,480MB/S  </p>
+<p>&#x5E76;&#x53E3;:&#x540C;&#x4E00;&#x7EBF;&#x7F06;&#x53EF;&#x4EE5;&#x63A5;&#x591A;&#x5757;&#x8BBE;&#x5907;;<br>IDE:&#x4E24;&#x4E2A;,&#x6709;&#x4E3B;&#x8BBE;&#x5907;&#x548C;&#x4ECE;&#x8BBE;&#x5907;<br>SCSI:<br>&#x5BBD;&#x5E26;:&#x53EF;&#x4EE5;&#x63A5;16-1&#x4E2A;&#x8BBE;&#x5907;<br>&#x7A84;&#x5E26;:8-1&#x4E2A;&#x8BBE;&#x5907;  </p>
+<p>&#x4E32;&#x53E3;:&#x540C;&#x4E00;&#x4E2A;&#x7EBF;&#x7F06;&#x53EA;&#x53EF;&#x4EE5;&#x63A5;1&#x4E2A;&#x8BBE;&#x5907;  </p>
+<p>iops:io per second  </p>
+<p>&#x786C;&#x76D8;:&#x673A;&#x68B0;&#x786C;&#x76D8;,&#x56FA;&#x6001;;  </p>
+<p>&#x673A;&#x68B0;&#x786C;&#x76D8;:<br>track:&#x78C1;&#x9053;<br>sector:&#x6247;&#x533A;,512bytes<br>cylinder:&#x67F1;&#x9762;<br>&#x5206;&#x533A;&#x5212;&#x5206;&#x57FA;&#x4E8E;&#x67F1;&#x9762;;  </p>
+<p>&#x5E73;&#x5747;&#x5BFB;&#x9053;&#x65F6;&#x95F4;:<br>5400rpm,7200rpm,10000rpm,15000rpm  </p>
+<p>linux&#x54F2;&#x5B66;&#x601D;&#x60F3;:&#x4E00;&#x5207;&#x7686;&#x6587;&#x4EF6;  </p>
+<h3 id="&#x8BBE;&#x5907;&#x7C7B;&#x578B;">&#x8BBE;&#x5907;&#x7C7B;&#x578B;:</h3>
+<p>&#x5757;(block):&#x968F;&#x673A;&#x8BBF;&#x95EE;,&#x6570;&#x636E;&#x4EA4;&#x6362;&#x5355;&#x4F4D;&#x662F;&quot;&#x5757;&quot;;<br>&#x5B57;&#x7B26;(character):&#x7EBF;&#x6027;&#x8BBF;&#x95EE;,&#x6570;&#x636E;&#x4EA4;&#x6362;&#x5355;&#x4F4D;&quot;&#x5B57;&#x7B26;&quot;;  </p>
+<p>&#x8BBE;&#x5907;&#x6587;&#x4EF6;:FHS<br>/dev<br>&#x8BBE;&#x5907;&#x6587;&#x4EF6;:&#x5173;&#x8054;&#x81F3;&#x8BBE;&#x5907;&#x7684;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;;&#x8BBE;&#x5907;&#x7684;&#x8BBF;&#x95EE;&#x5165;&#x53E3;;<br>&#x8BBE;&#x5907;&#x53F7;:<br>major:&#x4E3B;&#x8BBE;&#x5907;&#x53F7;,&#x533A;&#x5206;&#x8BBE;&#x5907;&#x7C7B;&#x578B;;&#x7528;&#x4E8E;&#x6807;&#x660E;&#x8BBE;&#x5907;&#x6240;&#x9700;&#x8981;&#x7684;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;;<br>minor:&#x6B21;&#x8BBE;&#x5907;&#x53F7;,&#x533A;&#x5206;&#x540C;&#x79CD;&#x7C7B;&#x4E0B;&#x7684;&#x4E0D;&#x540C;&#x7684;&#x8BBE;&#x5907;;&#x662F;&#x7279;&#x5B9A;&#x8BBE;&#x5907;&#x7684;&#x8BBF;&#x95EE;&#x5165;&#x53E3;;  </p>
+<h4 id="mknod&#x547D;&#x4EE4;">mknod&#x547D;&#x4EE4;</h4>
+<p>&#x521B;&#x5EFA;&#x5757;&#x6216;&#x5B57;&#x7B26;&#x8BBE;&#x5907;,(make block or character special files)<br>-m MODE:&#x521B;&#x5EFA;&#x540E;&#x7684;&#x8BBE;&#x5907;&#x6587;&#x4EF6;&#x7684;&#x8BBF;&#x95EE;&#x6743;&#x9650;;  </p>
+<p><a href="https://images.gitee.com/uploads/images/2019/0709/171758_fd7b5ea2_1479682.png" data-lightbox="b3691cc7-8a7f-4ff9-ba7b-5b6300b40324" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0709/171758_fd7b5ea2_1479682.png" alt=""></a></p>
+<h3 id="&#x78C1;&#x76D8;">&#x78C1;&#x76D8;:</h3>
+<p>IDE:/dev/hd[a-z]<br>&#x4F8B;&#x5982;:/dev/hda,/dev/hdb<br>SCSI,SATA,USB,SAS:/dev/sd[a-z]  </p>
+<h3 id="&#x5206;&#x533A;">&#x5206;&#x533A;:</h3>
+<p>/dev/sda#:
+&#x5982;:/dev/sda1,sda2...</p>
+<p>&#x6CE8;&#x610F;:CentOS6&#x548C;7&#x7EDF;&#x7EDF;&#x5C06;&#x786C;&#x76D8;&#x8BBE;&#x5907;&#x6587;&#x4EF6;&#x6807;&#x8BC6;&#x4E3A;/dev/sd[a-z]#</p>
+<p>&#x5F15;&#x7528;&#x8BBE;&#x5907;&#x7684;&#x65B9;&#x5F0F;:<br>&#x8BBE;&#x5907;&#x6587;&#x4EF6;&#x540D;<br>&#x5377;&#x6807;<br>UUID  </p>
+<h3 id="&#x78C1;&#x76D8;&#x5206;&#x533A;mbrgpt">&#x78C1;&#x76D8;&#x5206;&#x533A;:MBR,GPT</h3>
+<p>MBR:0&#x7F16;&#x53F7;&#x53F7;&#x6247;&#x533A;(0 sector)<br>&#x4E3B;&#x5F15;&#x5BFC;&#x8BB0;&#x5F55;&#x6216;&#x8005;&#x53EB;&#x4E3B;&#x5F15;&#x5BFC;&#x6247;&#x533A;(Master Boot Record)<br>&#x5206;&#x4E3A;&#x4E09;&#x90E8;&#x5206;:<br>446bytes:bootloader&#x7A0B;&#x5E8F;,&#x5F15;&#x5BFC;&#x542F;&#x52A8;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x7A0B;&#x5E8F;;<br>64bytes:&#x5206;&#x533A;&#x8868;,&#x6BCF;16bytes&#x6807;&#x8BC6;&#x4E00;&#x4E2A;&#x4E3B;&#x5206;&#x533A;,&#x4E00;&#x5171;&#x53EA;&#x80FD;&#x6709;4&#x4E2A;&#x4E3B;&#x5206;&#x533A;;<br>3&#x4E3B;1&#x6269;&#x5C55;:&#x6269;&#x5C55;&#x5206;&#x533A;&#x53C8;&#x53EF;&#x4EE5;&#x5212;&#x5206;n&#x4E2A;&#x903B;&#x8F91;&#x5206;&#x533A;;&#x8FD9;&#x5C31;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x53EF;&#x4EE5;&#x5206;&#x8D85;&#x8FC7;4&#x4E2A;&#x5206;&#x533A;&#x7684;&#x539F;&#x56E0;<br>2bytes:MBR&#x533A;&#x57DF;&#x7684;&#x6709;&#x6548;&#x6027;&#x6807;&#x8BC6;;55AA&#x4E3A;&#x6709;&#x6548;,&#x5426;&#x5219;&#x4E3A;&#x65E0;&#x6548;;    </p>
+<p>&#x4E3B;&#x5206;&#x533A;&#x548C;&#x6269;&#x5C55;&#x5206;&#x533A;&#x7684;&#x6807;&#x8BC6;:1-4<br>&#x903B;&#x8F91;&#x5206;&#x533A;:&#x4ECE;5&#x5F00;&#x59CB;  </p>
+<h4 id="fdisk&#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x7BA1;&#x7406;&#x78C1;&#x76D8;&#x5206;&#x533A;&#x8868;">fdisk&#x547D;&#x4EE4;:&#x7528;&#x4E8E;&#x7BA1;&#x7406;&#x78C1;&#x76D8;&#x5206;&#x533A;&#x8868;</h4>
+<h4 id="1&#x3001;&#x67E5;&#x770B;&#x78C1;&#x76D8;&#x7684;&#x5206;&#x533A;&#x4FE1;&#x606F;">1&#x3001;&#x67E5;&#x770B;&#x78C1;&#x76D8;&#x7684;&#x5206;&#x533A;&#x4FE1;&#x606F;:</h4>
+<p>fdisk -l [-u] [device ...]:&#x5217;&#x51FA;&#x6307;&#x5B9A;&#x78C1;&#x76D8;&#x8BBE;&#x5907;&#x4E0A;&#x7684;&#x5206;&#x533A;&#x60C5;&#x51B5;;  </p>
+<pre><code class="lang-shell">#&#x67E5;&#x770B;&#x5206;&#x533A;&#x4FE1;&#x606F;
+fdisk -l
+#&#x67E5;&#x770B;&#x67D0;&#x4E00;&#x5757;&#x786C;&#x76D8;&#x53EF;&#x4EE5;&#x8DDF;&#x4E0A;&#x786C;&#x76D8;&#x7684;&#x8BBE;&#x5907;&#x6587;&#x4EF6;&#x540D;
+fdisk -l /dev/sda1
+</code></pre>
+<h4 id="2&#x3001;&#x7BA1;&#x7406;&#x5206;&#x533A;">2&#x3001;&#x7BA1;&#x7406;&#x5206;&#x533A;</h4>
+<p>fdisk device<br>&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x4EA4;&#x4E92;&#x5F0F;&#x63A5;&#x53E3;&#x6765;&#x7BA1;&#x7406;&#x5206;&#x533A;,&#x5B83;&#x6709;&#x8BB8;&#x591A;&#x5B50;&#x547D;&#x4EE4;,&#x5206;&#x522B;&#x7528;&#x4E8E;&#x4E0D;&#x540C;&#x7684;&#x7BA1;&#x7406;&#x529F;&#x80FD;;&#x6240;&#x6709;&#x7684;&#x64CD;&#x4F5C;&#x5747;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x5B8C;&#x6210;,&#x6CA1;&#x6709;&#x76F4;&#x63A5;&#x540C;&#x6B65;&#x5230;&#x78C1;&#x76D8;&#xFF1B;&#x76F4;&#x5230;&#x4F7F;&#x7528;w&#x547D;&#x4EE4;&#x4FDD;&#x5B58;&#x81F3;&#x78C1;&#x76D8;&#x4E0A;;<br>&#x5E38;&#x7528;&#x547D;&#x4EE4;:<br>n:&#x521B;&#x5EFA;&#x65B0;&#x5206;&#x533A;<br>d:&#x5220;&#x9664;&#x5DF2;&#x6709;&#x5206;&#x533A;<br>t:&#x4FEE;&#x6539;&#x5206;&#x533A;&#x7C7B;&#x578B;<br>i:&#x67E5;&#x770B;&#x6240;&#x6709;&#x5DF2;&#x77E5;ID<br>w:&#x4FDD;&#x5B58;&#x5E76;&#x9000;&#x51FA;<br>q:&#x4E0D;&#x4FDD;&#x5B58;&#x9000;&#x51FA;<br>m:&#x67E5;&#x770B;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;<br>p:&#x663E;&#x793A;&#x73B0;&#x6709;&#x5206;&#x533A;&#x4FE1;&#x606F;<br>l:&#x5217;&#x51FA;&#x5DF2;&#x77E5;&#x5206;&#x533A;&#x7C7B;&#x578B;  </p>
+<pre><code class="lang-shell">fdisk /dev/sda
+</code></pre>
+<p><a href="https://images.gitee.com/uploads/images/2019/0715/082005_7cf61235_1479682.png" data-lightbox="69e1efc1-eff7-4784-8a4f-e476c5562838" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0715/082005_7cf61235_1479682.png" alt=""></a>
+<a href="https://images.gitee.com/uploads/images/2019/0715/085925_e36cf25c_1479682.png" data-lightbox="6ee73b67-9f70-4a9d-b42a-5d60a3205e23" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0715/085925_e36cf25c_1479682.png" alt=""></a></p>
+<p>&#x6CE8;&#x610F;:&#x5728;&#x5DF2;&#x7ECF;&#x5206;&#x533A;&#x5E76;&#x4E14;&#x5DF2;&#x7ECF;&#x6302;&#x8F7D;&#x5176;&#x4E2D;&#x67D0;&#x4E2A;&#x5206;&#x533A;&#x7684;&#x78C1;&#x76D8;&#x8BBE;&#x5907;&#x4E0A;&#x521B;&#x5EFA;&#x7684;&#x65B0;&#x5206;&#x533A;,&#x5185;&#x6838;&#x53EF;&#x80FD;&#x5728;&#x521B;&#x5EFA;&#x5B8C;&#x6210;&#x540E;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x8BC6;&#x522B;;<br>&#x4F7F;&#x7528;:<code>cat /proc/partitions</code>&#x67E5;&#x770B;&#x662F;&#x5426;&#x8BC6;&#x522B;;<br>&#x901A;&#x77E5;&#x5185;&#x6838;&#x5F3A;&#x5236;&#x91CD;&#x8BFB;&#x78C1;&#x76D8;&#x5206;&#x533A;&#x8868;:<br>CentOS5:partprobe [device]<br>CentOS6,7:partx,kpartx<br>partx -a [device]<br>kpartx -a [device]  </p>
+<pre><code>#&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x53EF;&#x80FD;&#x8981;&#x6267;&#x884C;&#x4E24;&#x6B21;&#x624D;&#x80FD;&#x6210;&#x529F;
+partx -a /dev/sda
+partx -a /dev/sda
+</code></pre><p><a href="https://images.gitee.com/uploads/images/2019/0715/082651_ee38a795_1479682.png" data-lightbox="ae93f71b-19ec-4b62-8de5-702dbb77c738" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0715/082651_ee38a795_1479682.png" alt=""></a></p>
+<h3 id="&#x5176;&#x4ED6;&#x5206;&#x533A;&#x521B;&#x5EFA;&#x5DE5;&#x5177;partedsfdisk">&#x5176;&#x4ED6;&#x5206;&#x533A;&#x521B;&#x5EFA;&#x5DE5;&#x5177;:parted,sfdisk;</h3>
+<h3 id="&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;">&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;:</h3>
+<p>&#x683C;&#x5F0F;&#x5316;:&#x4F4E;&#x7EA7;&#x683C;&#x5F0F;&#x5316;(&#x5206;&#x533A;&#x4E4B;&#x524D;&#x8FDB;&#x884C;,&#x5212;&#x5206;&#x78C1;&#x9053;)&#x3001;&#x9AD8;&#x7EA7;&#x683C;&#x5F0F;&#x5316;(&#x5206;&#x533A;&#x4E4B;&#x540E;&#x5BF9;&#x5206;&#x533A;&#x8FDB;&#x884C;,&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;)   </p>
+<h5 id="&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5206;&#x5143;&#x6570;&#x636E;&#x533A;&#x6570;&#x636E;&#x533A;">&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5206;:&#x5143;&#x6570;&#x636E;&#x533A;,&#x6570;&#x636E;&#x533A;</h5>
+<p>&#x5143;&#x6570;&#x636E;&#x533A;:<br>&#x6587;&#x4EF6;&#x5143;&#x6570;&#x636E;,inode(index node),inode table:&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x5927;&#x5C0F;&#x3001;&#x6743;&#x9650;&#x3001;&#x5C5E;&#x4E3B;&#x5C5E;&#x7EC4;&#x3001;&#x65F6;&#x95F4;&#x6233;&#x3001;&#x6570;&#x636E;&#x5757;&#x6307;&#x9488;(&#x5B83;&#x6307;&#x5411;&#x4E86;&#x54EA;&#x4E9B;&#x7F16;&#x53F7;&#x7684;&#x6570;&#x636E;&#x5757;(data blocks),&#x662F;&#x5C5E;&#x4E8E;&#x8BE5;&#x6587;&#x4EF6;&#x7684;)&#x3001;...;  </p>
+<p>&#x7B26;&#x53F7;&#x94FE;&#x63A5;&#x6587;&#x4EF6;:&#x5B58;&#x50A8;&#x6570;&#x636E;&#x5757;&#x6307;&#x9488;&#x7684;&#x7A7A;&#x95F4;&#x5F53;&#x4E2D;&#x5B58;&#x50A8;&#x7684;&#x662F;&#x771F;&#x5B9E;&#x6587;&#x4EF6;&#x7684;&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;;&#x6743;&#x9650;:lrwxrwxrwx;  </p>
+<p>&#x786C;&#x94FE;&#x63A5;:&#x6307;&#x5411;&#x540C;&#x4E00;&#x4E2A;inode;    </p>
+<p>&#x8BBE;&#x5907;&#x6587;&#x4EF6;:&#x5B58;&#x50A8;&#x6570;&#x636E;&#x5757;&#x6307;&#x9488;&#x7684;&#x7A7A;&#x95F4;&#x5F53;&#x4E2D;&#x5B58;&#x50A8;&#x7684;&#x662F;&#x8BBE;&#x5907;&#x53F7;(major,minor);  </p>
+<p>bitmap index:&#x4F4D;&#x56FE;&#x7D22;&#x5F15;:&#x5143;&#x6570;&#x636E;&#x533A;&#x5B58;&#x50A8;&#x7740;&#x4E8C;&#x8FDB;&#x5236;&#x4F4D;&#x7684;&#x7A7A;&#x95F4;,&#x6BCF;&#x4E00;&#x4F4D;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5757;,0&#x8868;&#x793A;&#x6570;&#x636E;&#x5757;&#x662F;&#x7A7A;&#x95F2;&#x7684;,1&#x8868;&#x793A;&#x6570;&#x636E;&#x5757;&#x5DF2;&#x5206;&#x914D;;   </p>
+<p>&#x6570;&#x636E;&#x5757;&#x548C;inode&#x90FD;&#x6709;&#x4F4D;&#x56FE;&#x7D22;&#x5F15;:&#x901A;&#x8FC7;&#x626B;&#x63CF;inode&#x6216;&#x6570;&#x636E;&#x5757;&#x7684;&#x4F4D;&#x56FE;&#x7D22;&#x5F15;,&#x6765;&#x83B7;&#x53D6;&#x54EA;&#x4E9B;&#x6570;&#x636E;&#x5757;(&#x5DF2;&#x5206;&#x5339;&#x914D;&#x6216;&#x7A7A;&#x95F2;;  </p>
+<p>linux&#x4E2D;&#x6587;&#x4EF6;&#x540D;&#x662F;&#x5B58;&#x653E;&#x5728;&#x5B83;&#x7684;&#x4E0A;&#x7EA7;&#x76EE;&#x5F55;&#x4E2D;;  </p>
+<p>&#x5220;&#x9664;&#x6587;&#x4EF6;:&#x5C06;&#x6B64;&#x6587;&#x4EF6;&#x6307;&#x5411;&#x7684;&#x6240;&#x6709;data block&#x6807;&#x8BB0;&#x4E3A;&#x672A;&#x4F7F;&#x7528;&#x72B6;&#x6001;;&#x5C06;&#x6B64;&#x6587;&#x4EF6;&#x7684;inode&#x6807;&#x8BB0;&#x4E3A;&#x672A;&#x4F7F;&#x7528;;  </p>
+<p>&#x590D;&#x5236;&#x548C;&#x79FB;&#x52A8;&#x6587;&#x4EF6;:<br>&#x590D;&#x5236;:&#x65B0;&#x5EFA;&#x6587;&#x4EF6;;<br>&#x79FB;&#x52A8;&#x6587;&#x4EF6;:<br>&#x5728;&#x540C;&#x4E00;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;:&#x6539;&#x53D8;&#x7684;&#x4EC5;&#x662F;&#x5176;&#x8DEF;&#x5F84;;<br>&#x5728;&#x4E0D;&#x540C;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;:&#x590D;&#x5236;&#x6570;&#x636E;&#x81F3;&#x76EE;&#x6807;&#x6587;&#x4EF6;,&#x5E76;&#x5220;&#x9664;&#x539F;&#x6587;&#x4EF6;;  </p>
+<pre><code class="lang-shell">#&#x67E5;&#x770B;inode&#x7684;&#x7F16;&#x53F7;
+ls -i
+#&#x4F7F;&#x7528;stat&#x67E5;&#x770B;inode&#x4E2D;&#x5B58;&#x653E;&#x7684;&#x5143;&#x6570;&#x636E;
+stat fstab
+</code></pre>
+<h3 id="vfsvirtual-file-system">VFS:Virtual File System</h3>
+<p>Linux&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;:ext2(&#x65E0;&#x65E5;&#x5FD7;&#x529F;&#x80FD;),ext3,ext4,xfs,relserfs,btrfs<br>&#x5149;&#x76D8;:iso9660<br>&#x7F51;&#x7EDC;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;:nfs,cifs<br>&#x96C6;&#x7FA4;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;:gfs2,ocfs2<br>&#x5185;&#x6838;&#x7EA7;&#x5206;&#x5E03;&#x5F0F;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;:ceph<br>windows&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;:vfat,ntfs<br>&#x4F2A;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;:proc,sysfs,tmpfs,hugepagefs<br>Unix&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;:UFS,FFS,JFS<br>&#x4EA4;&#x6362;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;:swap<br>&#x7528;&#x6237;&#x63A7;&#x4EF6;&#x7684;&#x5206;&#x5E03;&#x5F0F;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;:mogilefs,moosefs,glusterfs  </p>
+<h3 id="&#x94FE;&#x63A5;&#x6587;&#x4EF6;&#x8BBF;&#x95EE;&#x540C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E0D;&#x540C;&#x8DEF;&#x5F84;">&#x94FE;&#x63A5;&#x6587;&#x4EF6;:&#x8BBF;&#x95EE;&#x540C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E0D;&#x540C;&#x8DEF;&#x5F84;;</h3>
+<p>&#x786C;&#x94FE;&#x63A5;:&#x6307;&#x5411;&#x540C;&#x4E00;&#x4E2A;inode&#x7684;&#x591A;&#x4E2A;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;;<br>&#x7279;&#x6027;:<br>(1) &#x76EE;&#x5F55;&#x4E0D;&#x652F;&#x6301;&#x786C;&#x94FE;&#x63A5;;<br>(2) &#x786C;&#x94FE;&#x63A5;&#x4E0D;&#x80FD;&#x8DE8;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;;<br>(3) &#x521B;&#x5EFA;&#x786C;&#x94FE;&#x63A5;&#x4F1A;&#x589E;&#x52A0;inode&#x5F15;&#x7528;&#x8BA1;&#x6570;;<br><a href="https://images.gitee.com/uploads/images/2019/0711/153315_e9670b3a_1479682.png" data-lightbox="e17b70db-ba50-4aed-b482-e22da45fc8b4" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0711/153315_e9670b3a_1479682.png" alt=""></a>
+<a href="https://images.gitee.com/uploads/images/2019/0711/153500_664910bd_1479682.png" data-lightbox="46cbe33b-5bf7-4782-9ad0-70c6f65da29f" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0711/153500_664910bd_1479682.png" alt=""></a></p>
+<p>&#x7B26;&#x53F7;&#x94FE;&#x63A5;:&#x6307;&#x5411;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;;<br>&#x7279;&#x6027;:<br>(1) &#x7B26;&#x53F7;&#x94FE;&#x63A5;&#x4E0E;&#x6E90;&#x6587;&#x4EF6;&#x662F;&#x4E24;&#x4E2A;&#x5404;&#x81EA;&#x72EC;&#x7ACB;&#x7684;&#x6587;&#x4EF6;,&#x5404;&#x6709;&#x81EA;&#x5DF1;&#x7684;inode;&#x5BF9;&#x539F;&#x6587;&#x4EF6;&#x521B;&#x5EFA;&#x7B26;&#x53F7;&#x94FE;&#x63A5;&#x4E0D;&#x4F1A;&#x589E;inode&#x52A0;&#x5F15;&#x7528;&#x8BA1;&#x6570;;<br>(2) &#x652F;&#x6301;&#x5BF9;&#x76EE;&#x5F55;&#x521B;&#x5EFA;&#x7B26;&#x53F7;&#x94FE;&#x63A5;,&#x53EF;&#x4EE5;&#x8DE8;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;;<br>(3) &#x5220;&#x9664;&#x7B26;&#x53F7;&#x94FE;&#x63A5;&#x6587;&#x4EF6;&#x4E0D;&#x5F71;&#x54CD;&#x539F;&#x6587;&#x4EF6;;&#x4F46;&#x5220;&#x9664;&#x539F;&#x6587;&#x4EF6;,&#x7B26;&#x53F7;&#x94FE;&#x63A5;&#x6307;&#x5B9A;&#x7684;&#x8DEF;&#x5F84;&#x5373;&#x4E0D;&#x5B58;&#x5728;,&#x6B64;&#x65F6;&#x4F1A;&#x53D8;&#x6210;&#x65E0;&#x6548;&#x94FE;&#x63A5;;  </p>
+<p>&#x6CE8;&#x610F;:&#x7B26;&#x53F7;&#x94FE;&#x63A5;&#x6587;&#x4EF6;&#x7684;&#x5927;&#x5C0F;&#x662F;&#x5176;&#x6307;&#x5B9A;&#x7684;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5B57;&#x8282;&#x6570;;<br><a href="https://images.gitee.com/uploads/images/2019/0711/154109_756d8c8f_1479682.png" data-lightbox="afef9dd5-e57b-44f7-bdec-22cf0a1fabc8" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0711/154109_756d8c8f_1479682.png" alt=""></a></p>
+<h3 id="&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5DE5;&#x5177;">&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5DE5;&#x5177;:</h3>
+<p>&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x5DE5;&#x5177;<br>mkfs<br>mkfs.ext2,mkfs.ext3,mkfs.ext4,mkfs.xfs,mkfs.vfat,....  </p>
+<p>&#x68C0;&#x6D4B;&#x53CA;&#x4FEE;&#x590D;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x5DE5;&#x5177;<br>fsck<br>fsck.ext2,fsck.ext3,fsck.xfs,...  </p>
+<p>&#x67E5;&#x770B;&#x5176;&#x5C5E;&#x6027;&#x7684;&#x5DE5;&#x5177;<br>dumpe2fs,tune2fs  </p>
+<p>&#x8C03;&#x6574;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7279;&#x6027;:<br>tune2fs  </p>
+<h3 id="&#x5185;&#x6838;&#x7EA7;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x7EC4;&#x6210;&#x90E8;&#x5206;">&#x5185;&#x6838;&#x7EA7;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x7EC4;&#x6210;&#x90E8;&#x5206;:</h3>
+<p>&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x9A71;&#x52A8;:&#x7531;&#x5185;&#x6838;&#x63D0;&#x4F9B;<br>&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7BA1;&#x7406;&#x5DE5;&#x5177;:&#x7531;&#x7528;&#x6237;&#x63A7;&#x4EF6;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x63D0;&#x4F9B;  </p>
+<h3 id="ext&#x7CFB;&#x7EDF;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x7BA1;&#x7406;&#x5DE5;&#x5177;">ext&#x7CFB;&#x7EDF;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x7BA1;&#x7406;&#x5DE5;&#x5177;:</h3>
+<p>mkfs.ext2,mkfs.ext3,mkfs.ext4<br>&#x547D;&#x4EE4;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x9009;&#x9879;-t:  </p>
+<pre><code class="lang-shell">#&#x4E24;&#x4E2A;&#x547D;&#x4EE4;&#x4E00;&#x6837;
+mkfs.ext2 /dev/sda3
+mkfs -t ext2 /dev/sda3
+</code></pre>
+<p><a href="https://images.gitee.com/uploads/images/2019/0715/093558_4a1036fd_1479682.png" data-lightbox="a0c96300-3819-466d-b1d1-a44eca6c8ee9" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0715/093558_4a1036fd_1479682.png" alt=""></a>
+<a href="https://images.gitee.com/uploads/images/2019/0715/094711_c7d18fd4_1479682.png" data-lightbox="c8652b67-2e0d-4fcd-8a93-33cf0c659030" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0715/094711_c7d18fd4_1479682.png" alt=""></a></p>
+<h3 id="xfs">xfs</h3>
+<p>&#x521B;&#x5EFA;&#x4F7F;&#x7528;:mkfs.xfs<br>&#x68C0;&#x6D4B;&#x4F7F;&#x7528;:fsck.xfs</p>
+<p>CentOS6&#x4F7F;&#x7528;xfs&#x9700;&#x8981;&#x5B89;&#x88C5;,&#x4F7F;&#x7528;<code>yum -y install xfsprogs</code> </p>
+<p><a href="https://images.gitee.com/uploads/images/2019/0715/094909_8be08160_1479682.png" data-lightbox="f9c4eaf1-46ce-4aed-b2ee-827f78a7a95c" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0715/094909_8be08160_1479682.png" alt=""></a>
+<a href="https://images.gitee.com/uploads/images/2019/0715/095842_a4225ffb_1479682.png" data-lightbox="9344b64b-36a3-491b-aa61-e991befbba42" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0715/095842_a4225ffb_1479682.png" alt=""></a></p>
+<h3 id="ext&#x7CFB;&#x5217;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E13;&#x7528;&#x7BA1;&#x7406;&#x5DE5;&#x5177;mke2fs">ext&#x7CFB;&#x5217;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E13;&#x7528;&#x7BA1;&#x7406;&#x5DE5;&#x5177;:mke2fs</h3>
+<p>mke2fs [OPTIONS] device<br>-t {ext2|ext3|ext4}:&#x6307;&#x660E;&#x8981;&#x521B;&#x5EFA;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7C7B;&#x578B;;<br>-b {1024|2048|4096}:&#x6307;&#x660E;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x5757;&#x5927;&#x5C0F;;<br>-L LABEL:&#x6307;&#x660E;&#x5377;&#x6807;;<br>-j:&#x521B;&#x5EFA;&#x6709;&#x65E5;&#x5FD7;&#x529F;&#x80FD;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;;<br>-i #:byte-per-inode,&#x6307;&#x660E;Inode&#x4E0E;&#x5B57;&#x8282;&#x7684;&#x6BD4;&#x7387;;&#x5373;&#x6BCF;&#x591A;&#x5C11;&#x5B57;&#x8282;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;inode;<br>-N #:&#x76F4;&#x63A5;&#x6307;&#x660E;&#x8981;&#x7ED9;&#x6B64;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x521B;&#x5EFA;&#x7684;inode&#x7684;&#x6570;&#x91CF;;<br>-O <sup><a href="#fn_" id="reffn_"></a></sup>FEATURE:&#x4EE5;&#x6307;&#x5B9A;&#x7684;&#x7279;&#x6027;&#x521B;&#x5EFA;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;;<br>-m #:&#x6307;&#x5B9A;&#x9884;&#x7559;&#x7684;&#x7A7A;&#x95F4;,&#x767E;&#x5206;&#x6BD4;;(&#x9ED8;&#x8BA4;&#x7ED9;&#x7BA1;&#x7406;&#x5458;&#x9884;&#x7559;&#x7684;&#x7A7A;&#x95F4;&#x767E;&#x5206;&#x6BD4;&#x4E3A;5%;)  </p>
+<pre><code class="lang-shell">#&#x6307;&#x660E;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x5757;&#x5927;&#x5C0F;&#x4E3A;2048
+mke2fs -b 2048 /dev/sda3
+#&#x6307;&#x660E;&#x5377;&#x6807;&#x540D;&#x79F0;&#x4E3A;MYDATA,&#x5757;&#x5927;&#x5C0F;1024;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4F7F;&#x7528;ext3
+mke2fs -t ext3 -b 1024 -L MYDATA /dev/sda3
+#&#x8FD9;&#x91CC;&#x6307;&#x5B9A;&#x7279;&#x6027;&#x4E3A;&#x52A0;&#x5165;&#x65E5;&#x5FD7;,&#x6240;&#x4EE5;&#x6CA1;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7C7B;&#x578B;,&#x9ED8;&#x8BA4;&#x4F1A;&#x4F7F;&#x7528;ext3(ext3&#x7C7B;&#x578B;&#x5F00;&#x59CB;&#x6709;&#x65E5;&#x5FD7;)
+mke2fs -O has_journal /dev/sda3
+</code></pre>
+<h3 id="e2label&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x67E5;&#x770B;&#x548C;&#x8BBE;&#x7F6E;&#x5377;&#x6807;&#x65E0;&#x9700;&#x91CD;&#x65B0;&#x683C;&#x5F0F;&#x5316;&#x4FEE;&#x6539;">e2label&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x67E5;&#x770B;&#x548C;&#x8BBE;&#x7F6E;&#x5377;&#x6807;(&#x65E0;&#x9700;&#x91CD;&#x65B0;&#x683C;&#x5F0F;&#x5316;&#x4FEE;&#x6539;)</h3>
+<p><a href="https://images.gitee.com/uploads/images/2019/0715/104121_585d36a8_1479682.png" data-lightbox="a7be7250-7938-4a5b-907d-862174458515" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0715/104121_585d36a8_1479682.png" alt=""></a></p>
+<h3 id="tune2fs&#x547D;&#x4EE4;&#x67E5;&#x770B;&#x6216;&#x8005;&#x4FEE;&#x6539;ext&#x7CFB;&#x5217;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x67D0;&#x4E9B;&#x5C5E;&#x6027;&#x65E0;&#x9700;&#x91CD;&#x65B0;&#x683C;&#x5F0F;&#x5316;&#x4FEE;&#x6539;">tune2fs&#x547D;&#x4EE4;:&#x67E5;&#x770B;&#x6216;&#x8005;&#x4FEE;&#x6539;ext&#x7CFB;&#x5217;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x67D0;&#x4E9B;&#x5C5E;&#x6027;(&#x65E0;&#x9700;&#x91CD;&#x65B0;&#x683C;&#x5F0F;&#x5316;&#x4FEE;&#x6539;)</h3>
+<p>&#x6CE8;&#x610F;:&#x5757;&#x5927;&#x5C0F;&#x521B;&#x5EFA;&#x540E;&#x4E0D;&#x53EF;&#x4FEE;&#x6539;;  </p>
+<p>tune2fs [OPTIONS] device<br>-l:&#x67E5;&#x770B;&#x8D85;&#x7EA7;&#x5757;&#x7684;&#x5185;&#x5BB9;;  </p>
+<p>&#x4FEE;&#x6539;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x5C5E;&#x6027;:<br>-j:ext2--&gt;ext3;<br>-L LABEL:&#x4FEE;&#x6539;&#x5377;&#x6807;;<br>-m #:&#x8C03;&#x6574;&#x9884;&#x7559;&#x7A7A;&#x95F4;&#x767E;&#x5206;&#x6BD4;;<br>-O <sup><a href="#fn_" id="reffn_"></a></sup>FEATHER:&#x5F00;&#x542F;&#x6216;&#x5173;&#x95ED;&#x67D0;&#x79CD;&#x7279;&#x6027;;<br>-o <sup><a href="#fn_" id="reffn_"></a></sup>mount_options:&#x5F00;&#x542F;&#x6216;&#x5173;&#x95ED;&#x67D0;&#x79CD;&#x9ED8;&#x8BA4;&#x6302;&#x8F7D;&#x9009;&#x9879;;  </p>
+<pre><code class="lang-shell">#&#x8BBE;&#x7F6E;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E3A;ext2
+mke2fs -t ext2 /dev/sda3
+#&#x67E5;&#x770B;
+blkid /dev/sda3
+#&#x8BBE;&#x7F6E;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E3A;ext3
+tune2fs -j /dev/sda3
+#&#x67E5;&#x770B;
+blkid /dev/sda3
+
+#&#x8C03;&#x6574;&#x7A7A;&#x95F4;&#x9884;&#x7559;&#x767E;&#x5206;&#x6BD4;&#x4E3A;2%
+tune2fs -m 2 /dev/sda3
+
+#&#x5173;&#x95ED;jornal&#x65E5;&#x5FD7;&#x529F;&#x80FD;
+tune2fs -O ^has_journal /dev/sda3
+#&#x7136;&#x540E;&#x53D1;&#x73B0;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7C7B;&#x578B;&#x53D8;&#x6210;&#x4E86;ext2
+blkid /dev/sda3
+#&#x5F00;&#x542F;jornal&#x65E5;&#x5FD7;&#x529F;&#x80FD;
+tune2fs -O has_journal /dev/sda3
+#&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7C7B;&#x578B;&#x53D8;&#x6210;&#x4E86;ext3
+blkid /dev/sda3
+
+#&#x52A0;&#x5165;&#x9ED8;&#x8BA4;&#x6302;&#x8F7D;&#x9009;&#x9879;acl
+tune2fs -o acl /dev/sda3
+#&#x67E5;&#x770B;Default mount options&#x91CC;&#x52A0;&#x5165;&#x4E86;acl
+tune2fs -l /dev/sda3
+</code></pre>
+<h3 id="dumpe2fs&#x547D;&#x4EE4;&#x663E;&#x793A;ext&#x7CFB;&#x5217;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x5C5E;&#x6027;&#x4FE1;&#x606F;">dumpe2fs&#x547D;&#x4EE4;:&#x663E;&#x793A;ext&#x7CFB;&#x5217;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x5C5E;&#x6027;&#x4FE1;&#x606F;</h3>
+<p>dumpe2fs [-h] device  </p>
+<pre><code class="lang-shell">#ext&#x7CFB;&#x5217;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x5C5E;&#x6027;&#x4FE1;&#x606F; 
+dumpe2fs /dev/sda3
+#&#x53EA;&#x663E;&#x793A;&#x8D85;&#x7EA7;&#x5757;&#x4FE1;&#x606F;
+dumpe2fs -h /dev/sda3
+</code></pre>
+<h3 id="fsck&#x547D;&#x4EE4;&#x7528;&#x4E8E;&#x5B9E;&#x73B0;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x68C0;&#x6D4B;&#x5DE5;&#x5177;">fsck&#x547D;&#x4EE4;:&#x7528;&#x4E8E;&#x5B9E;&#x73B0;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x68C0;&#x6D4B;&#x5DE5;&#x5177;</h3>
+<p>&#x56E0;&#x8FDB;&#x7A0B;&#x610F;&#x5916;&#x7EC8;&#x6B62;&#x6216;&#x8005;&#x7CFB;&#x7EDF;&#x5D29;&#x6E83;&#x7B49;&#x539F;&#x56E0;&#x5BFC;&#x81F4;&#x5199;&#x5165;&#x64CD;&#x4F5C;&#x975E;&#x6B63;&#x5E38;&#x7EC8;&#x6B62;&#x65F6;,&#x53EF;&#x80FD;&#x4F1A;&#x9020;&#x6210;&#x6587;&#x4EF6;&#x635F;&#x574F;;&#x6B64;&#x65F6;,&#x5E94;&#x8BE5;&#x68C0;&#x6D4B;&#x5E76;&#x4FEE;&#x590D;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;;&#x5EFA;&#x8BAE;&#x79BB;&#x7EBF;&#x8FDB;&#x884C;;<br>fsck:check and repair a linux file system<br>-t stype:&#x6307;&#x660E;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7C7B;&#x578B;;<br>fsck -t ext4 = fsck.ext4<br>-a:&#x65E0;&#x9700;&#x4EA4;&#x4E92;&#x800C;&#x81EA;&#x52A8;&#x4FEE;&#x590D;&#x6240;&#x6709;&#x9519;&#x8BEF;;<br>-r:&#x4EA4;&#x4E92;&#x5F0F;&#x4FEE;&#x590D;;  </p>
+<pre><code class="lang-shell">fsck -t ext4 /dev/sda3
+</code></pre>
+<h4 id="ext&#x7CFB;&#x5217;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x4E13;&#x7528;&#x5DE5;&#x5177;">ext&#x7CFB;&#x5217;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x4E13;&#x7528;&#x5DE5;&#x5177;:</h4>
+<p>e2fsck:check a Linux ext2/ext3/ext4 file system<br>e2fsck [OPTIONS] device<br>-y:&#x5BF9;&#x6240;&#x6709;&#x95EE;&#x9898;&#x81EA;&#x52A8;&#x56DE;&#x7B54;&#x4E3A;yes;<br>-f:&#x5373;&#x4F7F;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5904;&#x4E8E;clean&#x72B6;&#x6001;,&#x4E5F;&#x8981;&#x5F3A;&#x5236;&#x8FDB;&#x884C;&#x68C0;&#x6D4B;;  </p>
+<pre><code class="lang-shell">e2fsck -f /dev/sda3
+</code></pre>
+<h3 id="blkid&#x547D;&#x4EE4;">blkid&#x547D;&#x4EE4;</h3>
+<p>blkid device<br>blkid -L LABEL:&#x6839;&#x636E;LABEL&#x5B9A;&#x4F4D;&#x8BBE;&#x5907;<br>blkid -U UUID:&#x6839;&#x636E;UUID&#x5B9A;&#x4F4D;&#x8BBE;&#x5907;  </p>
+<pre><code class="lang-shell">#&#x8BBE;&#x7F6E;&#x5377;&#x6807;
+e2label /dev/sda3 MYDATA
+#&#x901A;&#x8FC7;&#x5377;&#x6807;&#x67E5;&#x627E;&#x67D0;&#x4E2A;&#x5377;&#x6807;&#x6240;&#x5BF9;&#x5E94;&#x7684;&#x8BBE;&#x5907;
+blkid -L MYDATA
+</code></pre>
+<h3 id="swap&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;">swap&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;</h3>
+<p>Linux&#x4E0A;&#x7684;&#x4EA4;&#x6362;&#x5206;&#x533A;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x72EC;&#x7ACB;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;;<br>&#x4E14;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;System ID&#x5FC5;&#x987B;&#x4E3A;82;  </p>
+<p>&#x521B;&#x5EFA;swap&#x8BBE;&#x5907;:mkswap&#x547D;&#x4EE4;<br>mkswap [OPTIONS] device<br>-L LABEL:&#x6307;&#x660E;&#x5377;&#x6807;<br>-f:&#x5F3A;&#x5236;&#x521B;&#x5EFA;</p>
+<p><a href="https://images.gitee.com/uploads/images/2019/0715/143725_ebc431d3_1479682.png" data-lightbox="876eca92-6ac3-4ad3-b14d-d212f7fd98e7" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0715/143725_ebc431d3_1479682.png" alt=""></a>
+<a href="https://images.gitee.com/uploads/images/2019/0715/143939_55c9da23_1479682.png" data-lightbox="c445705c-2cd6-42bb-9032-065b76c6565d" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0715/143939_55c9da23_1479682.png" alt=""></a></p>
+<h3 id="window&#x65E0;&#x6CD5;&#x8BC6;&#x522B;linux&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;">window&#x65E0;&#x6CD5;&#x8BC6;&#x522B;Linux&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;</h3>
+<p>&#x56E0;&#x6B64;,&#x5B58;&#x50A8;&#x8BBE;&#x5907;&#x9700;&#x8981;&#x4E24;&#x79CD;&#x7CFB;&#x7EDF;&#x4E4B;&#x95F4;&#x4EA4;&#x53C9;&#x4F7F;&#x7528;&#x65F6;,&#x5E94;&#x8BE5;&#x4F7F;&#x7528;windows&#x548C;linux&#x540C;&#x65F6;&#x652F;&#x6301;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;:fat32(vfat);<br>mkfs.vfat device  </p>
+<h3 id="&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x4F7F;&#x7528;">&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x4F7F;&#x7528;:</h3>
+<p>&#x9996;&#x5148;&#x8981;&quot;&#x6302;&#x8F7D;&quot;:mount&#x547D;&#x4EE4;&#x548C;unmount&#x547D;&#x4EE4;  </p>
+<p>&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E4B;&#x5916;&#x7684;&#x5176;&#x5B83;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x8981;&#x60F3;&#x80FD;&#x591F;&#x88AB;&#x8BBF;&#x95EE;,&#x90FD;&#x5FC5;&#x987B;&#x901A;&#x8FC7;&quot;&#x5173;&#x8054;&quot;&#x81F3;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E0A;&#x7684;&#x67D0;&#x4E2A;&#x76EE;&#x5F55;&#x6765;&#x5B9E;&#x73B0;,&#x6B64;&#x5173;&#x8054;&#x64CD;&#x4F5C;&#x5373;&#x4E3A;&quot;&#x6302;&#x8F7D;&quot;;&#x6B64;&#x76EE;&#x5F55;&#x5373;&#x4E3A;&quot;&#x6302;&#x8F7D;&#x70B9;&quot;;<br>&#x6302;&#x8F7D;&#x70B9;:mount_point,&#x7528;&#x4E8E;&#x4F5C;&#x4E3A;&#x53E6;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x8BBF;&#x95EE;&#x5165;&#x53E3;;<br>(1) &#x4E8B;&#x5148;&#x5B58;&#x5728;;<br>(2) &#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x672A;&#x88AB;&#x6216;&#x4E0D;&#x4F1A;&#x88AB;&#x5176;&#x4ED6;&#x8FDB;&#x7A0B;&#x4F7F;&#x7528;&#x5230;&#x7684;&#x76EE;&#x5F55;;<br>(3) &#x6302;&#x8F7D;&#x70B9;&#x4E0B;&#x539F;&#x6709;&#x7684;&#x6587;&#x4EF6;&#x5C06;&#x4F1A;&#x88AB;&#x9690;&#x85CF;;  </p>
+<h3 id="mount&#x547D;&#x4EE4;">mount&#x547D;&#x4EE4;:</h3>
+<p>mount [-nrw] [-t vfstype] [-o options] device dir  </p>
+<p>&#x547D;&#x4EE4;&#x9009;&#x9879;:<br>-r:readonly,&#x53EA;&#x8BFB;&#x6302;&#x8F7D;;&#x6BD4;&#x5982;&#x5149;&#x9A71;;<br>-w:read and write,&#x8BFB;&#x5199;&#x6302;&#x8F7D;;&#x9ED8;&#x8BA4;&#x503C;;<br>-n:&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;,&#x8BBE;&#x5907;&#x6302;&#x8F7D;&#x6216;&#x5378;&#x8F7D;&#x7684;&#x64CD;&#x4F5C;&#x4F1A;&#x540C;&#x6B65;&#x66F4;&#x65B0;&#x81F3;/etc/mtab&#x6587;&#x4EF6;&#x4E2D;;-n&#x7528;&#x4E8E;&#x7981;&#x6B62;&#x6B64;&#x7279;&#x6027;;  </p>
+<p>-t vfstype:&#x6307;&#x660E;&#x8981;&#x6302;&#x8F7D;&#x7684;&#x8BBE;&#x5907;&#x4E0A;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7C7B;&#x578B;;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#x53EF;&#x7701;&#x7565;,&#x6B64;&#x65F6;mount&#x4F1A;&#x901A;&#x8FC7;blkid&#x6765;&#x5224;&#x65AD;&#x8981;&#x6302;&#x8F7D;&#x7684;&#x8BBE;&#x5907;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7C7B;&#x578B;;  </p>
+<p>-L LABEL:&#x6302;&#x8F7D;&#x65F6;&#x4EE5;&#x5377;&#x6807;&#x7684;&#x65B9;&#x5F0F;&#x6307;&#x660E;&#x8BBE;&#x5907;;  </p>
+<pre><code class="lang-shell">mount -L MYDATA /media
+</code></pre>
+<p>-U UUID:&#x6302;&#x8F7D;&#x65F6;&#x4EE5;UUID&#x65B9;&#x5F0F;&#x6307;&#x660E;&#x8BBE;&#x5907;;    </p>
+<pre><code class="lang-shell">mount -U fa3a9607-558a-4148-94ff-da25f0432de4 /mnt
+</code></pre>
+<p>-o options:&#x6302;&#x8F7D;&#x9009;&#x9879;(&#x6302;&#x8F7D;&#x65F6;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7279;&#x6027;)<br>sync/async:&#x540C;&#x6B65;/&#x5F02;&#x6B65;&#x64CD;&#x4F5C;;<br>&#x8FDB;&#x7A0B;&#x6BCF;&#x4E00;&#x6B21;&#x6240;&#x8BBF;&#x95EE;&#x7684;&#x6570;&#x636E;&#x9ED8;&#x8BA4;&#x5E94;&#x8BE5;&#x662F;&#x5728;&#x78C1;&#x76D8;&#x4E0A;&#x7684;,&#x8FDB;&#x7A0B;&#x4E0D;&#x53EF;&#x80FD;&#x64CD;&#x4F5C;&#x78C1;&#x76D8;&#x6570;&#x636E;,&#x9700;&#x8981;&#x628A;&#x6570;&#x636E;&#x88C5;&#x5230;&#x5185;&#x5B58;&#x4E2D;,&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x6267;&#x884C;&#x8BFB;&#x5199;&#x64CD;&#x4F5C;<br>&#x5F02;&#x6B65;:&#x5148;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x5199;&#x5B8C;,&#x8FC7;&#x4E00;&#x4F1A;&#x518D;&#x5199;&#x5230;&#x78C1;&#x76D8;&#x4E0A;<br>&#x540C;&#x6B65;:&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x4E00;&#x5199;,&#x7ACB;&#x5373;&#x5199;&#x5230;&#x78C1;&#x76D8;&#x4E0A;   </p>
+<p>atime/noatime:&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x5728;&#x88AB;&#x8BBF;&#x95EE;&#x65F6;&#x662F;&#x5426;&#x66F4;&#x65B0;&#x5176;&#x8BBF;&#x95EE;&#x7684;&#x65F6;&#x95F4;&#x6233;;<br>atime:&#x67D0;&#x4E2A;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x88AB;&#x8BBF;&#x95EE;&#x65F6;,&#x7ACB;&#x5373;&#x66F4;&#x65B0;&#x5176;&#x8BBF;&#x95EE;&#x65F6;&#x95F4;&#x6233;<br>noatime:&#x4E0D;&#x66F4;&#x65B0;&#x5176;&#x8BBF;&#x95EE;&#x65F6;&#x95F4;&#x6233;;&#x67D0;&#x4E2A;&#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x88AB;&#x8BBF;&#x95EE;&#x5C31;&#x66F4;&#x65B0;&#x5176;&#x8BBF;&#x95EE;&#x7684;&#x65F6;&#x95F4;&#x6233;,&#x4F1A;&#x7ED9;&#x7CFB;&#x7EDF;&#x5E26;&#x6765;IO&#x538B;&#x529B;;&#x5C24;&#x5176;&#x662F;WEB&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x7684;&#x6587;&#x4EF6;,&#x4E00;&#x79D2;&#x8BBF;&#x95EE;&#x4E0A;&#x4E07;&#x6B21;;  </p>
+<p>diratime/nodirname:&#x76EE;&#x5F55;&#x5728;&#x88AB;&#x8BBF;&#x95EE;&#x65F6;&#x662F;&#x5426;&#x66F4;&#x65B0;&#x5176;&#x8BBF;&#x95EE;&#x7684;&#x65F6;&#x95F4;&#x6233;;<br>remount:&#x91CD;&#x65B0;&#x6302;&#x8F7D;;<br>acl:&#x652F;&#x6301;&#x4F7F;&#x7528;facl&#x529F;&#x80FD;;<br>ro:&#x53EA;&#x8BFB;;<br>rw:&#x8BFB;&#x5199;;<br>dev/nodev:&#x6B64;&#x8BBE;&#x5907;&#x4E0A;&#x662F;&#x5426;&#x5141;&#x8BB8;&#x521B;&#x5EFA;&#x8BBE;&#x5907;&#x6587;&#x4EF6;;<br>exec/noexec:&#x662F;&#x5426;&#x5141;&#x8BB8;&#x8FD0;&#x884C;&#x6B64;&#x8BBE;&#x5907;&#x4E0A;&#x7684;&#x7A0B;&#x5E8F;&#x6587;&#x4EF6;;<br>auto/noauto:&#x662F;&#x5426;&#x5141;&#x8BB8;&#x81EA;&#x52A8;&#x6302;&#x8F7D;;<br>user/nouser:&#x662F;&#x5426;&#x5141;&#x8BB8;&#x666E;&#x901A;&#x7528;&#x6237;&#x6302;&#x8F7D;&#x6B64;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;;<br>suid/nosuid:&#x662F;&#x5426;&#x5141;&#x8BB8;&#x7A0B;&#x5E8F;&#x6587;&#x4EF6;&#x4E0A;&#x7684;suid&#x548C;sgid&#x7279;&#x6B8A;&#x6743;&#x9650;&#x751F;&#x6548;;<br>relatime/norelatime:&#x662F;&#x5426;&#x53C2;&#x8003;&#x4FEE;&#x6539;&#x540E;&#x7684;&#x6539;&#x53D8;&#x65F6;&#x95F4;,&#x6765;&#x66F4;&#x65B0;inode&#x7684;&#x8BBF;&#x95EE;&#x65F6;&#x95F4;;&#x5982;&#x679C;&#x4F60;&#x7684;&#x6587;&#x4EF6;&#x66F4;&#x65B0;&#x65F6;&#x95F4;&#x6CA1;&#x6709;&#x4FEE;&#x6539;,&#x5219;&#x8BBF;&#x95EE;&#x65F6;&#x95F4;&#x5C31;&#x4E0D;&#x4FEE;&#x6539;;<br>defaults:Use default options: rw, suid, dev, exec, auto, nouser, and async;(&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x7684;&#x9009;&#x9879;)  </p>
+<pre><code class="lang-shell">#&#x663E;&#x793A;&#x5F53;&#x524D;&#x6240;&#x6709;&#x5DF2;&#x6302;&#x8F7D;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;
+mount
+#&#x663E;&#x793A;&#x5F53;&#x524D;&#x6240;&#x6709;&#x5DF2;&#x6302;&#x8F7D;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;,&#x548C;mount&#x6548;&#x679C;&#x4E00;&#x6837;
+cat /etc/mtab
+
+#&#x5C06;/dev/sda3&#x6302;&#x8F7D;&#x5230;&#x5230;/mnt
+mount /dev/sda3 /mnt
+#&#x67E5;&#x770B;&#x6302;&#x8F7D;&#x4FE1;&#x606F;
+mount|grep &quot;/dev/sda3&quot;
+#&#x62F7;&#x8D1D;&#x6587;&#x4EF6;&#x5230;/mnt&#x4E0B;
+cp /etc/fstab /mnt
+#&#x67E5;&#x770B;&#x53EF;&#x4EE5;&#x770B;&#x5230;fstab&#x6587;&#x4EF6;
+ls /mnt
+#&#x5378;&#x8F7D;
+unmout /mnt
+#fatab&#x6587;&#x4EF6;&#x5C31;&#x6CA1;&#x6709;&#x4E86;
+ls /mnt
+#&#x4F60;&#x628A;&#x5B83;&#x6302;&#x5230;&#x54EA;&#x5C31;&#x80FD;&#x901A;&#x8FC7;&#x54EA;&#x8BBF;&#x95EE;,&#x6BD4;&#x5982;&#x6302;&#x8F7D;&#x5230;media
+mount /dev/sda3 /media
+#&#x67E5;&#x770B;
+ls /media
+</code></pre>
+<pre><code class="lang-shell">#&#x91CD;&#x65B0;&#x6302;&#x8F7D;,&#x5E76;&#x4F7F;&#x5176;&#x7528;&#x7528;facl&#x6743;&#x9650;&#x7279;&#x6027;;xfs&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x4E0D;&#x652F;&#x6301;&#x4E00;&#x4E0B;&#x547D;&#x4EE4;
+mount -o remount,acl /dev/sda3 /mnt/
+#&#x590D;&#x5236;&#x6587;&#x4EF6;
+cp /etc/fstab /mnt
+#&#x8BBE;&#x7F6E;acl&#x6743;&#x9650;
+setfacl -m u:centos:rw- /mnt/fstab
+#&#x67E5;&#x770B;acl&#x6743;&#x9650;
+getfacl /mnt/fstab
+
+###################################################
+
+#&#x6216;&#x8005;&#x8BBE;&#x7F6E;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x62E5;&#x6709;acl&#x6743;&#x9650;
+tune2fs -o acl /dev/sda3
+#&#x67E5;&#x770B;&#x5176;Default mount options&#x9009;&#x9879;&#x91CC;&#x6709;acl&#x6743;&#x9650;
+tune2fs -l /dev/sda3
+#&#x8BBE;&#x7F6E;acl&#x6743;&#x9650;
+setfacl -m u:fedora:rw- /mnt/fstab
+#&#x67E5;&#x770B;acl&#x6743;&#x9650;
+getfacl /mnt/fstab
+</code></pre>
+<p>&#x53EA;&#x8BFB;&#x6302;&#x8F7D;:<br><a href="https://images.gitee.com/uploads/images/2019/0715/160818_b1b13024_1479682.png" data-lightbox="de73c4c4-9153-4443-8733-29ad212a1038" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0715/160818_b1b13024_1479682.png" alt=""></a></p>
+<p>&#x901A;&#x8FC7;&#x5377;&#x6807;&#x6302;&#x8F7D;<br><a href="https://images.gitee.com/uploads/images/2019/0715/162737_1406adc5_1479682.png" data-lightbox="5f977c9b-18b7-4367-9c5a-13013598dc58" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0715/162737_1406adc5_1479682.png" alt=""></a></p>
+<h3 id="umount&#x547D;&#x4EE4;">umount&#x547D;&#x4EE4;:</h3>
+<p>umount device | dir </p>
+<p>&#x6CE8;&#x610F;:&#x6B63;&#x5728;&#x88AB;&#x8FDB;&#x7A0B;&#x8BBF;&#x95EE;&#x5230;&#x7684;&#x6302;&#x8F7D;&#x70B9;&#x65E0;&#x6CD5;&#x88AB;&#x5378;&#x8F7D;;&#x6BD4;&#x5982;cd&#x5230;&#x6302;&#x8F7D;&#x76EE;&#x5F55;&#x5C31;&#x65E0;&#x6CD5;&#x5378;&#x8F7D;;<br><a href="https://images.gitee.com/uploads/images/2019/0715/160443_532e7004_1479682.png" data-lightbox="9fd495d6-5777-47c6-aeba-3970e4def1f6" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0715/160443_532e7004_1479682.png" alt=""></a>  </p>
+<h3 id="&#x4E00;&#x4E2A;&#x4F7F;&#x7528;&#x6280;&#x5DE7;">&#x4E00;&#x4E2A;&#x4F7F;&#x7528;&#x6280;&#x5DE7;:</h3>
+<p>&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x5C06;&#x76EE;&#x5F55;&#x7ED1;&#x5B9A;&#x81F3;&#x53E6;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#x4E0A;,&#x4F5C;&#x4E3A;&#x5176;&#x4E34;&#x65F6;&#x8BBF;&#x95EE;&#x5165;&#x53E3;;<br>mount -bind &#x6E90;&#x76EE;&#x5F55; &#x76EE;&#x6807;&#x76EE;&#x5F55;  </p>
+<pre><code class="lang-shell">#&#x5C06;/etc&#x7ED1;&#x5B9A;&#x5230;/mnt&#x76EE;&#x5F55;
+mount --bind /etc /mnt
+ls /mnt
+umount /mnt
+ls /mnt
+</code></pre>
+<h3 id="&#x67E5;&#x770B;&#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x6240;&#x6709;&#x5DF2;&#x6302;&#x5728;&#x7684;&#x8BBE;&#x5907;">&#x67E5;&#x770B;&#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x6240;&#x6709;&#x5DF2;&#x6302;&#x5728;&#x7684;&#x8BBE;&#x5907;:</h3>
+<pre><code class="lang-shell">mount
+cat /etc/mtab
+cat /proc/mounts
+</code></pre>
+<h3 id="&#x6302;&#x8F7D;&#x5149;&#x76D8;">&#x6302;&#x8F7D;&#x5149;&#x76D8;</h3>
+<p>mount -r /dev/cdrom mount_point<br>&#x5149;&#x76D8;&#x8BBE;&#x5907;&#x6587;&#x4EF6;:/dev/cdrom,/dev/dvd</p>
+<pre><code class="lang-shell">mount -r /dev/cdrom /media
+</code></pre>
+<h3 id="&#x6302;&#x8F7D;u&#x76D8;">&#x6302;&#x8F7D;U&#x76D8;</h3>
+<p>&#x4E8B;&#x5148;&#x8BC6;&#x522B;U&#x76D8;&#x7684;&#x8BBE;&#x5907;&#x6587;&#x4EF6;;  </p>
+<h3 id="&#x6B63;&#x5728;&#x8BBF;&#x95EE;&#x7684;&#x6302;&#x8F7D;&#x70B9;&#x65E0;&#x6CD5;&#x88AB;&#x5378;&#x8F7D;">&#x6B63;&#x5728;&#x8BBF;&#x95EE;&#x7684;&#x6302;&#x8F7D;&#x70B9;&#x65E0;&#x6CD5;&#x88AB;&#x5378;&#x8F7D;</h3>
+<p>&#x67E5;&#x770B;&#x88AB;&#x54EA;&#x4E2A;&#x6216;&#x90A3;&#x4E9B;&#x8FDB;&#x7A0B;&#x6240;&#x5360;&#x7528;<br>lsof MOUNT_POINT<br>fuser -v MOUNT_POINT  </p>
+<p>&#x7EC8;&#x6B62;&#x6240;&#x6709;&#x6B63;&#x5728;&#x8BBF;&#x95EE;&#x67D0;&#x6302;&#x8F7D;&#x70B9;&#x7684;&#x8FDB;&#x7A0B;:<br>fuser -km MOUNT_POINT </p>
+<pre><code class="lang-shell">#&#x4E00;&#x4E2A;shell&#x8FDB;&#x7A0B;cd&#x5230;&#x6302;&#x8F7D;&#x76EE;&#x5F55;,&#x5C31;&#x5360;&#x7528;&#x4E86;&#x6B64;&#x6302;&#x8F7D;,&#x7528;unmount&#x5378;&#x8F7D;&#x4F1A;&#x63D0;&#x793A;&#x88AB;&#x5360;&#x7528;
+cd /mnt
+#&#x663E;&#x793A;&#x54EA;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x5360;&#x7528;&#x6B64;&#x6302;&#x8F7D;
+lsof /mnt
+fuser -v /mnt
+#&#x7EC8;&#x6B62;&#x6240;&#x6709;/mnt&#x6302;&#x8F7D;&#x70B9;&#x7684;&#x8FDB;&#x7A0B;
+fuser -km /mnt
+</code></pre>
+<h3 id="&#x6302;&#x8F7D;&#x672C;&#x5730;&#x56DE;&#x73AF;&#x8BBE;&#x5907;">&#x6302;&#x8F7D;&#x672C;&#x5730;&#x56DE;&#x73AF;&#x8BBE;&#x5907;</h3>
+<p>&#x56DE;&#x73AF;&#x6587;&#x4EF6;&#x6BD4;&#x5982;:.iso&#x3001;.img&#x6587;&#x4EF6;<br>mount -o loop /PATH/TO/SOME_LOOP_FILE MOUNT_POINT  </p>
+<pre><code class="lang-shell">mount -r -o loop  ~/CentOS-6.8-x86_64-bin-DVD1.iso /mnt
+ls /mnt
+</code></pre>
+<h3 id="&#x4EA4;&#x6362;&#x5206;&#x533A;&#x7684;&#x542F;&#x7528;&#x548C;&#x7981;&#x7528;">&#x4EA4;&#x6362;&#x5206;&#x533A;&#x7684;&#x542F;&#x7528;&#x548C;&#x7981;&#x7528;:</h3>
+<p>&#x521B;&#x5EFA;&#x4EA4;&#x6362;&#x5206;&#x533A;&#x7684;&#x547D;&#x4EE4;:mkswap  </p>
+<p>&#x542F;&#x7528;:swapon<br>swapon [OPTION] [DEVICE]<br>-a:&#x5B9A;&#x4E49;&#x5728;/etc/fstab&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x6240;&#x6709;swap&#x8BBE;&#x5907;;  </p>
+<p>&#x7981;&#x7528;:swapoff<br>swapoff DEVICE
+<a href="https://images.gitee.com/uploads/images/2019/0716/142159_47d4eb73_1479682.png" data-lightbox="79079f36-d291-4736-bf15-3484e3744550" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0716/142159_47d4eb73_1479682.png" alt=""></a></p>
+<h3 id="&#x8BBE;&#x5B9A;&#x9664;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4EE5;&#x5916;&#x7684;&#x5176;&#x5B83;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x80FD;&#x591F;&#x5F00;&#x673A;&#x65F6;&#x81EA;&#x52A8;&#x6302;&#x8F7D;etcstab&#x6587;&#x4EF6;">&#x8BBE;&#x5B9A;&#x9664;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4EE5;&#x5916;&#x7684;&#x5176;&#x5B83;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x80FD;&#x591F;&#x5F00;&#x673A;&#x65F6;&#x81EA;&#x52A8;&#x6302;&#x8F7D;:/etc/stab&#x6587;&#x4EF6;</h3>
+<p>&#x6BCF;&#x884C;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x8981;&#x6302;&#x8F7D;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x76F8;&#x5173;&#x5C5E;&#x6027;:<br>6&#x4E2A;&#x5B57;&#x6BB5;:<br>(1) &#x8981;&#x6302;&#x8F7D;&#x7684;&#x8BBE;&#x5907;;<br>&#x8BBE;&#x5907;&#x6587;&#x4EF6;;<br>LABEL;<br>UUID;<br>&#x4F2A;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;:&#x5982;:sysfs,proc,tmpfs&#x7B49;;  </p>
+<p>(2) &#x6302;&#x8F7D;&#x70B9;<br>swap&#x7C7B;&#x578B;&#x7684;&#x8BBE;&#x5907;&#x7684;&#x6302;&#x8F7D;&#x70B9;&#x4E3A;swap;  </p>
+<p>(3) &#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7C7B;&#x578B;;  </p>
+<p>(4) &#x6302;&#x8F7D;&#x9009;&#x9879;<br>defaults:&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x6302;&#x8F7D;&#x9009;&#x9879;;<br>&#x5982;&#x679C;&#x8981;&#x540C;&#x65F6;&#x6307;&#x660E;&#x591A;&#x4E2A;&#x6302;&#x8F7D;&#x9009;&#x9879;,&#x5F7C;&#x6B64;&#x95F4;&#x4EE5;&#x9017;&#x53F7;&#x5206;&#x9694;;<br>&#x4F8B;&#x5982;:defaults,acl,noatime,noexec  </p>
+<p>(5) &#x8F6C;&#x50A8;&#x9891;&#x7387;<br>0:&#x4ECE;&#x4E0D;&#x5907;&#x4EFD;;<br>1:&#x6BCF;&#x5929;&#x5907;&#x4EFD;;<br>2.&#x6BCF;&#x9694;&#x4E00;&#x5929;&#x5907;&#x4EFD;;  </p>
+<p>(6) &#x81EA;&#x68C0;&#x6B21;&#x5E8F;(&#x8BBE;&#x5907;&#x7684;&#x81EA;&#x68C0;&#x5206;&#x5148;&#x540E;)<br>0:&#x4ECE;&#x4E0D;&#x5907;&#x4EFD;;<br>1:&#x6BCF;&#x5929;&#x5907;&#x4EFD;,&#x901A;&#x5E38;&#x53EA;&#x80FD;&#x662F;&#x6839;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x53EF;&#x7528;1;<br>2:&#x6B21;&#x7EA7;&#x81EA;&#x68C0;<br>...</p>
+<p><a href="https://images.gitee.com/uploads/images/2019/0716/144747_bd19b856_1479682.png" data-lightbox="e756cb50-e3f6-471a-bad9-713dc36bf03a" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0716/144747_bd19b856_1479682.png" alt=""></a></p>
+<p>vim&#x7F16;&#x8F91;/etc/fstab&#x6587;&#x4EF6;
+<a href="https://images.gitee.com/uploads/images/2019/0716/145651_4c85119f_1479682.png" data-lightbox="78c97efd-0291-450b-9d9f-5688088b2e33" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0716/145651_4c85119f_1479682.png" alt=""></a></p>
+<pre><code class="lang-shell">#&#x521B;&#x5EFA;&#x4E0A;&#x56FE;&#x4E2D;&#x6302;&#x8F7D;&#x70B9;&#x7684;&#x6587;&#x4EF6;&#x5939;
+mkdir /mydata
+#&#x8868;&#x793A;&#x80FD;&#x591F;&#x628A;/etc/fstab&#x6587;&#x4EF6;&#x4E2D;&#x6240;&#x6709;&#x5B9A;&#x4E49;&#x7684;&#x652F;&#x6301;&#x81EA;&#x52A8;&#x6302;&#x8F7D;&#x7684;&#x8BBE;&#x5907;&#x90FD;&#x7ED9;&#x6302;&#x8F7D;&#x4E0A;&#x6765;
+mount -a
+#&#x67E5;&#x770B;&#x6302;&#x8F7D;&#x7684;&#x4FE1;&#x606F;
+mount|grep &quot;/dev/sda3&quot;
+</code></pre>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5377;&#x6807;&#x6765;&#x6302;&#x8F7D;,vim&#x7F16;&#x8F91;/etc/fstab&#x6587;&#x4EF6;
+<a href="https://images.gitee.com/uploads/images/2019/0716/152019_cad6d7f2_1479682.png" data-lightbox="e524dd95-df16-4063-9b7c-f0b74adc7355" data-title="" target="_blank"><img src="https://images.gitee.com/uploads/images/2019/0716/152019_cad6d7f2_1479682.png" alt=""></a></p>
+<h3 id="df&#x547D;&#x4EE4;&#x67E5;&#x770B;&#x78C1;&#x76D8;&#x7684;&#x4F7F;&#x7528;&#x72B6;&#x6001;">df&#x547D;&#x4EE4;:&#x67E5;&#x770B;&#x78C1;&#x76D8;&#x7684;&#x4F7F;&#x7528;&#x72B6;&#x6001;</h3>
+<p>df [OPTIONS]... [FILE]...<br>-l:&#x4EC5;&#x663E;&#x793A;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x7684;&#x76F8;&#x5173;&#x4FE1;&#x606F;;<br>-h:human-readble,&#x4EBA;&#x7C7B;&#x6613;&#x4E8E;&#x7406;&#x89E3;&#x7684;&#x683C;&#x5F0F;;<br>-i:&#x663E;&#x793A;inode&#x7684;&#x4F7F;&#x7528;&#x72B6;&#x6001;&#x800C;&#x975E;blocks;  </p>
+<pre><code class="lang-shell">df -h
+</code></pre>
+<h3 id="du&#x547D;&#x4EE4;&#x663E;&#x793A;&#x6587;&#x4EF6;&#x5927;&#x5C0F;">du&#x547D;&#x4EE4;:&#x663E;&#x793A;&#x6587;&#x4EF6;&#x5927;&#x5C0F;</h3>
+<p>du [OPTIONS]... [FILE]...<br>-s:summary<br>-h:human-readable</p>
+<pre><code class="lang-shell">#ll -dh /etc&#x53EA;&#x80FD;&#x663E;&#x793A;etc&#x76EE;&#x5F55;&#x672C;&#x8EAB;&#x5360;&#x7528;&#x7684;&#x5927;&#x5C0F;
+ll -dh /etc
+
+#&#x7528;&#x4E8E;&#x663E;&#x793A;/etc&#x4E0B;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x7684;&#x5927;&#x5C0F;&#x5217;&#x8868;
+du /etc
+#/etc&#x4E0B;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x5408;&#x8BA1;
+du -s /etc
+#/etc&#x4E0B;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x5408;&#x8BA1;,&#x5E76;human readble&#x7684;&#x65B9;&#x5F0F;&#x663E;&#x793A;
+du -sh /etc
+</code></pre>
+<h3 id="&#x7EC3;&#x4E60;">&#x7EC3;&#x4E60;:</h3>
+<p>1&#x3001;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;10G&#x7684;&#x5206;&#x533A;,&#x5E76;&#x683C;&#x5F0F;&#x5316;&#x4E3A;ext4&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;;<br>(1) block&#x5927;&#x5C0F;&#x4E3A;2048;&#x9884;&#x7559;&#x7A7A;&#x95F4;&#x4E3A;2%,&#x5377;&#x6807;MYDATA;<br>(2) &#x6302;&#x8F7D;&#x81F3;/mydata&#x76EE;&#x5F55;,&#x8981;&#x6C42;&#x6302;&#x8F7D;&#x65F6;&#x7981;&#x6B62;&#x7A0B;&#x5E8F;&#x81EA;&#x52A8;&#x8FD0;&#x884C;,&#x4E14;&#x4E0D;&#x66F4;&#x65B0;&#x6587;&#x4EF6;&#x7684;&#x8BBF;&#x95EE;&#x65F6;&#x95F4;&#x6233;,&#x9ED8;&#x8BA4;&#x8981;&#x6709;acl&#x6302;&#x8F7D;&#x9009;&#x9879;&#xFF1B;<br>(3) &#x53EF;&#x5F00;&#x673A;&#x81EA;&#x52A8;&#x6302;&#x8F7D;;  </p>
+<p>&#x5148;&#x7528;fdisk&#x521B;&#x5EFA;1&#x4E2A;10G&#x7684;&#x5206;&#x533A;</p>
+<pre><code class="lang-shell">#&#x4E3A;&#x5206;&#x533A;&#x683C;&#x5F0F;&#x5316;&#x521B;&#x5EFA;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;
+mke2fs -t ext4 -b 2048 -m 2 -L MYDATA /dev/sda3
+#&#x67E5;&#x770B;
+blkid /dev/sda3
+#&#x6302;&#x8F7D;
+mount -o noexec,noatime,acl /dev/sda3 /mydata
+</code></pre>
+<p>&#x5728;/etc/fstab&#x6587;&#x4EF6;&#x4E2D;&#x52A0;&#x5165;&#x4EE5;&#x4E0B;&#x884C;:<br><code>shell
+LABEL=MYDATA    /mydata     ext4    defaults    0 0</code></p>
+<p>2&#x3001;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5927;&#x5C0F;&#x4E3A;1G&#x7684;swap&#x5206;&#x533A;,&#x5E76;&#x542F;&#x52A8;&#x4E4B;  </p>
+
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="15.文件查找find和特殊权限及facl.html" class="navigation navigation-prev " aria-label="Previous page: 15.文件查找find和特殊权限及facl">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="17.shell条件测试,逻辑判断,参数传递.html" class="navigation navigation-next " aria-label="Next page: 17.shell条件测试,逻辑判断,参数传递">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"16.磁盘及文件系统管理","level":"1.17","depth":1,"next":{"title":"17.shell条件测试,逻辑判断,参数传递","level":"1.18","depth":1,"path":"pages/17.shell条件测试,逻辑判断,参数传递.md","ref":"pages/17.shell条件测试,逻辑判断,参数传递.md","articles":[]},"previous":{"title":"15.文件查找find和特殊权限及facl","level":"1.16","depth":1,"path":"pages/15.文件查找find和特殊权限及facl.md","ref":"pages/15.文件查找find和特殊权限及facl.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["hide-element","lightbox","page-treeview","-lunr","-search","search-pro","-sharing","sharing-plus","back-to-top-button","code","splitter","chapter-fold","popup","custom-favicon","livereload"],"pluginsConfig":{"page-treeview":{"collapsed":false,"copyright":"Copyright &#169; aleen42","minHeaderCount":"2","minHeaderDeep":"2"},"chapter-fold":{},"styles":{"website":"styles/website.css"},"livereload":{},"splitter":{},"search-pro":{},"author":"sonin","sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"images/Title/favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"back-to-top-button":{},"title":"面试","custom-favicon":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":true,"facebook":false,"weibo":true,"twitter":false,"pocket":false,"google":false,"qzone":true},"description":"面试宝典","theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pages/16.磁盘及文件系统管理.md","mtime":"2023-07-13T05:42:09.554Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-07-13T06:53:25.815Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
